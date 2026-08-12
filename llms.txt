@@ -1,0 +1,70 @@
+# E2P Systems Group
+
+> Equipment-to-Process Systems research group led by Han Sol Jung at the Korea Research Institute of Chemical Technology (KRICT).
+
+## Core identity
+The group studies **technology translation and engineering decision-making**: how source technologies are translated into credible equipment and process systems, validated against engineering and demonstration data, and used for design, operability, scale-up and deployment decisions.
+
+Technology domains such as e-SAF, e-CCU, CO2-to-methanol, FDCA, hydrogen and electrolysis are treated as **testbeds**, not as the research identity itself.
+
+## Core research questions
+1. Cross-scale fidelity — which equipment physics must be retained in process models?
+2. Model credibility — where is a model valid and how should uncertainty be treated?
+3. Dynamic feasibility — are steady-state designs operable under variable load, startup/shutdown and degradation?
+4. Decision relevance — does added model fidelity change engineering decisions?
+
+## Core research areas
+- Equipment–process systems modeling
+- Dynamic operation analysis
+- Optimization and data-informed decisions
+- Environmental and techno-economic assessment
+- Process integration, scale-up and demonstration
+
+## Principal investigator
+**Han Sol Jung, Ph.D.**
+Senior Researcher, Chemical Process Solution Research Center, KRICT
+Email: hsjung@krict.re.kr
+Research identity: Equipment-aware Process Systems Engineering / Technology Translation & Engineering Decision-Making
+
+## Current researchers
+- Jisoo Kim — process models, validation, LCA/TEA and system decisions
+- Soo Won Son — equipment physics, COMSOL multiphysics and operability
+
+## Key collaborators
+- Sun Choi — industrial process strategy, commercialization and scale-up; Global TOP Subproject 5
+- Gibaek Lee — carbon-neutral strategy, LCA/GHG and certification
+- Kiwoong Kim — low-carbon process, CO2 capture and reaction-separation; Global TOP Subproject 5
+- Kyoungrok Kim — industrial process development and commercialization; KRICT; Global TOP Subproject 5
+- Dowan Kim — hydroprocessing and downstream upgrading; KRICT; Global TOP Subproject 5
+- Seunghyun Cheon — post-master researcher; e-SAF process design, KPI and optimization; KRICT; Global TOP Subproject 5
+- Seungjun Baek — reactor design collaboration; KRICT Chemical Process Solution Research Center; Global TOP Subproject 1
+- Kyungmin Lee — KRICT basic-program collaboration; KRICT Chemical Process Solution Research Center
+- Yongtae Kim — Global TOP Subproject 1 lead; KRICT CO2 Energy Research Center
+- Jungjin Han — demonstration collaboration; KRICT Carbon-Neutral Chemical Process Demonstration Center; Global TOP Subproject 5
+
+## Institutional programs
+- Global TOP CCU Strategic Research Group: e-SAF integrated-process design, demonstration and strategy interface
+- KRICT basic program: DX-enabled carbon-neutral chemical process demonstration platform
+- PI-led independent track: operating-data-driven reaction-equipment performance modeling
+
+## Publications and IP
+The group’s publication record spans thermochemical storage, CO2 photoconversion materials/reactors, LCA, thermal/energy systems, plant-data-based assessment and electrolysis catalysts.
+
+The IP portfolio includes Korean filings/grants and international patent families in thermal systems, CO2 conversion/CCUS, hydrogen/electrolysis and functional energy systems. A recent non-public Korean application is **10-2026-0101862, Selective Recovery Method of Cesium Using a Bipolar-Membrane Electrodialysis Device**.
+
+## Research culture
+Researchers develop ownership through reproduction, independent recalculation, challenging assumptions, owning a technical interface, proposing the next analysis and defining the next research question. The group emphasizes reproducibility, traceability, fair credit and decision relevance.
+
+## Public pages
+- Home: https://dochi37-cpu.github.io/
+- Research: https://dochi37-cpu.github.io/research.html
+- People: https://dochi37-cpu.github.io/people.html
+- Publications: https://dochi37-cpu.github.io/publications.html
+- Intellectual Property: https://dochi37-cpu.github.io/ip.html
+- Group Culture & News: https://dochi37-cpu.github.io/group.html
+- Join Us & Contact: https://dochi37-cpu.github.io/join.html
+
+## Machine-readable discovery
+- robots.txt: https://dochi37-cpu.github.io/robots.txt
+- sitemap.xml: https://dochi37-cpu.github.io/sitemap.xml
+- llms.txt: https://dochi37-cpu.github.io/llms.txt
