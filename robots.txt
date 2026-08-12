@@ -1,16 +1,10 @@
 User-agent: *
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
 User-agent: GPTBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://dochi37-cpu.github.io/sitemap.xml

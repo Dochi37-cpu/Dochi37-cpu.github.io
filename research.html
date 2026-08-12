@@ -4,149 +4,134 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Research | E2P Systems Group</title>
-  <meta name="description" content="Research questions, methods, evidence and application testbeds of the E2P Systems Group at KRICT.">
+  <meta name="description" content="Research positioning, questions, model hierarchy, evidence standards and current programs of the E2P Systems Group at KRICT.">
+  <meta name="theme-color" content="#082b4d">
   <link rel="canonical" href="https://dochi37-cpu.github.io/research.html">
   <link rel="icon" href="assets/e2p-favicon-v19.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/site-v19.css">
-  <link rel="stylesheet" href="assets/research-v19.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/components.css">
+  <link rel="stylesheet" href="assets/responsive.css">
+  <meta property="og:title" content="Research | E2P Systems Group">
+  <meta property="og:description" content="Research positioning, questions, model hierarchy, evidence standards and current programs of the E2P Systems Group at KRICT.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dochi37-cpu.github.io/research.html">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body data-lang="ko">
+<a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <div class="shell nav">
-    <a class="brand" href="index.html" aria-label="E2P Research Group home"><img src="assets/e2p-wordmark-v19.svg" alt="E2P Research Group"></a>
-    <nav class="menu" aria-label="Main navigation">
-      <a href="index.html">HOME</a><a class="active" href="research.html">RESEARCH</a><a href="people.html">PEOPLE</a><a href="publications.html">PUBLICATIONS</a><a href="ip.html">IP</a><a href="group.html">GROUP</a><a href="join.html">JOIN US</a>
-    </nav>
-    <div class="lang-toggle" aria-label="Language"><button class="active" data-lang-btn="ko">KO</button><button data-lang-btn="en">EN</button></div>
-    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <a class="brand" href="index.html" aria-label="E2P Systems Group home">
+      <img src="assets/e2p-wordmark-v19.svg" alt="E2P Research Group">
+    </a>
+    <nav class="menu" aria-label="Main navigation"><a href="index.html">HOME</a><a href="research.html" aria-current="page">RESEARCH</a><a href="people.html">PEOPLE</a><a href="publications.html">PUBLICATIONS</a><a href="ip.html">IP</a><a href="group.html">GROUP</a><a href="join.html">JOIN US</a></nav>
+    <div class="lang-toggle" aria-label="Language selection">
+      <button type="button" data-lang-button="ko" aria-pressed="true">KO</button>
+      <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
   </div>
 </header>
-
-<nav class="research-nav" aria-label="Research page sections"><div class="shell">
-  <a href="#positioning">Positioning</a><a href="#questions">Questions</a><a href="#methodology">Methodology</a><a href="#evidence">Evidence</a><a href="#testbeds">Testbeds</a><a href="#programs">Programs</a><a href="#assets">Assets</a>
-</div></nav>
-
-<main>
-<section class="research-hero">
-  <div class="shell research-hero-grid">
-    <div>
+<main id="main-content">
+  <section class="page-hero">
+    <div class="shell">
       <div class="eyebrow">RESEARCH</div>
-      <h1><span class="lang-ko">장치 현실을<br><span class="accent">신뢰 가능한 공정 의사결정으로</span></span><span class="lang-en">Turning equipment reality into<br><span class="accent">credible process decisions.</span></span></h1>
-      <p class="lead lang-ko">E2P의 연구는 장치 물리, 공정 시스템, engineering data와 technology deployment의 경계에 있습니다. 원천기술과 응용 도메인을 입력으로 받아 장치 현실을 공정·운전 모델에 반영하고, 실제 설계·실증 근거로 검증하여 scale-up, 설계, 운전과 기술선택 의사결정으로 번역합니다.</p>
-      <p class="lead lang-en">E2P works at the interface between equipment physics, process systems, engineering data and technology deployment. Source technologies and application domains are translated through equipment reality, process and operation models, and engineering evidence into design, scale-up, operation and technology-selection decisions.</p>
-      <div class="chips"><span class="chip">Equipment-aware PSE</span><span class="chip">Model Hierarchy</span><span class="chip">Dynamic Feasibility</span><span class="chip">Evidence-first Validation</span><span class="chip">Decision Relevance</span></div>
+      <h1><span class="lang-ko">장치 현실을<br><span class="accent">공정 feasible region과 의사결정으로</span></span><span class="lang-en">Turning equipment reality into<br><span class="accent">process feasibility and decisions.</span></span></h1>
+      <p class="lang-ko">E2P는 traditional PSE와 high-fidelity equipment engineering 사이의 interface를 연구합니다. 핵심 질문은 “어떤 장치 물리가 plant-level 결과를 바꾸고, 그 근거를 어디까지 신뢰하며, 실제로 어떤 결정을 달리해야 하는가?”입니다.</p>
+      <p class="lang-en">E2P studies the interface between traditional process systems engineering and high-fidelity equipment engineering. The central question is which equipment physics changes plant-level outcomes, how far the evidence can be trusted and which decisions should therefore change.</p>
+      <div class="page-nav"><a href="#positioning">Positioning</a><a href="#questions">Questions</a><a href="#methodology">Methodology</a><a href="#evidence">Evidence</a><a href="#programs">Current programs</a><a href="#case-studies">Case-study standard</a></div>
     </div>
-    <aside class="research-map">
-      <div class="eyebrow">RESEARCH MAP</div>
-      <div class="map-row"><div class="map-key">Input</div><div><b>Source technology & application domain</b><span>e-SAF · e-CCU · methanol · FDCA · H₂ / electrolysis</span></div></div>
-      <div class="map-row"><div class="map-key">Reality</div><div><b>Equipment physics & operating constraints</b><span>transport · performance maps · pressure drop · degradation</span></div></div>
-      <div class="map-row"><div class="map-key">Model</div><div><b>Process & dynamic representation</b><span>flowsheet · reduced / gray-box models · operating envelope</span></div></div>
-      <div class="map-row"><div class="map-key">Evidence</div><div><b>Credibility & validity</b><span>PFD/HMB · datasheet · pilot / plant data · uncertainty</span></div></div>
-      <div class="map-row"><div class="map-key">Output</div><div><b>Engineering decision</b><span>design basis · scale-up · operation · deployment</span></div></div>
-    </aside>
-  </div>
-</section>
+  </section>
 
-<section class="section alt reveal" id="positioning">
-  <div class="shell">
-    <div class="section-head"><div><div class="eyebrow">ACADEMIC POSITIONING</div><h2>Owning the interface between process systems engineering and equipment reality.</h2></div><p><span class="lang-ko">E2P의 장기적 연구영역은 PSE와 high-fidelity equipment engineering 중간의 interface입니다. 어느 한 분야를 대체하는 것이 아니라 서로 다른 fidelity의 evidence가 plant-level feasible region과 engineering decision을 어떻게 바꾸는지 연구합니다.</span><span class="lang-en">E2P's long-term research space is the interface between process systems engineering and high-fidelity equipment engineering. The goal is not to replace either field, but to determine how evidence across fidelities changes plant-level feasible regions and engineering decisions.</span></p></div>
-    <div class="position-grid">
-      <article class="position-card"><div class="eyebrow">TRADITIONAL PSE</div><h3>Process → Equipment</h3><p>Flowsheet, synthesis, optimization, control and scheduling problems that introduce equipment constraints as required.</p><div class="mini">Primary novelty: process synthesis · optimization · control · scheduling</div></article>
-      <article class="position-card core"><div class="eyebrow">E2P SYSTEMS</div><h3>Equipment Reality → Process Feasibility → Engineering Decision</h3><p>Lift equipment transport, performance, degradation and operating limits into process-level representations, validate them against engineering evidence, and propagate the consequences into plant decisions.</p><div class="mini">Primary novelty: plant fidelity · operability · model credibility · decision relevance</div></article>
-      <article class="position-card"><div class="eyebrow">HIGH-FIDELITY EQUIPMENT</div><h3>Physics → Equipment</h3><p>CFD/FEM and multiphysics models resolve detailed equipment or reactor behavior, spatial gradients and scale transitions.</p><div class="mini">Primary novelty: high-fidelity physics · spatial resolution · scale transition</div></article>
+  <section class="section alt reveal anchor-target" id="positioning">
+    <div class="shell">
+      <div class="section-head"><div><div class="eyebrow">ACADEMIC POSITIONING</div><h2>Owning the interface between PSE and equipment reality.</h2></div><p><span class="lang-ko">어느 한 분야를 대체하는 것이 아니라 서로 다른 fidelity의 evidence가 plant-level feasible region과 engineering decision을 어떻게 바꾸는지 규명합니다.</span><span class="lang-en">The aim is not to replace either field, but to determine how evidence across fidelities changes plant-level feasible regions and engineering decisions.</span></p></div>
+      <div class="position-grid">
+        <article class="position-card"><div class="eyebrow">TRADITIONAL PSE</div><h3>Process → Equipment</h3><p>Flowsheets, synthesis, optimization, control and scheduling with equipment constraints introduced as required.</p><div class="mini-note">Primary novelty: synthesis · optimization · control · scheduling</div></article>
+        <article class="position-card core"><div class="eyebrow">E2P SYSTEMS</div><h3>Equipment Reality → Process Feasibility → Engineering Decision</h3><p>Lift equipment behavior into process-level representations, validate it against engineering evidence and propagate the consequences into plant decisions.</p><div class="mini-note">Primary novelty: plant fidelity · operability · model credibility · decision relevance</div></article>
+        <article class="position-card"><div class="eyebrow">HIGH-FIDELITY EQUIPMENT</div><h3>Physics → Equipment</h3><p>CFD/FEM and multiphysics models resolve transport, reaction, spatial gradients and scale-transition behavior.</p><div class="mini-note">Primary novelty: high-fidelity physics · spatial resolution · scale transition</div></article>
+      </div>
+      <div class="callout"><b>Boundary rule.</b> E2P is not a simulation service group. A contribution should remain as a reusable model/data interface, a validated constraint or a decision-relevant research question.</div>
     </div>
-    <div class="boundary-note"><b>Research white space.</b> <span class="lang-ko">E2P는 고해상도 장치해석이나 공정모사를 대신 수행하는 service group이 아니라, 각 분야의 결과가 실제 설비·공정에서 어떤 운전·설계 결정을 허용하는지를 규명하는 interface owner를 지향합니다.</span><span class="lang-en">E2P is not a service group that simply provides high-fidelity equipment simulations or process simulations. Its long-term role is to own the interface that determines which operating and design decisions are actually supported by combined evidence.</span></div>
-  </div>
-</section>
+  </section>
 
-<section class="section reveal" id="questions">
-  <div class="shell">
-    <div class="section-head"><div><div class="eyebrow">FOUR FLAGSHIP QUESTIONS</div><h2>We own questions, not software territories.</h2></div><p><span class="lang-ko">연구 단위는 Aspen, COMSOL, CFD, AI 같은 도구가 아니라 실제 engineering decision을 바꾸는 질문입니다.</span><span class="lang-en">The unit of research is not Aspen, COMSOL, CFD or AI; it is a question whose answer can change an engineering decision.</span></p></div>
-    <div class="rq-grid">
-      <article class="rq-card"><div class="q">Q1</div><div><h3>Cross-scale fidelity</h3><p class="lang-ko">어떤 equipment-level physics가 plant-level KPI와 설계 경계를 실제로 바꾸는가? 필요한 fidelity와 불필요한 fidelity를 구분합니다.</p><p class="lang-en">Which equipment-level physics actually changes plant-level KPIs and design boundaries? The objective is to distinguish necessary from unnecessary fidelity.</p><div class="methods"><span>multiphysics</span><span>model hierarchy</span><span>sensitivity</span><span>reduced models</span></div></div></article>
-      <article class="rq-card"><div class="q">Q2</div><div><h3>Model credibility</h3><p class="lang-ko">설계문서와 실증·운전 데이터로 모델의 validity domain과 uncertainty를 어떻게 정의할 것인가?</p><p class="lang-en">How should model validity domains and uncertainty be defined using engineering documents, demonstration data and operating evidence?</p><div class="methods"><span>source of truth</span><span>independent reproduction</span><span>validation</span><span>uncertainty</span></div></div></article>
-      <article class="rq-card"><div class="q">Q3</div><div><h3>Dynamic feasibility</h3><p class="lang-ko">steady-state optimum이 부분부하, startup/shutdown, 가변 원료·전력과 열화 조건에서도 실제 운전 가능한가?</p><p class="lang-en">Does a steady-state optimum remain feasible under part-load, startup/shutdown, variable feed or power, and degradation?</p><div class="methods"><span>dynamics</span><span>operability</span><span>control-relevant models</span><span>operating envelope</span></div></div></article>
-      <article class="rq-card"><div class="q">Q4</div><div><h3>Decision relevance</h3><p class="lang-ko">추가적인 model fidelity가 실제 설계, scale-up, 경제성 또는 기술선택 결론을 바꾸는가?</p><p class="lang-en">Does additional model fidelity materially change design, scale-up, economics or technology-selection conclusions?</p><div class="methods"><span>design trade-off</span><span>TEA</span><span>decision analysis</span><span>deployment</span></div></div></article>
+  <section class="section reveal anchor-target" id="questions">
+    <div class="shell">
+      <div class="section-head"><div><div class="eyebrow">FOUR FLAGSHIP QUESTIONS</div><h2>We own questions, not software territories.</h2></div><p><span class="lang-ko">Aspen, COMSOL, CFD, Python 또는 AI는 질문을 검증하기 위한 도구입니다. 연구의 단위는 실제 engineering decision을 바꾸는 question입니다.</span><span class="lang-en">Aspen, COMSOL, CFD, Python and AI are tools used to test a question. The unit of research is a question that can change an engineering decision.</span></p></div>
+      <div class="question-grid">
+        <article class="question-card"><div class="question-label">Q1</div><div><h3>Cross-scale fidelity</h3><p><span class="lang-ko">어떤 equipment-level physics가 plant KPI와 설계 경계를 실제로 바꾸는가?</span><span class="lang-en">Which equipment-level physics actually changes plant KPIs and design boundaries?</span></p><div class="tags"><span>multiphysics</span><span>model hierarchy</span><span>reduced models</span><span>sensitivity</span></div></div></article>
+        <article class="question-card"><div class="question-label">Q2</div><div><h3>Model credibility</h3><p><span class="lang-ko">설계문서와 실증·운전 데이터로 validity domain과 uncertainty를 어떻게 정의하는가?</span><span class="lang-en">How should validity domains and uncertainty be defined using engineering, demonstration and operating evidence?</span></p><div class="tags"><span>source of truth</span><span>validation</span><span>uncertainty</span></div></div></article>
+        <article class="question-card"><div class="question-label">Q3</div><div><h3>Dynamic feasibility</h3><p><span class="lang-ko">steady-state optimum은 부분부하, transient operation과 열화 조건에서도 실제 운전 가능한가?</span><span class="lang-en">Does a steady-state optimum remain feasible under part-load, transient operation and degradation?</span></p><div class="tags"><span>dynamics</span><span>operability</span><span>control-relevant model</span></div></div></article>
+        <article class="question-card"><div class="question-label">Q4</div><div><h3>Decision relevance</h3><p><span class="lang-ko">추가 model fidelity가 설계, scale-up, 경제성 또는 기술선택 결론을 실제로 바꾸는가?</span><span class="lang-en">Does additional model fidelity materially change design, scale-up, economics or technology-selection conclusions?</span></p><div class="tags"><span>TEA/TCO</span><span>LCA</span><span>decision analysis</span></div></div></article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section alt reveal" id="methodology">
-  <div class="shell">
-    <div class="section-head"><div><div class="eyebrow">METHODOLOGY</div><h2>From high-fidelity evidence to plant-level decisions.</h2></div><p><span class="lang-ko">모델은 하나의 해상도로 고정되지 않습니다. 연구질문과 decision sensitivity에 따라 high-fidelity model, reduced/gray-box model, process model과 dynamic model을 계층적으로 연결합니다.</span><span class="lang-en">Models are not fixed at one fidelity. High-fidelity, reduced/gray-box, process and dynamic models are connected hierarchically according to the research question and decision sensitivity.</span></p></div>
-    <div class="hierarchy">
-      <article class="hierarchy-card"><div class="step">01 · PHYSICS</div><h3>High-fidelity model</h3><p>Transport · multiphysics · reactor/equipment behavior · spatial resolution</p></article>
-      <article class="hierarchy-card"><div class="step">02 · REDUCTION</div><h3>Reduced / gray-box model</h3><p>Preserve the physics that matters while enabling system-level computation.</p></article>
-      <article class="hierarchy-card"><div class="step">03 · SYSTEM</div><h3>Process model</h3><p>Mass/energy balances · recycle · utilities · equipment constraints · plant KPIs</p></article>
-      <article class="hierarchy-card"><div class="step">04 · OPERATION</div><h3>Dynamic feasibility</h3><p>Part-load · transient behavior · degradation · feasible operating region</p></article>
-      <article class="hierarchy-card decision"><div class="step">05 · DECISION</div><h3>Engineering decision layer</h3><p>Design basis · specification · scale-up · operating policy · deployment</p></article>
+  <section class="section alt reveal anchor-target" id="methodology">
+    <div class="shell">
+      <div class="section-head"><div><div class="eyebrow">MODEL HIERARCHY</div><h2>From physics to the decision layer.</h2></div><p><span class="lang-ko">모델은 한 해상도로 고정하지 않습니다. decision sensitivity에 따라 필요한 물리를 보존하면서 high-fidelity, reduced/gray-box, process와 dynamic model을 계층적으로 연결합니다.</span><span class="lang-en">Models are not fixed at one resolution. High-fidelity, reduced/gray-box, process and dynamic models are connected according to decision sensitivity while preserving the physics that matters.</span></p></div>
+      <div class="hierarchy">
+        <article class="hierarchy-card"><div class="step">01 · PHYSICS</div><h3>High-fidelity model</h3><p>Transport · reaction · equipment behavior · spatial resolution</p></article>
+        <article class="hierarchy-card"><div class="step">02 · REDUCTION</div><h3>Reduced / gray-box model</h3><p>Retain decision-relevant physics at system-computation cost.</p></article>
+        <article class="hierarchy-card"><div class="step">03 · SYSTEM</div><h3>Process model</h3><p>Balances · recycle · utilities · equipment constraints · plant KPIs</p></article>
+        <article class="hierarchy-card"><div class="step">04 · OPERATION</div><h3>Dynamic feasibility</h3><p>Part-load · transient behavior · degradation · feasible region</p></article>
+        <article class="hierarchy-card final"><div class="step">05 · DECISION</div><h3>Engineering decision layer</h3><p>Design basis · specification · scale-up · operating policy · deployment</p></article>
+      </div>
     </div>
+  </section>
 
-    <div class="method-matrix" style="margin-top:22px">
-      <article class="method-block"><div class="eyebrow">EQUIPMENT-AWARE MODELING</div><h3>Carry equipment reality upward</h3><p class="lang-ko">성능맵, 압력강하, 열·물질전달, 열화와 운전제약 중 plant-level 결과를 바꾸는 요소를 공정 모델에 보존합니다.</p><p class="lang-en">Preserve the equipment behavior—performance maps, pressure drop, transport, degradation and operating limits—that materially changes plant-level outcomes.</p><div class="tool-line">Representative tools: COMSOL · CFD/FEM · Python · reduced-order modeling</div></article>
-      <article class="method-block"><div class="eyebrow">PROCESS & DYNAMICS</div><h3>Translate physics into operability</h3><p class="lang-ko">steady-state flowsheet뿐 아니라 부분부하와 transient condition까지 고려해 실제 feasible operating envelope를 정의합니다.</p><p class="lang-en">Move beyond steady-state flowsheets to define feasible operating envelopes under part-load and transient conditions.</p><div class="tool-line">Representative tools: Aspen Plus · Aspen HYSYS · dynamic simulation · optimization</div></article>
-      <article class="method-block"><div class="eyebrow">ASSESSMENT & DECISION</div><h3>Ask whether conclusions change</h3><p class="lang-ko">LCA, TEA, CAPEX/OPEX, GHG와 uncertainty를 이용해 더 높은 model fidelity가 실제 기술선택과 scale-up 결론을 바꾸는지 확인합니다.</p><p class="lang-en">Use LCA, TEA, CAPEX/OPEX, GHG and uncertainty to test whether higher model fidelity changes technology-selection and scale-up conclusions.</p><div class="tool-line">Methods: TEA · LCA · multi-objective optimization · uncertainty / sensitivity analysis</div></article>
+  <section class="section reveal anchor-target" id="evidence">
+    <div class="shell">
+      <div class="section-head"><div><div class="eyebrow">EVIDENCE-FIRST MODELING</div><h2>Simulation is not the source of truth.</h2></div><p><span class="lang-ko">모델의 목적은 단순히 결과를 맞추는 것이 아니라 어떤 조건에서 믿을 수 있고 어떤 결정을 허용하는지를 명확히 하는 것입니다.</span><span class="lang-en">The objective is not merely to improve fit, but to establish when a model can be trusted and which decisions the evidence supports.</span></p></div>
+      <div class="source-grid">
+        <article class="source-card"><div class="eyebrow">SOURCE OF TRUTH</div><h3>Engineering evidence first</h3><div class="source-list"><span>PFD / HMB</span><span>Equipment datasheets</span><span>Performance maps</span><span>Vendor information</span><span>Pilot / demonstration data</span><span>Operating history</span></div></article>
+        <article class="source-card"><div class="eyebrow">CREDIBILITY WORKFLOW</div><h3>Independent verification</h3><div class="flow"><span>Reproduce</span><span>Challenge</span><span>Validate</span><span>Update</span></div><div class="callout"><b>Outcome:</b> validity domain · uncertainty · operating envelope · design margin · decision confidence</div></article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section reveal" id="evidence">
-  <div class="shell">
-    <div class="section-head"><div><div class="eyebrow">EVIDENCE-FIRST MODELING</div><h2>Simulation is not the source of truth.</h2></div><p><span class="lang-ko">실제 설계자료와 실증 데이터가 simulation보다 우선합니다. 모델 업데이트의 목적은 단순한 fit 향상이 아니라 engineering decision의 신뢰도를 높이는 것입니다.</span><span class="lang-en">Engineering documents and demonstration data take precedence over simulation. Model updates are performed to improve decision credibility, not simply to obtain a better fit.</span></p></div>
-    <div class="source-grid">
-      <article class="source-card"><div class="eyebrow">SOURCE OF TRUTH</div><h3>Engineering evidence first</h3><div class="source-list"><span>PFD / HMB</span><span>Equipment datasheets</span><span>Performance maps</span><span>Vendor information</span><span>Pilot / demonstration data</span><span>Operating history</span></div></article>
-      <article class="source-card"><div class="eyebrow">CREDIBILITY WORKFLOW</div><h3>Independent verification</h3><div class="credibility-flow"><span>Reproduce</span><span>Challenge</span><span>Validate</span><span>Update</span></div><div class="boundary-note" style="margin-top:18px"><b>Outcome:</b> validity domain · uncertainty · operating envelope · design margin · decision confidence</div></article>
+  <section class="section alt reveal anchor-target" id="programs">
+    <div class="shell">
+      <div class="section-head"><div><div class="eyebrow">CURRENT KRICT PROGRAMS</div><h2>Programs are vehicles for the questions.</h2></div><p><span class="lang-ko">현재 과제는 E2P의 정체성 자체가 아니라 서로 다른 research interface와 engineering evidence를 제공하는 실행 환경입니다.</span><span class="lang-en">Current programs are not the identity of E2P; they provide execution environments with distinct research interfaces and engineering evidence.</span></p></div>
+      <div class="grid three">
+        <article class="card status-card"><div class="status-row"><span class="status-badge">Active</span><span class="status-owner">e-SAF</span></div><h3>Integrated Demonstration Process</h3><p><span class="lang-ko">원천기술, downstream upgrading, utility integration과 실증 설계자료를 integrated-process decision으로 연결합니다.</span><span class="lang-en">Links source technologies, downstream upgrading, utility integration and demonstration engineering data to integrated-process decisions.</span></p><div class="evidence-line"><b>Interfaces:</b> process model · validation · TCO/TEA/LCA · scale-up</div></article>
+        <article class="card status-card"><div class="status-row"><span class="status-badge">Active</span><span class="status-owner">DX / demo</span></div><h3>Physical–Digital Process Demonstration</h3><p><span class="lang-ko">동적 장치·공정 모델, Physical Twin–Digital Twin 연계와 실증 데이터 기반 model update를 다룹니다.</span><span class="lang-en">Addresses dynamic equipment/process models, Physical Twin–Digital Twin integration and demonstration-data-driven model updates.</span></p><div class="evidence-line"><b>Interfaces:</b> dynamics · validation · operability · model update</div></article>
+        <article class="card status-card"><div class="status-row"><span class="status-badge planned">Building</span><span class="status-owner">MeOH testbed</span></div><h3>Equipment Data to Reactor-System Performance</h3><p><span class="lang-ko">CO₂-to-methanol을 testbed로 equipment performance map이 system performance와 operating envelope를 어떻게 바꾸는지 규명합니다.</span><span class="lang-en">Uses CO₂-to-methanol to determine how equipment performance maps change system performance and operating envelopes.</span></p><div class="evidence-line"><b>Interfaces:</b> performance maps · equipment-to-process model · feasible operation</div></article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section alt reveal" id="testbeds">
-  <div class="shell">
-    <div class="section-head"><div><div class="eyebrow">APPLICATION TESTBEDS</div><h2>Different technologies. Reusable questions and methods.</h2></div><p><span class="lang-ko">응용 도메인은 연구그룹을 규정하는 정체성이 아니라 동일한 시스템 방법론을 반복 검증하고 확장하는 proving ground입니다.</span><span class="lang-en">Application domains do not define the group. They are proving grounds used to repeatedly test and extend the same systems methodology.</span></p></div>
-    <div class="testbed-grid">
-      <article class="testbed"><div class="eyebrow">TESTBED 01</div><h3>e-SAF</h3><p>Integrated process design · upgrading · heat & utility integration · demonstration</p><div class="question">Interface question: how do source technologies, downstream upgrading and utility constraints change integrated-process decisions?</div></article>
-      <article class="testbed"><div class="eyebrow">TESTBED 02</div><h3>e-CCU</h3><p>CO₂ conversion · reactor/process interface · system integration</p><div class="question">Interface question: how should source-technology and reactor performance propagate into plant design and scale-up?</div></article>
-      <article class="testbed"><div class="eyebrow">TESTBED 03</div><h3>CO₂-to-Methanol</h3><p>Reaction–separation · recycle · thermal integration · dynamic operation</p><div class="question">Interface question: how do machinery/equipment performance and recycle dynamics constrain operability?</div></article>
-      <article class="testbed"><div class="eyebrow">TESTBED 04</div><h3>FDCA & Sustainable Chemicals</h3><p>Emerging routes · scale transition · technology assessment</p><div class="question">Interface question: which low-TRL performance assumptions remain credible at process and deployment scale?</div></article>
-      <article class="testbed"><div class="eyebrow">TESTBED 05</div><h3>H₂ & Electrolysis</h3><p>Variable operation · equipment degradation · renewable-power integration</p><div class="question">Interface question: when do equipment dynamics and degradation change system-level operating strategy?</div></article>
+  <section class="section reveal anchor-target" id="case-studies">
+    <div class="shell">
+      <div class="section-head"><div><div class="eyebrow">PUBLIC CASE-STUDY STANDARD</div><h2><span class="lang-ko">그림을 채우기보다,<br>공개할 evidence의 기준을 먼저 정합니다.</span><span class="lang-en">Define the evidence standard<br>before filling the site with figures.</span></h2></div><p><span class="lang-ko">각 공개 case study는 “무엇을 모델링했는가”보다 “어떤 source of truth를 사용했고, 어떤 validity boundary가 있으며, 어떤 결정이 바뀌었는가”를 보여줍니다.</span><span class="lang-en">Each public case study will state the source of truth, validity boundary and decision consequence—not merely what was modeled.</span></p></div>
+      <div class="grid three">
+        <article class="case-placeholder"><div class="eyebrow">CASE TEMPLATE 01</div><h3>e-SAF integrated process</h3><p>To be populated after model validation and publication/data clearance.</p><div class="case-fields"><span><b>Evidence</b>PFD/HMB · engineering data</span><span><b>Credibility</b>validation · uncertainty</span><span><b>Decision</b>design / TCO / scale-up</span></div></article>
+        <article class="case-placeholder"><div class="eyebrow">CASE TEMPLATE 02</div><h3>Equipment-aware operability</h3><p>To be populated after the model hierarchy and process consequence are defensible.</p><div class="case-fields"><span><b>Evidence</b>multiphysics · performance map</span><span><b>Credibility</b>reduction error · domain</span><span><b>Decision</b>constraint / feasible region</span></div></article>
+        <article class="case-placeholder"><div class="eyebrow">CASE TEMPLATE 03</div><h3>CO₂-to-methanol dynamics</h3><p>To be populated after operating data and dynamic validation can be released.</p><div class="case-fields"><span><b>Evidence</b>plant / equipment data</span><span><b>Credibility</b>dynamic validation</span><span><b>Decision</b>operating policy / envelope</span></div></article>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="section reveal" id="programs">
-  <div class="shell">
-    <div class="section-head"><div><div class="eyebrow">CURRENT KRICT PROGRAMS</div><h2>Programs are vehicles for the research questions.</h2></div><p><span class="lang-ko">현재 과제는 E2P의 정체성 자체가 아니라 서로 다른 research interface와 engineering evidence를 제공하는 실행 환경입니다.</span><span class="lang-en">Current programs are not the identity of E2P; they provide execution environments with distinct research interfaces and engineering evidence.</span></p></div>
-    <div class="program-grid">
-      <article class="program-card"><div class="program-label">GLOBAL TOP CCU</div><h3>Global TOP CCU Strategic Research Group</h3><p class="lang-ko">e-SAF 통합공정 설계·실증과 전략 연계. 원천기술, downstream 공정, scale-up 및 실증 데이터를 integrated-process decision으로 연결합니다.</p><p class="lang-en">Integrated e-SAF process design and demonstration, linking source technologies, downstream processes, scale-up and demonstration evidence to integrated-process decisions.</p><div class="interface"><b>E2P interface:</b> technology translation · integrated process design · scale-up · demonstration decision support</div></article>
-      <article class="program-card"><div class="program-label">KRICT BASIC PROGRAM</div><h3>DX-enabled Carbon-Neutral Process Demonstration</h3><p class="lang-ko">Dynamic equipment simulation, Physical Twin–Digital Twin 연계, 실증 데이터 기반 model update와 operability를 다룹니다.</p><p class="lang-en">Dynamic equipment simulation, Physical Twin–Digital Twin integration, demonstration-data-driven model updates and operability analysis.</p><div class="interface"><b>E2P interface:</b> dynamic feasibility · physical/digital twin · validation · model update</div></article>
-      <article class="program-card"><div class="program-label">INDEPENDENT INVESTIGATOR TRACK</div><h3>Equipment Operating Data for Reactor-System Performance</h3><p class="lang-ko">CO₂-to-methanol을 testbed로 machinery/equipment performance map과 process model을 연결하여 장치 현실이 시스템 성능과 운전영역에 미치는 영향을 규명합니다.</p><p class="lang-en">Uses CO₂-to-methanol as a testbed to connect machinery/equipment performance maps with process models and quantify how equipment reality changes system performance and operability.</p><div class="interface"><b>E2P interface:</b> equipment performance maps · equipment-to-process modeling · operating envelope</div></article>
-    </div>
-  </div>
-</section>
-
-<section class="section alt reveal" id="assets">
-  <div class="shell">
-    <div class="section-head"><div><div class="eyebrow">CUMULATIVE RESEARCH ASSETS</div><h2>Each project should leave something reusable behind.</h2></div><p><span class="lang-ko">과제 deliverable만 남기지 않고 다음 기술과 다음 연구자에게 재사용 가능한 model, data interface, validation protocol과 decision structure를 축적합니다.</span><span class="lang-en">Beyond project deliverables, E2P aims to accumulate reusable models, data interfaces, validation protocols and decision structures that transfer to the next technology and researcher.</span></p></div>
-    <div class="asset-grid-research">
-      <article class="asset-research"><b>Model Library</b><span>equipment · reactor · process · dynamic · reduced / gray-box models</span></article>
-      <article class="asset-research"><b>Data Interfaces</b><span>PFD/HMB · datasheets · performance maps · operating data</span></article>
-      <article class="asset-research"><b>Validation Protocols</b><span>source of truth · independent calculation · uncertainty · validity domain</span></article>
-      <article class="asset-research"><b>Decision Layer</b><span>operating envelope · design basis · optimization · scale-up criteria</span></article>
-      <article class="asset-research"><b>Knowledge & IP</b><span>reusable code · documentation · publications · patents where justified</span></article>
-    </div>
-    <div class="boundary-note"><b>Boundary rule.</b> <span class="lang-ko">다른 팀의 촉매·실험·장치 결과와 협업하되, E2P의 산출물은 one-off technical support가 아니라 재사용 가능한 interface와 독립적인 research question으로 남아야 합니다.</span><span class="lang-en">E2P collaborates with catalyst, experimental and equipment teams, but its contribution should remain as a reusable interface and an independent research question rather than one-off technical support.</span></div>
-  </div>
-</section>
-
-<section class="research-cta">
-  <div class="shell inner">
-    <div><h2><span class="lang-ko">연구 방법보다 더 중요한 것은<br>어떤 질문을 소유하느냐입니다.</span><span class="lang-en">The method matters.<br>The question you own matters more.</span></h2><p class="lang-ko">E2P 연구자는 하나의 technical interface와 flagship question을 소유하고, 실제 evidence를 통해 다음 engineering decision을 정의하는 방향으로 성장합니다.</p><p class="lang-en">E2P researchers grow toward ownership of a technical interface and flagship question, using real evidence to define the next engineering decision.</p></div>
-    <div class="actions"><a class="btn secondary" href="people.html"><span class="lang-ko">연구자 보기 →</span><span class="lang-en">Meet the Researchers →</span></a><a class="btn primary" href="join.html"><span class="lang-ko">함께하기 →</span><span class="lang-en">Join E2P →</span></a></div>
-  </div>
-</section>
+  </section>
 </main>
-
-<footer class="footer"><div class="shell"><div class="footer-grid"><div><img src="assets/e2p-wordmark-v19.svg" alt="E2P Research Group"><small>E2P Systems Group · Korea Research Institute of Chemical Technology (KRICT)</small></div><div><b>Technology Translation & Engineering Decision-Making</b><small>Equipment-to-Process Systems</small></div><div class="footer-links"><a href="research.html">Research</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="ip.html">IP</a><a href="group.html">Group</a><a href="join.html">Join Us</a></div></div><div class="copyright">© E2P Systems Group · Han Sol Jung · KRICT · hsjung@krict.re.kr</div></div></footer>
-<script src="assets/site-v19.js"></script>
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/e2p-wordmark-v19.svg" alt="E2P Research Group">
+        <small>Equipment-to-Process Systems Group<br>Korea Research Institute of Chemical Technology (KRICT)</small>
+      </div>
+      <div>
+        <strong>Han Sol Jung, Ph.D. · 정한솔</strong>
+        <small>Senior Researcher · KRICT<br><a href="mailto:hsjung@krict.re.kr">hsjung@krict.re.kr</a></small>
+      </div>
+      <div class="footer-links">
+        <a href="research.html">Research</a><a href="people.html">People</a>
+        <a href="publications.html">Publications</a><a href="ip.html">IP</a>
+        <a href="group.html">Group</a><a href="join.html">Join Us</a>
+      </div>
+    </div>
+    <div class="copyright">© E2P Systems Group · Established at KRICT in August 2025 · Public information only</div>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
 </body>
 </html>

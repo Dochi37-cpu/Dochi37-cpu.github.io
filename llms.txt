@@ -1,78 +1,26 @@
 # E2P Systems Group
 
-> Equipment-to-Process Systems research group led by Han Sol Jung at the Korea Research Institute of Chemical Technology (KRICT).
+> Equipment-to-Process Systems Group at the Korea Research Institute of Chemical Technology (KRICT), led by Han Sol Jung.
 
-## Core identity
-The group studies **technology translation and engineering decision-making**: how source technologies and equipment reality are translated into credible process models and operating envelopes, validated against engineering and demonstration data, and used for design, operability, scale-up and deployment decisions.
+## Canonical site
+https://dochi37-cpu.github.io/
 
-Technology domains such as e-SAF, e-CCU, CO2-to-methanol, FDCA, hydrogen and electrolysis are treated as **testbeds**, not as the research identity itself.
+## Research identity
+E2P develops methods for translating equipment physics, performance and operating constraints into credible process and dynamic models, validated against engineering and demonstration evidence and used for design, scale-up, operation and deployment decisions.
 
-Canonical methodology phrase: **Equipment-aware Process Systems Engineering**.
-Academic position: **Owning the interface between process systems engineering and equipment reality.**
-Decision principle: **The endpoint is a decision, not a model.**
+## Current status
+- Established at KRICT in August 2025.
+- Current work focuses on e-SAF process-model credibility and system decisions, equipment reality and operability, and CO2-to-methanol demonstration-plant systems.
+- E2P-originated publications and IP are labeled only after public release and defensible attribution.
+- PI prior/collaborative publications and IP are explicitly distinguished from E2P-originated outputs.
 
-## Translation logic
-1. Technology Testbed
-2. Equipment Reality
-3. Process & Operation
-4. Evidence & Credibility
-5. Engineering Decision
-
-## Core research questions
-1. Cross-scale fidelity — which equipment physics must be retained in process models?
-2. Model credibility — where is a model valid and how should uncertainty be treated?
-3. Dynamic feasibility — are steady-state designs operable under variable load, startup/shutdown and degradation?
-4. Decision relevance — does added model fidelity change engineering decisions?
-
-## Principal investigator
-**Han Sol Jung, Ph.D.**
-Senior Researcher, Chemical Process Solution Research Center, KRICT
-Email: hsjung@krict.re.kr
-Research identity: Equipment-aware Process Systems Engineering / Technology Translation & Engineering Decision-Making
-
-## Directly mentored researchers
-- Jisoo Kim — process models, validation, LCA/TEA and system decisions
-- Soo Won Son — equipment physics, multiphysics and equipment-to-process interfaces
-
-## Key collaborators
-- Sun Choi — industrial process strategy, commercialization and scale-up; Global TOP Subproject 5
-- Gibaek Lee — carbon-neutral strategy, LCA/GHG and certification
-- Kiwoong Kim — low-carbon process, CO2 capture and reaction-separation; Global TOP Subproject 5
-- Kyoungrok Kim — industrial process development and commercialization; KRICT; Global TOP Subproject 5
-- Dowan Kim — hydroprocessing and downstream upgrading; KRICT; Global TOP Subproject 5
-- Seunghyun Cheon — post-master researcher; e-SAF process design, KPI and optimization; KRICT; Global TOP Subproject 5
-- Seungjun Baek — reactor design and multiphysics; KRICT Chemical Process Solution Research Center; Global TOP Subproject 1
-- Kyungmin Lee — digital twin and dynamic demonstration; KRICT Chemical Process Solution Research Center; KRICT Basic Program
-- Yongtae Kim — Global TOP Subproject 1 lead; KRICT CO2 Energy Research Center
-- Joongjin Han — demonstration and scale-up; KRICT Carbon-Neutral Chemical Process Demonstration Center; Global TOP Subproject 5
-
-## Institutional programs
-- Global TOP CCU Strategic Research Group: e-SAF integrated-process design, demonstration and strategy interface
-- KRICT Basic Program: DX-enabled carbon-neutral chemical-process demonstration platform
-- PI-led independent track: operating-data-driven reaction-equipment performance modeling
-
-## Evidence-first principle
-The source of truth is engineering evidence such as PFD/HMB, equipment datasheets, performance maps, vendor information, pilot/demonstration data and operating history. The model workflow is **Reproduce → Challenge → Validate → Update**. Better fit is not the goal; better engineering decisions are.
-
-## Publications
-The publication trajectory spans thermochemical storage, CO2 photoconversion materials/reactors, LCA and technology assessment, thermal/energy systems, plant-data-based assessment and electrochemical collaborations. The public Publications page provides the research trajectory plus selected verified recent papers and DOI links.
-
-## Intellectual property
-The public IP page reports **23 domestic IP records** and **5 international patent families**. The registry spans thermal/storage systems, CO2 conversion, energy systems, electrolysis and functional/separation systems. A recent non-public Korean application is **10-2026-0101862, Selective Recovery Method of Cesium Using a Bipolar-Membrane Electrodialysis Device**. Unverified placeholders are excluded from the count.
-
-## Research culture
-Researchers develop ownership through Ground Truth → Independent Reproduction → Challenge Assumptions → Own an Interface → Own a Research Question → Define What Comes Next. The group emphasizes reproducibility, traceability, fair credit, reusable research assets and decision relevance.
-
-## Public pages
-- Home: https://dochi37-cpu.github.io/
+## Key pages
 - Research: https://dochi37-cpu.github.io/research.html
 - People: https://dochi37-cpu.github.io/people.html
 - Publications: https://dochi37-cpu.github.io/publications.html
-- Intellectual Property: https://dochi37-cpu.github.io/ip.html
-- Group Culture & News: https://dochi37-cpu.github.io/group.html#news
-- Join Us & Contact: https://dochi37-cpu.github.io/join.html#contact
+- Intellectual property: https://dochi37-cpu.github.io/ip.html
+- Group culture: https://dochi37-cpu.github.io/group.html
+- Join/contact: https://dochi37-cpu.github.io/join.html
 
-## Machine-readable discovery
-- robots.txt: https://dochi37-cpu.github.io/robots.txt
-- sitemap.xml: https://dochi37-cpu.github.io/sitemap.xml
-- llms.txt: https://dochi37-cpu.github.io/llms.txt
+## Public-data policy
+The website does not disclose confidential plant data, pre-publication patent filings or unvalidated research conclusions.
