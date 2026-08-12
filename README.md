@@ -1,34 +1,56 @@
-# Han Sol Jung Research Group Website
+# E2P Systems Group website
 
-This repository is prepared for GitHub Pages.
+Public website for the **Equipment-to-Process Systems (E2P) Group** at KRICT.
 
-## Site type
-- Static HTML
-- No build command required
-- Main entry file: `index.html`
-- Korean / English toggle included
+Current canonical URL: `https://dochi37-cpu.github.io/`
 
-## GitHub Pages
-For the GitHub user `Dochi37-cpu`, the recommended repository name is:
+## Information architecture
 
-`Dochi37-cpu.github.io`
+- `index.html` — concise group identity, current work and evidence status
+- `research.html` — academic positioning, flagship questions, methodology and evidence standard
+- `people.html` — PI, directly mentored researchers and collaboration interfaces
+- `publications.html` — E2P output status separated from PI background/collaborative record
+- `ip.html` — public IP only; pre-publication/confidential filings excluded
+- `group.html` — researcher-development and operating principles
+- `join.html` — opportunities and contact
+- `assets/site.css`, `assets/site.js` — shared presentation and behavior
 
-After Pages is enabled, the default public URL will be:
+## Content rules
 
-`https://dochi37-cpu.github.io/`
+1. Do not label a result as E2P-originated unless the work was substantially developed through E2P.
+2. Distinguish `in progress`, `planned`, `submitted` and `published` states.
+3. Do not publish confidential plant data, unprotected invention details or pre-publication filing numbers.
+4. Case studies should state the source of truth, validation boundary and decision consequence.
+5. Employment or organizational details should be shown only when they are necessary to understand research ownership.
 
-## Files
-- `index.html` — website
-- `.nojekyll` — disables Jekyll processing for this static site
-- `CNAME.example` — template only; do NOT rename until you own a custom domain
-- `DEPLOY_CHECKLIST.md` — step-by-step instructions
+## Local preview
 
-## Custom domain
-Do not commit a real `CNAME` file until you have purchased/selected a domain.
+No build step is required.
 
-When you later use a domain, for example `www.example.com`:
-1. Rename `CNAME.example` to `CNAME`
-2. Replace its contents with exactly:
-   `www.example.com`
-3. In GitHub repository Settings → Pages, enter the same domain under Custom domain
-4. Configure DNS at your domain provider
+```bash
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000/`.
+
+## Validation
+
+```bash
+python tools/validate_site.py
+```
+
+The GitHub Actions workflow runs the same validator for branches and pull requests.
+
+## Changing the public URL
+
+Use:
+
+```bash
+python tools/update_site_url.py --url https://new.example.org
+```
+
+Then validate, review the diff and configure GitHub Pages/DNS. See `DOMAIN_MIGRATION.md`.
+
+## Deployment
+
+GitHub Pages can continue to deploy from `main` / root. Keep `.nojekyll` because the site is plain static HTML.
