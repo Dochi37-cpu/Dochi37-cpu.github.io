@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Research | E2P Systems Group</title>
-  <meta name="description" content="Research positioning, questions, model hierarchy, evidence standards and current programs of the E2P Systems Group at KRICT.">
+  <meta name="description" content="Plant BOP and Energy Systems Engineering research, flagship questions, methods, evidence standards, research assets and current testbeds of the E2P Systems Group at KRICT.">
   <meta name="theme-color" content="#082b4d">
   <link rel="canonical" href="https://dochi37-cpu.github.io/research.html">
   <link rel="icon" href="assets/e2p-favicon-v19.svg" type="image/svg+xml">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/components.css">
   <link rel="stylesheet" href="assets/responsive.css">
   <meta property="og:title" content="Research | E2P Systems Group">
-  <meta property="og:description" content="Research positioning, questions, model hierarchy, evidence standards and current programs of the E2P Systems Group at KRICT.">
+  <meta property="og:description" content="Plant BOP and Energy Systems Engineering research, flagship questions, methods, evidence standards, research assets and current testbeds of the E2P Systems Group at KRICT.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dochi37-cpu.github.io/research.html">
   <script>document.documentElement.classList.add('js')</script>
@@ -22,92 +22,115 @@
 <header class="site-header">
   <div class="shell nav">
     <a class="brand" href="index.html" aria-label="E2P Systems Group home">
-      <img src="assets/e2p-wordmark-v19.svg" alt="E2P Research Group">
+      <img src="assets/e2p-wordmark-v20.svg" alt="E2P Systems Group">
     </a>
-    <nav class="menu" aria-label="Main navigation"><a href="index.html">HOME</a><a href="research.html" aria-current="page">RESEARCH</a><a href="people.html">PEOPLE</a><a href="publications.html">PUBLICATIONS</a><a href="ip.html">IP</a><a href="group.html">GROUP</a><a href="join.html">JOIN US</a></nav>
-    <div class="lang-toggle" aria-label="Language selection">
+    <nav id="main-menu" class="menu" aria-label="Main navigation"><a href="index.html">HOME</a><a href="research.html" aria-current="page">RESEARCH</a><a href="people.html">PEOPLE</a><a href="publications.html">PUBLICATIONS</a><a href="ip.html">IP</a><a href="group.html">GROUP</a><a href="join.html">JOIN US</a></nav>
+    <div class="lang-toggle" role="group" aria-label="Language selection">
       <button type="button" data-lang-button="ko" aria-pressed="true">KO</button>
       <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
     </div>
-    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="main-menu" aria-expanded="false">☰</button>
   </div>
 </header>
 <main id="main-content">
   <section class="page-hero">
     <div class="shell">
-      <div class="eyebrow">RESEARCH</div>
-      <h1><span class="lang-ko">장치 현실을<br><span class="accent">공정 feasible region과 의사결정으로</span></span><span class="lang-en">Turning equipment reality into<br><span class="accent">process feasibility and decisions.</span></span></h1>
-      <p class="lang-ko">E2P는 traditional PSE와 high-fidelity equipment engineering 사이의 interface를 연구합니다. 핵심 질문은 “어떤 장치 물리가 plant-level 결과를 바꾸고, 그 근거를 어디까지 신뢰하며, 실제로 어떤 결정을 달리해야 하는가?”입니다.</p>
-      <p class="lang-en">E2P studies the interface between traditional process systems engineering and high-fidelity equipment engineering. The central question is which equipment physics changes plant-level outcomes, how far the evidence can be trusted and which decisions should therefore change.</p>
-      <div class="page-nav"><a href="#positioning">Positioning</a><a href="#questions">Questions</a><a href="#methodology">Methodology</a><a href="#evidence">Evidence</a><a href="#programs">Current programs</a><a href="#case-studies">Case-study standard</a></div>
+      <div class="eyebrow">RESEARCH · PLANT BOP &amp; ENERGY SYSTEMS ENGINEERING</div>
+      <h1><span class="lang-ko">원천기술과 실제 플랜트 사이의<br><span class="accent">BOP·통합·운전가능성을 연구합니다.</span></span><span class="lang-en">Bridging core technologies and operable plants through<br><span class="accent">BOP, integration and dynamic operability.</span></span></h1>
+      <p class="lang-ko">E2P는 반응·분리 등 core process technology와 실제 운전 가능한 플랜트 사이의 plant-system layer를 연구하며, 특히 BOP·유틸리티·공정통합·동적 운전가능성과 scale-up decision을 중심으로 합니다.</p>
+      <p class="lang-en">E2P studies the plant-system layer between core process technology and operable deployment, with particular emphasis on BOP, utilities, plant integration, dynamic operability and scale-up decisions.</p>
+      <div class="page-nav"><a href="#positioning">Positioning</a><a href="#questions">Questions</a><a href="#architecture">Architecture</a><a href="#themes">Themes</a><a href="#methods">Methods &amp; assets</a><a href="#evidence">Evidence</a><a href="#testbeds">Testbeds</a><a href="#case-studies">Case standard</a></div>
     </div>
   </section>
 
   <section class="section alt reveal anchor-target" id="positioning">
     <div class="shell">
-      <div class="section-head"><div><div class="eyebrow">ACADEMIC POSITIONING</div><h2>Owning the interface between PSE and equipment reality.</h2></div><p><span class="lang-ko">어느 한 분야를 대체하는 것이 아니라 서로 다른 fidelity의 evidence가 plant-level feasible region과 engineering decision을 어떻게 바꾸는지 규명합니다.</span><span class="lang-en">The aim is not to replace either field, but to determine how evidence across fidelities changes plant-level feasible regions and engineering decisions.</span></p></div>
+      <div class="section-head"><div><div class="eyebrow">ACADEMIC POSITIONING</div><h2>Owning the plant-system layer between core technology and deployment.</h2></div><p><span class="lang-ko">E2P는 검증된 core-technology 성능을 출발점으로 BOP·유틸리티·plant integration·operability와 그로부터 도출되는 scale-up decision을 연구합니다.</span><span class="lang-en">E2P starts from validated core-technology performance and focuses on BOP, utilities, plant integration, operability and the resulting scale-up decisions.</span></p></div>
       <div class="position-grid">
-        <article class="position-card"><div class="eyebrow">TRADITIONAL PSE</div><h3>Process → Equipment</h3><p>Flowsheets, synthesis, optimization, control and scheduling with equipment constraints introduced as required.</p><div class="mini-note">Primary novelty: synthesis · optimization · control · scheduling</div></article>
-        <article class="position-card core"><div class="eyebrow">E2P SYSTEMS</div><h3>Equipment Reality → Process Feasibility → Engineering Decision</h3><p>Lift equipment behavior into process-level representations, validate it against engineering evidence and propagate the consequences into plant decisions.</p><div class="mini-note">Primary novelty: plant fidelity · operability · model credibility · decision relevance</div></article>
-        <article class="position-card"><div class="eyebrow">HIGH-FIDELITY EQUIPMENT</div><h3>Physics → Equipment</h3><p>CFD/FEM and multiphysics models resolve transport, reaction, spatial gradients and scale-transition behavior.</p><div class="mini-note">Primary novelty: high-fidelity physics · spatial resolution · scale transition</div></article>
+        <article class="position-card"><div class="eyebrow">CORE TECHNOLOGY INPUT</div><h3>Reaction / Separation / Device → Performance</h3><p>Experiments, kinetics, reactor or separation models, CFD/multiphysics results and source-technology specifications enter as validated upstream inputs.</p><div class="mini-note">Typical ownership: source-technology researchers and collaborators</div></article>
+        <article class="position-card core"><div class="eyebrow">E2P SYSTEMS</div><h3>BOP &amp; Utilities → Plant Integration → Operability</h3><p>Integrate real BOP performance, engineering data and operating constraints with core process technologies to define feasible plant systems.</p><div class="mini-note">Primary novelty: plant feasibility · operability · scale-up · decision relevance</div></article>
+        <article class="position-card"><div class="eyebrow">DECISION / EVALUATION INTERFACES</div><h3>Optimization / AI / TEA / LCA → Deployment</h3><p>Optimization, AI, autonomous-operation methods, TEA and LCA are enabling or collaborative interfaces when they support plant-system decisions.</p><div class="mini-note">Used as needed; not the top-level E2P identity</div></article>
       </div>
-      <div class="callout"><b>Boundary rule.</b> E2P is not a simulation service group. A contribution should remain as a reusable model/data interface, a validated constraint or a decision-relevant research question.</div>
+      <div class="callout"><b>Translation rule.</b> Validated reactor/device models enter as Core Technology Input; E2P builds on them with BOP, plant integration and operability evidence. The endpoint is a decision, not a model.</div>
     </div>
   </section>
 
   <section class="section reveal anchor-target" id="questions">
     <div class="shell">
-      <div class="section-head"><div><div class="eyebrow">FOUR FLAGSHIP QUESTIONS</div><h2>We own questions, not software territories.</h2></div><p><span class="lang-ko">Aspen, COMSOL, CFD, Python 또는 AI는 질문을 검증하기 위한 도구입니다. 연구의 단위는 실제 engineering decision을 바꾸는 question입니다.</span><span class="lang-en">Aspen, COMSOL, CFD, Python and AI are tools used to test a question. The unit of research is a question that can change an engineering decision.</span></p></div>
+      <div class="section-head"><div><div class="eyebrow">FOUR FLAGSHIP QUESTIONS</div><h2>We own questions, not software territories.</h2></div><p><span class="lang-ko">Aspen, COMSOL, CFD, Python, AI, TEA와 LCA는 질문을 검증하기 위한 수단입니다. 연구의 단위는 실제 plant-system decision을 바꾸는 question입니다.</span><span class="lang-en">Aspen, COMSOL, CFD, Python, AI, TEA and LCA are tools used to test a question. The unit of research is a question that can change a plant-system decision.</span></p></div>
       <div class="question-grid">
-        <article class="question-card"><div class="question-label">Q1</div><div><h3>Cross-scale fidelity</h3><p><span class="lang-ko">어떤 equipment-level physics가 plant KPI와 설계 경계를 실제로 바꾸는가?</span><span class="lang-en">Which equipment-level physics actually changes plant KPIs and design boundaries?</span></p><div class="tags"><span>multiphysics</span><span>model hierarchy</span><span>reduced models</span><span>sensitivity</span></div></div></article>
-        <article class="question-card"><div class="question-label">Q2</div><div><h3>Model credibility</h3><p><span class="lang-ko">설계문서와 실증·운전 데이터로 validity domain과 uncertainty를 어떻게 정의하는가?</span><span class="lang-en">How should validity domains and uncertainty be defined using engineering, demonstration and operating evidence?</span></p><div class="tags"><span>source of truth</span><span>validation</span><span>uncertainty</span></div></div></article>
-        <article class="question-card"><div class="question-label">Q3</div><div><h3>Dynamic feasibility</h3><p><span class="lang-ko">steady-state optimum은 부분부하, transient operation과 열화 조건에서도 실제 운전 가능한가?</span><span class="lang-en">Does a steady-state optimum remain feasible under part-load, transient operation and degradation?</span></p><div class="tags"><span>dynamics</span><span>operability</span><span>control-relevant model</span></div></div></article>
-        <article class="question-card"><div class="question-label">Q4</div><div><h3>Decision relevance</h3><p><span class="lang-ko">추가 model fidelity가 설계, scale-up, 경제성 또는 기술선택 결론을 실제로 바꾸는가?</span><span class="lang-en">Does additional model fidelity materially change design, scale-up, economics or technology-selection conclusions?</span></p><div class="tags"><span>TEA/TCO</span><span>LCA</span><span>decision analysis</span></div></div></article>
+        <article class="question-card"><div class="question-label">Q1</div><div><h3>BOP-limited feasibility</h3><p><span class="lang-ko">원천기술이 scale-up될 때 어떤 BOP·유틸리티 제약이 먼저 binding constraint가 되는가?</span><span class="lang-en">Which BOP and utility constraints become binding as a core technology is scaled up?</span></p><div class="tags"><span>compressors</span><span>pumps</span><span>thermal management</span><span>utilities</span></div></div></article>
+        <article class="question-card"><div class="question-label">Q2</div><div><h3>Plant integration</h3><p><span class="lang-ko">압축, 펌핑, 열관리, recycle, storage와 utility가 전체 plant performance를 어떻게 재구성하는가?</span><span class="lang-en">How do compression, pumping, heat management, recycle, storage and utilities reshape overall plant performance?</span></p><div class="tags"><span>PFD/HMB</span><span>recycle</span><span>energy integration</span><span>BOP interfaces</span></div></div></article>
+        <article class="question-card"><div class="question-label">Q3</div><div><h3>Dynamic operability</h3><p><span class="lang-ko">부분부하, ramping, startup/shutdown, variable energy·feed 조건에서 실제로 어떤 operating envelope가 가능한가?</span><span class="lang-en">What operating envelope remains feasible under part-load, ramping, startup/shutdown and variable energy or feed conditions?</span></p><div class="tags"><span>dynamics</span><span>turndown</span><span>ramping</span><span>buffer sizing</span></div></div></article>
+        <article class="question-card"><div class="question-label">Q4</div><div><h3>Decision-relevant fidelity</h3><p><span class="lang-ko">engineering decision이 신뢰 가능해지기 위해 어느 수준의 plant·equipment fidelity가 실제로 필요한가?</span><span class="lang-en">How much plant and equipment fidelity is required before an engineering decision becomes reliable?</span></p><div class="tags"><span>model adequacy</span><span>validation</span><span>uncertainty</span><span>decision sensitivity</span></div></div></article>
       </div>
     </div>
   </section>
 
-  <section class="section alt reveal anchor-target" id="methodology">
+  <section class="section alt reveal anchor-target" id="architecture">
     <div class="shell">
-      <div class="section-head"><div><div class="eyebrow">MODEL HIERARCHY</div><h2>From physics to the decision layer.</h2></div><p><span class="lang-ko">모델은 한 해상도로 고정하지 않습니다. decision sensitivity에 따라 필요한 물리를 보존하면서 high-fidelity, reduced/gray-box, process와 dynamic model을 계층적으로 연결합니다.</span><span class="lang-en">Models are not fixed at one resolution. High-fidelity, reduced/gray-box, process and dynamic models are connected according to decision sensitivity while preserving the physics that matters.</span></p></div>
+      <div class="section-head"><div><div class="eyebrow">RESEARCH ARCHITECTURE</div><h2>From core technology to operable plant systems.</h2></div><p><span class="lang-ko">연구 architecture는 upstream 원천기술을 모두 직접 개발하는 구조가 아니라, 검증된 Core Technology Input을 받아 BOP와 plant-system evidence를 축적하는 translation chain입니다.</span><span class="lang-en">The architecture does not require E2P to develop every upstream technology. It accepts validated Core Technology Input and builds reusable BOP and plant-system evidence through a translation chain.</span></p></div>
       <div class="hierarchy">
-        <article class="hierarchy-card"><div class="step">01 · PHYSICS</div><h3>High-fidelity model</h3><p>Transport · reaction · equipment behavior · spatial resolution</p></article>
-        <article class="hierarchy-card"><div class="step">02 · REDUCTION</div><h3>Reduced / gray-box model</h3><p>Retain decision-relevant physics at system-computation cost.</p></article>
-        <article class="hierarchy-card"><div class="step">03 · SYSTEM</div><h3>Process model</h3><p>Balances · recycle · utilities · equipment constraints · plant KPIs</p></article>
-        <article class="hierarchy-card"><div class="step">04 · OPERATION</div><h3>Dynamic feasibility</h3><p>Part-load · transient behavior · degradation · feasible region</p></article>
-        <article class="hierarchy-card final"><div class="step">05 · DECISION</div><h3>Engineering decision layer</h3><p>Design basis · specification · scale-up · operating policy · deployment</p></article>
+        <article class="hierarchy-card"><div class="step">01 · INPUT</div><h3>Core Technology Input</h3><p>Experiments · kinetics · reactor/device models · separation performance</p></article>
+        <article class="hierarchy-card"><div class="step">02 · BOP</div><h3>BOP &amp; Utilities</h3><p>Compressors · pumps · HX/thermal · utilities · recycle · storage</p></article>
+        <article class="hierarchy-card"><div class="step">03 · PLANT</div><h3>Plant Integration</h3><p>PFD/HMB · engineering data · mass/energy integration · interfaces</p></article>
+        <article class="hierarchy-card"><div class="step">04 · OPERATION</div><h3>Dynamic Operability</h3><p>Part-load · ramping · startup/shutdown · operating envelope</p></article>
+        <article class="hierarchy-card final"><div class="step">05 · DECISION</div><h3>Scale-up &amp; Demonstration Decisions</h3><p>Specification · design basis · scale-up · demonstration · deployment</p></article>
       </div>
+    </div>
+  </section>
+
+  <section class="section reveal anchor-target" id="themes">
+    <div class="shell">
+      <div class="section-head"><div><div class="eyebrow">RESEARCH THEMES</div><h2>Four enduring plant-system themes.</h2></div><p><span class="lang-ko">특정 application이나 software가 아니라 GlobalTop 이후에도 남는 장기 연구축을 기준으로 구성합니다.</span><span class="lang-en">The themes are organized around durable plant-system questions that remain relevant beyond any one project or software package.</span></p></div>
+      <div class="grid four">
+        <article class="card"><div class="card-number">01</div><h3>BOP &amp; Utility Systems</h3><p>Compression · pumping · heat exchange · thermal management · utilities · recycle · storage/buffer · performance constraints</p></article>
+        <article class="card"><div class="card-number">02</div><h3>Plant Integration &amp; Energy Systems</h3><p>PFD/HMB · mass/energy integration · design basis · recycle architecture · utility balance · plant efficiency</p></article>
+        <article class="card"><div class="card-number">03</div><h3>Dynamic Operability &amp; Flexible Operation</h3><p>Turndown · ramping · startup/shutdown · renewable variability · recycle dynamics · thermal inertia · operating envelopes</p></article>
+        <article class="card"><div class="card-number">04</div><h3>Scale-up &amp; Engineering Decisions</h3><p>Design criteria · BOP specification · scale-up rules · model adequacy · demonstration strategy · technology selection</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt reveal anchor-target" id="methods">
+    <div class="shell">
+      <div class="section-head"><div><div class="eyebrow">METHODS &amp; RESEARCH ASSETS</div><h2>Methods support the question; reusable assets preserve the learning.</h2></div><p><span class="lang-ko">Equipment-performance-aware modeling과 decision-relevant fidelity는 E2P의 signature methodology이지만 최상위 연구분야 자체는 아닙니다.</span><span class="lang-en">Equipment-performance-aware modeling and decision-relevant fidelity are signature methodologies, not the top-level research identity.</span></p></div>
+      <div class="source-grid">
+        <article class="source-card"><div class="eyebrow">CORE METHODS</div><h3>Decision-oriented modeling and validation</h3><div class="source-list"><span>Equipment-performance-aware modeling</span><span>Steady-state &amp; dynamic simulation</span><span>Decision-relevant fidelity</span><span>Engineering-data integration</span><span>Demo/operation-data validation</span><span>Data reconciliation &amp; uncertainty</span></div></article>
+        <article class="source-card"><div class="eyebrow">BOP MODEL &amp; INTERFACE LIBRARY</div><h3>Reusable plant-system assets</h3><div class="source-list"><span>Compressors</span><span>Pumps</span><span>Heat exchangers / thermal</span><span>Utilities</span><span>Recycle &amp; storage/buffer</span><span>Performance maps &amp; constraints</span><span>Core-model interfaces</span><span>Operating-envelope maps</span></div></article>
+      </div>
+      <div class="callout"><b>Enabling / collaborative methods.</b> Optimization, AI / hybrid modeling, CFD / multiphysics and TEA / LCA are used when they are needed to answer a plant-system question.</div>
     </div>
   </section>
 
   <section class="section reveal anchor-target" id="evidence">
     <div class="shell">
-      <div class="section-head"><div><div class="eyebrow">EVIDENCE-FIRST MODELING</div><h2>Simulation is not the source of truth.</h2></div><p><span class="lang-ko">모델의 목적은 단순히 결과를 맞추는 것이 아니라 어떤 조건에서 믿을 수 있고 어떤 결정을 허용하는지를 명확히 하는 것입니다.</span><span class="lang-en">The objective is not merely to improve fit, but to establish when a model can be trusted and which decisions the evidence supports.</span></p></div>
+      <div class="section-head"><div><div class="eyebrow">EVIDENCE-FIRST MODELING</div><h2>Models do not define plant reality; engineering evidence does.</h2></div><p><span class="lang-ko">모델의 목적은 결과를 그럴듯하게 맞추는 것이 아니라 어떤 조건에서 믿을 수 있고 어떤 engineering decision을 허용하는지 명확히 하는 것입니다.</span><span class="lang-en">The objective is not merely to improve fit, but to establish when a model can be trusted and which engineering decisions the evidence supports.</span></p></div>
       <div class="source-grid">
         <article class="source-card"><div class="eyebrow">SOURCE OF TRUTH</div><h3>Engineering evidence first</h3><div class="source-list"><span>PFD / HMB</span><span>Equipment datasheets</span><span>Performance maps</span><span>Vendor information</span><span>Pilot / demonstration data</span><span>Operating history</span></div></article>
-        <article class="source-card"><div class="eyebrow">CREDIBILITY WORKFLOW</div><h3>Independent verification</h3><div class="flow"><span>Reproduce</span><span>Challenge</span><span>Validate</span><span>Update</span></div><div class="callout"><b>Outcome:</b> validity domain · uncertainty · operating envelope · design margin · decision confidence</div></article>
+        <article class="source-card"><div class="eyebrow">CREDIBILITY WORKFLOW</div><h3>Source of truth → decision</h3><div class="flow"><span>Reproduce</span><span>Validate</span><span>Map envelope</span><span>Decide</span></div><div class="callout"><b>Outcome:</b> validity domain · uncertainty · operating envelope · design margin · decision confidence</div></article>
       </div>
     </div>
   </section>
 
-  <section class="section alt reveal anchor-target" id="programs">
+  <section class="section alt reveal anchor-target" id="testbeds">
     <div class="shell">
-      <div class="section-head"><div><div class="eyebrow">CURRENT KRICT PROGRAMS</div><h2>Programs are vehicles for the questions.</h2></div><p><span class="lang-ko">현재 과제는 E2P의 정체성 자체가 아니라 서로 다른 research interface와 engineering evidence를 제공하는 실행 환경입니다.</span><span class="lang-en">Current programs are not the identity of E2P; they provide execution environments with distinct research interfaces and engineering evidence.</span></p></div>
+      <div class="section-head"><div><div class="eyebrow">CURRENT TESTBEDS</div><h2>Different technologies, same plant-system questions.</h2></div><p><span class="lang-ko">현재 과제와 기술은 E2P의 정체성 자체가 아니라 BOP·plant integration·operability 방법론을 검증하는 실행환경입니다.</span><span class="lang-en">Current projects and technologies are not the identity of E2P; they are execution environments for testing BOP, plant-integration and operability methods.</span></p></div>
       <div class="grid three">
-        <article class="card status-card"><div class="status-row"><span class="status-badge">Active</span><span class="status-owner">e-SAF</span></div><h3>Integrated Demonstration Process</h3><p><span class="lang-ko">원천기술, downstream upgrading, utility integration과 실증 설계자료를 integrated-process decision으로 연결합니다.</span><span class="lang-en">Links source technologies, downstream upgrading, utility integration and demonstration engineering data to integrated-process decisions.</span></p><div class="evidence-line"><b>Interfaces:</b> process model · validation · TCO/TEA/LCA · scale-up</div></article>
-        <article class="card status-card"><div class="status-row"><span class="status-badge">Active</span><span class="status-owner">DX / demo</span></div><h3>Physical–Digital Process Demonstration</h3><p><span class="lang-ko">동적 장치·공정 모델, Physical Twin–Digital Twin 연계와 실증 데이터 기반 model update를 다룹니다.</span><span class="lang-en">Addresses dynamic equipment/process models, Physical Twin–Digital Twin integration and demonstration-data-driven model updates.</span></p><div class="evidence-line"><b>Interfaces:</b> dynamics · validation · operability · model update</div></article>
-        <article class="card status-card"><div class="status-row"><span class="status-badge planned">Building</span><span class="status-owner">MeOH testbed</span></div><h3>Equipment Data to Reactor-System Performance</h3><p><span class="lang-ko">CO₂-to-methanol을 testbed로 equipment performance map이 system performance와 operating envelope를 어떻게 바꾸는지 규명합니다.</span><span class="lang-en">Uses CO₂-to-methanol to determine how equipment performance maps change system performance and operating envelopes.</span></p><div class="evidence-line"><b>Interfaces:</b> performance maps · equipment-to-process model · feasible operation</div></article>
+        <article class="card status-card"><div class="status-row"><span class="status-badge">Active</span><span class="status-owner">e-SAF · GlobalTop</span></div><h3>Integrated Process, BOP &amp; Demonstration Engineering</h3><p><span class="lang-ko">원천기술과 downstream upgrading을 BOP·유틸리티·recycle·실증 설계자료와 통합하여 scale-up과 실증 의사결정으로 연결합니다.</span><span class="lang-en">Integrates core technologies and downstream upgrading with BOP, utilities, recycle and demonstration engineering data to support scale-up and demonstration decisions.</span></p><div class="evidence-line"><b>E2P focus:</b> process integration · BOP/utility logic · engineering data · operability · scale-up</div></article>
+        <article class="card status-card"><div class="status-row"><span class="status-badge planned">Building</span><span class="status-owner">CO₂-to-MeOH</span></div><h3>Demo-Plant BOP &amp; Flexible Operability</h3><p><span class="lang-ko">실제 PFD/HMB와 compressor·recycle·heat-management 제약을 사용해 BOP가 steady-state·dynamic operating envelope를 어떻게 바꾸는지 규명합니다.</span><span class="lang-en">Uses actual PFD/HMB and compressor, recycle and heat-management constraints to determine how BOP changes steady-state and dynamic operating envelopes.</span></p><div class="evidence-line"><b>E2P focus:</b> BOP maps · recycle · flexible operation · decision-relevant fidelity · validation</div></article>
+        <article class="card status-card"><div class="status-row"><span class="status-badge">Active</span><span class="status-owner">Low-carbon systems</span></div><h3>Physical–Digital Demonstration &amp; e-CCU Systems</h3><p><span class="lang-ko">저탄소 공정의 dynamic model, Physical Twin–Digital Twin, 실증 data update를 plant-system operability와 engineering decision에 연결합니다.</span><span class="lang-en">Connects dynamic models, Physical Twin–Digital Twin and demonstration-data updates in low-carbon processes to plant-system operability and engineering decisions.</span></p><div class="evidence-line"><b>E2P focus:</b> dynamics · validation · system integration · demonstration decisions</div></article>
       </div>
     </div>
   </section>
 
   <section class="section reveal anchor-target" id="case-studies">
     <div class="shell">
-      <div class="section-head"><div><div class="eyebrow">PUBLIC CASE-STUDY STANDARD</div><h2><span class="lang-ko">그림을 채우기보다,<br>공개할 evidence의 기준을 먼저 정합니다.</span><span class="lang-en">Define the evidence standard<br>before filling the site with figures.</span></h2></div><p><span class="lang-ko">각 공개 case study는 “무엇을 모델링했는가”보다 “어떤 source of truth를 사용했고, 어떤 validity boundary가 있으며, 어떤 결정이 바뀌었는가”를 보여줍니다.</span><span class="lang-en">Each public case study will state the source of truth, validity boundary and decision consequence—not merely what was modeled.</span></p></div>
+      <div class="section-head"><div><div class="eyebrow">PUBLIC CASE-STUDY STANDARD</div><h2><span class="lang-ko">그림을 채우기보다,<br>공개할 evidence의 기준을 먼저 정합니다.</span><span class="lang-en">Define the evidence standard<br>before filling the site with figures.</span></h2></div><p><span class="lang-ko">각 공개 case study는 “무엇을 모델링했는가”보다 “어떤 source of truth를 사용했고, 어떤 validity boundary가 있으며, 어떤 plant-system decision이 바뀌었는가”를 보여줍니다.</span><span class="lang-en">Each public case study will state the source of truth, validity boundary and plant-system decision consequence—not merely what was modeled.</span></p></div>
       <div class="grid three">
-        <article class="case-placeholder"><div class="eyebrow">CASE TEMPLATE 01</div><h3>e-SAF integrated process</h3><p>To be populated after model validation and publication/data clearance.</p><div class="case-fields"><span><b>Evidence</b>PFD/HMB · engineering data</span><span><b>Credibility</b>validation · uncertainty</span><span><b>Decision</b>design / TCO / scale-up</span></div></article>
-        <article class="case-placeholder"><div class="eyebrow">CASE TEMPLATE 02</div><h3>Equipment-aware operability</h3><p>To be populated after the model hierarchy and process consequence are defensible.</p><div class="case-fields"><span><b>Evidence</b>multiphysics · performance map</span><span><b>Credibility</b>reduction error · domain</span><span><b>Decision</b>constraint / feasible region</span></div></article>
-        <article class="case-placeholder"><div class="eyebrow">CASE TEMPLATE 03</div><h3>CO₂-to-methanol dynamics</h3><p>To be populated after operating data and dynamic validation can be released.</p><div class="case-fields"><span><b>Evidence</b>plant / equipment data</span><span><b>Credibility</b>dynamic validation</span><span><b>Decision</b>operating policy / envelope</span></div></article>
+        <article class="case-placeholder"><div class="eyebrow">CASE TEMPLATE 01</div><h3>e-SAF integrated plant system</h3><p>To be populated after model validation and publication/data clearance.</p><div class="case-fields"><span><b>Evidence</b>PFD/HMB · BOP/utility data</span><span><b>Credibility</b>validation · uncertainty</span><span><b>Decision</b>design / TCO / scale-up</span></div></article>
+        <article class="case-placeholder"><div class="eyebrow">CASE TEMPLATE 02</div><h3>BOP-aware operability</h3><p>To be populated after the BOP constraints and plant consequence are defensible.</p><div class="case-fields"><span><b>Evidence</b>performance maps · utility data</span><span><b>Credibility</b>validity domain · uncertainty</span><span><b>Decision</b>constraint / feasible region</span></div></article>
+        <article class="case-placeholder"><div class="eyebrow">CASE TEMPLATE 03</div><h3>CO₂-to-methanol dynamics</h3><p>To be populated after operating data and dynamic validation can be released.</p><div class="case-fields"><span><b>Evidence</b>plant / BOP data</span><span><b>Credibility</b>dynamic validation</span><span><b>Decision</b>operating policy / envelope</span></div></article>
       </div>
     </div>
   </section>
@@ -116,8 +139,8 @@
   <div class="shell">
     <div class="footer-grid">
       <div>
-        <img src="assets/e2p-wordmark-v19.svg" alt="E2P Research Group">
-        <small>Equipment-to-Process Systems Group<br>Korea Research Institute of Chemical Technology (KRICT)</small>
+        <img src="assets/e2p-wordmark-v20.svg" alt="E2P Systems Group">
+        <small>Plant BOP &amp; Energy Systems Engineering<br>Korea Research Institute of Chemical Technology (KRICT)</small>
       </div>
       <div>
         <strong>Han Sol Jung, Ph.D. · 정한솔</strong>

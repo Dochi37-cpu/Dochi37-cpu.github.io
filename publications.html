@@ -22,14 +22,14 @@
 <header class="site-header">
   <div class="shell nav">
     <a class="brand" href="index.html" aria-label="E2P Systems Group home">
-      <img src="assets/e2p-wordmark-v19.svg" alt="E2P Research Group">
+      <img src="assets/e2p-wordmark-v20.svg" alt="E2P Systems Group">
     </a>
-    <nav class="menu" aria-label="Main navigation"><a href="index.html">HOME</a><a href="research.html">RESEARCH</a><a href="people.html">PEOPLE</a><a href="publications.html" aria-current="page">PUBLICATIONS</a><a href="ip.html">IP</a><a href="group.html">GROUP</a><a href="join.html">JOIN US</a></nav>
-    <div class="lang-toggle" aria-label="Language selection">
+    <nav id="main-menu" class="menu" aria-label="Main navigation"><a href="index.html">HOME</a><a href="research.html">RESEARCH</a><a href="people.html">PEOPLE</a><a href="publications.html" aria-current="page">PUBLICATIONS</a><a href="ip.html">IP</a><a href="group.html">GROUP</a><a href="join.html">JOIN US</a></nav>
+    <div class="lang-toggle" role="group" aria-label="Language selection">
       <button type="button" data-lang-button="ko" aria-pressed="true">KO</button>
       <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
     </div>
-    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="main-menu" aria-expanded="false">☰</button>
   </div>
 </header>
 <main id="main-content">
@@ -55,8 +55,8 @@
     <div class="shell">
       <div class="section-head"><div><div class="eyebrow">MANUSCRIPT DIRECTIONS</div><h2><span class="lang-ko">진행 방향은 공개하되,<br>검증되지 않은 결론은 공개하지 않습니다.</span><span class="lang-en">Share the research direction—<br>not unvalidated conclusions.</span></h2></div><p><span class="lang-ko">아래 항목은 working directions이며 논문 제목, 결과 또는 출판 확정을 의미하지 않습니다.</span><span class="lang-en">The items below are working directions; they are not publication titles, result claims or acceptance statements.</span></p></div>
       <div class="grid two">
-        <article class="card"><div class="status-row"><span class="status-badge">Working direction</span><span class="status-owner">Jisoo Kim</span></div><h3>e-SAF demonstration process: model credibility and system decisions</h3><p><span class="lang-ko">engineering data 기반 process-model update가 TCO/TEA, LCA와 design/scale-up decision을 어떻게 바꾸는지 분석합니다.</span><span class="lang-en">Examines how engineering-data-based process-model updates change TCO/TEA, LCA and design/scale-up decisions.</span></p></article>
-        <article class="card"><div class="status-row"><span class="status-badge">Working direction</span><span class="status-owner">Soo Won Son</span></div><h3>Equipment physics to process operability</h3><p><span class="lang-ko">multiphysics에서 필요한 fidelity를 식별하고 reduced representation을 통해 process feasible region과 operating constraint로 전파합니다.</span><span class="lang-en">Identifies the fidelity that matters in multiphysics models and propagates it through reduced representations into process-feasible regions and operating constraints.</span></p></article>
+        <article class="card"><div class="status-row"><span class="status-badge">Working direction</span><span class="status-owner">Jisoo Kim</span></div><h3>e-SAF demonstration process: BOP, model credibility and system decisions</h3><p><span class="lang-ko">engineering data와 BOP/utility constraint를 반영한 plant-model update가 TCO/TEA, LCA와 design/scale-up decision을 어떻게 바꾸는지 분석합니다.</span><span class="lang-en">Examines how engineering-data and BOP/utility-aware plant-model updates change TCO/TEA, LCA and design/scale-up decisions.</span></p></article>
+        <article class="card"><div class="status-row"><span class="status-badge">Working direction</span><span class="status-owner">Soo Won Son</span></div><h3>Reactor–plant interface and operability</h3><p><span class="lang-ko">upstream reactor/multiphysics 결과에서 plant-level decision에 필요한 정보를 식별하고 operating constraint와 feasible region으로 전파합니다.</span><span class="lang-en">Identifies plant-relevant information in upstream reactor/multiphysics results and propagates it into operating constraints and feasible regions.</span></p></article>
       </div>
     </div>
   </section>
@@ -86,8 +86,8 @@
   <div class="shell">
     <div class="footer-grid">
       <div>
-        <img src="assets/e2p-wordmark-v19.svg" alt="E2P Research Group">
-        <small>Equipment-to-Process Systems Group<br>Korea Research Institute of Chemical Technology (KRICT)</small>
+        <img src="assets/e2p-wordmark-v20.svg" alt="E2P Systems Group">
+        <small>Plant BOP &amp; Energy Systems Engineering<br>Korea Research Institute of Chemical Technology (KRICT)</small>
       </div>
       <div>
         <strong>Han Sol Jung, Ph.D. · 정한솔</strong>
