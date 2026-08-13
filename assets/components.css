@@ -38,14 +38,14 @@
   background: #fff;
   padding: 24px;
 }
-.question-label { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 15px; background: var(--green-100); color: var(--green-600); font-weight: 950; }
+.question-label { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 15px; background: var(--green-100); color: var(--green-700); font-weight: 950; }
 .question-card h3 { margin: 0 0 6px; color: var(--navy-800); font-size: 21px; }
 .question-card p { margin: 0; color: var(--muted); font-size: 12px; }
 
 .hierarchy { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
 .hierarchy-card { position: relative; min-height: 180px; padding: 20px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
 .hierarchy-card:not(:last-child)::after { content: "→"; position: absolute; top: 50%; right: -17px; z-index: 2; color: var(--green-600); font-size: 23px; font-weight: 950; }
-.hierarchy-card .step { color: var(--green-600); font-size: 9px; font-weight: 900; letter-spacing: .1em; }
+.hierarchy-card .step { color: var(--green-700); font-size: 9px; font-weight: 900; letter-spacing: .1em; }
 .hierarchy-card h3 { margin: 7px 0; color: var(--navy-800); font-size: 16px; }
 .hierarchy-card p { color: var(--muted); font-size: 10.5px; }
 .hierarchy-card.final { background: var(--navy-950); border-color: var(--navy-950); }
@@ -136,7 +136,7 @@
 .registry-table th, .registry-table td { padding: 12px 13px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 10.5px; }
 .registry-table th { background: var(--blue-100); color: var(--navy-800); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
 .registry-table tr:last-child td { border-bottom: 0; }
-.registry-table .no { width: 42px; color: var(--green-600); font-weight: 900; }
+.registry-table .no { width: 42px; color: var(--green-700); font-weight: 900; }
 .registry-table .pubno { color: var(--navy-800); font-weight: 800; white-space: nowrap; }
 .registry-table .title { min-width: 300px; font-weight: 700; }
 .status-pill { display: inline-flex; padding: 4px 7px; border-radius: 999px; background: var(--green-100); color: #2e704f; font-size: 8.5px; font-weight: 900; white-space: nowrap; }
@@ -144,7 +144,7 @@
 
 .ownership { display: grid; grid-template-columns: repeat(6, 1fr); gap: 9px; }
 .ownership-step { min-height: 150px; padding: 17px 13px; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
-.ownership-step .num { color: var(--green-600); font-size: 9px; font-weight: 900; letter-spacing: .1em; }
+.ownership-step .num { color: var(--green-700); font-size: 9px; font-weight: 900; letter-spacing: .1em; }
 .ownership-step h3 { margin: 7px 0 4px; color: var(--navy-800); font-size: 15px; }
 .ownership-step p { margin: 0; color: var(--muted); font-size: 10.5px; }
 .ownership-step.advanced { background: var(--green-100); border-color: #c8ead7; }
@@ -173,3 +173,4 @@
 .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; font-size: 11px; }
 .footer-links a:hover { color: var(--green-500); }
 .copyright { margin-top: 24px; padding-top: 17px; border-top: 1px solid rgba(255,255,255,.1); color: #8fa5b1; font-size: 10px; }
+.position-card.core .eyebrow { color: #86e9ac; }

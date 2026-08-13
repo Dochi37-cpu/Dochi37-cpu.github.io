@@ -1,13 +1,15 @@
 # E2P Systems Group website
 
-Public website for the **Equipment-to-Process Systems (E2P) Group** at KRICT.
+Public website for the **E2P Systems Group** at KRICT. Academic field: **Plant BOP & Energy Systems Engineering**.
 
 Current canonical URL: `https://dochi37-cpu.github.io/`
+
+The content single source of truth is `E2P_Homepage_Master_Specification_v2.md`. If implementation and that specification conflict, update the implementation to match the specification.
 
 ## Information architecture
 
 - `index.html` — concise group identity, current work and evidence status
-- `research.html` — academic positioning, flagship questions, methodology and evidence standard
+- `research.html` — academic positioning, flagship questions, plant-system architecture, methods/assets and evidence standard
 - `people.html` — PI, directly mentored researchers and collaboration interfaces
 - `publications.html` — E2P output status separated from PI background/collaborative record
 - `ip.html` — public IP only; pre-publication/confidential filings excluded

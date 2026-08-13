@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" role="img" aria-labelledby="title desc">
-  <title id="title">E2P Research Group</title>
-  <desc id="desc">E2P Research Group wordmark with green P and leaf motif.</desc>
+  <title id="title">E2P Systems Group</title>
+  <desc id="desc">E2P Systems Group wordmark for Plant BOP and Energy Systems Engineering.</desc>
   <g transform="translate(8 20)">
     <text x="0" y="92" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="900" letter-spacing="-7" fill="#0B3A67">E2</text>
     <text x="132" y="92" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="900" letter-spacing="-5" fill="#22D66A">P</text>
@@ -8,7 +8,7 @@
     <path d="M186 45 C199 35 214 30 229 31 C219 41 211 52 203 62 C196 71 190 78 183 84 C186 68 187 55 186 45Z" fill="#22D66A"/>
     <path d="M187 80 C198 62 210 48 224 36" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/>
     <line x1="275" y1="19" x2="275" y2="109" stroke="#0B3A67" stroke-width="3"/>
-    <text x="304" y="63" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="800" fill="#0B3A67">Research Group</text>
-    <text x="304" y="94" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" letter-spacing=".8" fill="#506070">Equipment-to-Process Systems</text>
+    <text x="304" y="63" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="800" fill="#0B3A67">Systems Group</text>
+    <text x="304" y="94" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" letter-spacing=".55" fill="#506070">Plant BOP &amp; Energy Systems Engineering</text>
   </g>
 </svg>

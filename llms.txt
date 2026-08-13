@@ -1,18 +1,36 @@
 # E2P Systems Group
 
-> Equipment-to-Process Systems Group at the Korea Research Institute of Chemical Technology (KRICT), led by Han Sol Jung.
+> Plant BOP & Energy Systems Engineering group at the Korea Research Institute of Chemical Technology (KRICT), led by Han Sol Jung.
 
 ## Canonical site
 https://dochi37-cpu.github.io/
 
-## Research identity
-E2P develops methods for translating equipment physics, performance and operating constraints into credible process and dynamic models, validated against engineering and demonstration evidence and used for design, scale-up, operation and deployment decisions.
+## Academic field
+Plant BOP & Energy Systems Engineering
 
-## Current status
-- Established at KRICT in August 2025.
-- Current work focuses on e-SAF process-model credibility and system decisions, equipment reality and operability, and CO2-to-methanol demonstration-plant systems.
-- E2P-originated publications and IP are labeled only after public release and defensible attribution.
-- PI prior/collaborative publications and IP are explicitly distinguished from E2P-originated outputs.
+## Canonical identity
+Technology Translation & Engineering Decision-Making
+
+## Core philosophy
+From core technology to operable plant systems.
+
+## Research identity
+E2P studies how BOP, utilities, plant integration and operating constraints determine whether core chemical and energy technologies can scale and operate in real plant systems. Core technology inputs may include experiments, kinetics, reactor/device models and separation performance from internal or external collaborators. E2P's core ownership begins at BOP and utilities and extends through plant integration, dynamic operability, scale-up and demonstration decisions.
+
+## Signature methods
+- Equipment-performance-aware modeling
+- Steady-state and dynamic simulation
+- Decision-relevant model fidelity
+- Engineering-data integration
+- Demonstration/operation-data validation and reconciliation
+
+## Current testbeds
+- e-SAF / GlobalTop: integrated process, BOP, utilities, flexible operation and demonstration engineering
+- CO2-to-methanol demo plant: BOP constraints, recycle, flexible operability and decision-relevant fidelity
+- Other low-carbon systems: dynamic integration, validation and demonstration decisions
+
+## Public-data policy
+The website does not disclose confidential plant data, pre-publication patent filings or unvalidated research conclusions.
 
 ## Key pages
 - Research: https://dochi37-cpu.github.io/research.html
@@ -21,6 +39,3 @@ E2P develops methods for translating equipment physics, performance and operatin
 - Intellectual property: https://dochi37-cpu.github.io/ip.html
 - Group culture: https://dochi37-cpu.github.io/group.html
 - Join/contact: https://dochi37-cpu.github.io/join.html
-
-## Public-data policy
-The website does not disclose confidential plant data, pre-publication patent filings or unvalidated research conclusions.
