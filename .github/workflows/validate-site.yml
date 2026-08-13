@@ -16,4 +16,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - run: python tools/validate_site.py
+      - run: node --check assets/site.js
+      - name: Validate bilingual translation maps
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          files = sorted(Path('assets/i18n').glob('i18n-*.json'))
+          assert len(files) == 9, f'Expected 9 i18n maps, found {len(files)}'
+          merged = {}
+          for path in files:
+              data = json.loads(path.read_text(encoding='utf-8'))
+              for key, value in data.items():
+                  assert set(value) == {'ko', 'en'}, f'Invalid bilingual entry: {path} :: {key}'
+                  assert value['ko'] and value['en'], f'Empty translation: {path} :: {key}'
+                  merged[key] = value
+          assert len(merged) >= 480, f'Translation map unexpectedly small: {len(merged)}'
+          print(f'Validated {len(files)} i18n maps with {len(merged)} unique bilingual entries.')
+          PY
