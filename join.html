@@ -21,81 +21,20 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <div class="shell nav">
-    <a class="brand" href="index.html" aria-label="E2P Systems Group home">
-      <img src="assets/e2p-wordmark-v19.svg" alt="E2P Research Group">
-    </a>
-    <nav class="menu" aria-label="Main navigation"><a href="index.html">HOME</a><a href="research.html">RESEARCH</a><a href="people.html">PEOPLE</a><a href="publications.html">PUBLICATIONS</a><a href="ip.html">IP</a><a href="group.html">GROUP</a><a href="join.html" aria-current="page">JOIN US</a></nav>
-    <div class="lang-toggle" aria-label="Language selection">
-      <button type="button" data-lang-button="ko" aria-pressed="true">KO</button>
-      <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
-    </div>
-    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <a class="brand" href="index.html" aria-label="E2P Systems Group home"><img src="assets/e2p-wordmark-v20.svg" alt="E2P Systems Group"></a>
+    <nav id="main-menu" class="menu" aria-label="Main navigation"><a href="index.html">HOME</a><a href="research.html">RESEARCH</a><a href="people.html">PEOPLE</a><a href="publications.html">PUBLICATIONS</a><a href="ip.html">IP</a><a href="group.html">GROUP</a><a href="join.html" aria-current="page">JOIN US</a></nav>
+    <div class="lang-toggle" role="group" aria-label="Language selection"><button type="button" data-lang-button="ko" aria-pressed="true">KO</button><button type="button" data-lang-button="en" aria-pressed="false">EN</button></div>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="main-menu" aria-expanded="false">☰</button>
   </div>
 </header>
 <main id="main-content">
-  <section class="page-hero">
-    <div class="shell">
-      <div class="eyebrow">JOIN E2P</div>
-      <h1><span class="lang-ko">주어진 모델을 돌리는 사람이 아니라,<br><span class="accent">자기 연구질문을 소유할 연구자를 찾습니다.</span></span><span class="lang-en">We are looking for researchers who want to<br><span class="accent">own a question, not just operate a tool.</span></span></h1>
-      <p><span class="lang-ko">E2P 연구자는 source of truth와 기존 모델을 독립적으로 재현하는 단계에서 시작해, 가정을 challenge하고 하나의 technical interface와 flagship question을 소유하는 방향으로 성장합니다.</span><span class="lang-en">E2P researchers begin by independently reproducing source-of-truth evidence and existing models, then challenge assumptions, take ownership of a technical interface and ultimately define the next question.</span></p>
-      <div class="page-nav"><a href="#fit">Who fits</a><a href="#growth">Growth path</a><a href="#routes">Opportunities</a><a href="#contact">Contact</a></div>
-    </div>
-  </section>
-
-  <section class="section reveal anchor-target" id="fit">
-    <div class="shell">
-      <div class="section-head"><div><div class="eyebrow">WHO MAY FIT THIS GROUP</div><h2>Curiosity, rigor and ownership matter more than one software package.</h2></div><p><span class="lang-ko">특정 툴을 이미 잘 쓰는지보다 원리를 확인하고 독립적으로 재현하며 다음 질문을 스스로 정의하고 싶은지가 더 중요합니다.</span><span class="lang-en">Existing software skill matters less than the willingness to verify principles, reproduce independently and define the next question.</span></p></div>
-      <div class="join-grid">
-        <div class="fit-list"><div class="fit-item"><b>원리를 끝까지 확인하는 사람</b><span>결과가 그럴듯하다는 이유만으로 가정과 계산을 받아들이지 않는 사람</span></div><div class="fit-item"><b>독립적인 재현을 즐기는 사람</b><span>source of truth, balances, properties와 model logic를 직접 확인하는 사람</span></div><div class="fit-item"><b>장치와 공정 사이를 연결하고 싶은 사람</b><span>한 fidelity의 결과를 다른 engineering layer의 판단으로 번역하는 데 관심 있는 사람</span></div></div>
-        <div class="fit-list"><div class="fit-item"><b>“그래서 어떤 결정을 해야 하는가?”를 묻는 사람</b><span>model complexity보다 decision relevance를 중요하게 보는 사람</span></div><div class="fit-item"><b>자기 연구주제를 갖고 싶은 사람</b><span>장기적으로 하나의 technical boundary와 flagship question을 소유하고 싶은 사람</span></div><div class="fit-item"><b>협업 속에서도 reusable asset을 남기는 사람</b><span>project deliverable을 넘어 model, data interface와 validation protocol을 축적하는 사람</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt reveal anchor-target" id="growth">
-    <div class="shell">
-      <div class="section-head"><div><div class="eyebrow">RESEARCHER DEVELOPMENT</div><h2>How researchers grow in E2P.</h2></div><p><span class="lang-ko">PI가 모든 다음 단계를 지시하는 구조가 아니라, 검증된 이해를 바탕으로 autonomy와 ownership을 단계적으로 확장합니다.</span><span class="lang-en">Autonomy and ownership expand progressively from verified understanding rather than relying on the PI to prescribe every next step.</span></p></div>
-      <div class="ownership"><article class="ownership-step"><div class="num">01</div><h3>Source of Truth</h3><p>원자료, 설계자료와 기존 모델의 기준을 확인합니다.</p></article><article class="ownership-step"><div class="num">02</div><h3>Reconstruct</h3><p>기존 계산과 모델을 독립적으로 재현합니다.</p></article><article class="ownership-step"><div class="num">03</div><h3>Validate</h3><p>오류, 가정, 민감도와 validity domain을 검증합니다.</p></article><article class="ownership-step advanced"><div class="num">04</div><h3>Own an Interface</h3><p>하나의 기술경계를 책임지고 설명할 수 있게 됩니다.</p></article><article class="ownership-step advanced"><div class="num">05</div><h3>Publish / Protect</h3><p>ownership을 paper, IP와 professional visibility로 연결합니다.</p></article><article class="ownership-step advanced"><div class="num">06</div><h3>Define Next</h3><p>다음 question과 필요한 evidence를 스스로 제안합니다.</p></article></div>
-    </div>
-  </section>
-
-  <section class="section reveal anchor-target" id="routes">
-    <div class="shell">
-      <div class="section-head"><div><div class="eyebrow">OPPORTUNITIES</div><h2>Typical routes to work with E2P.</h2></div><p><span class="lang-ko">모든 공식 임용과 계약은 KRICT 채용공고와 기관 절차를 따릅니다. 홈페이지는 채용공고를 대체하지 않습니다.</span><span class="lang-en">All formal appointments follow KRICT recruitment notices and institutional procedures. This website does not replace an official recruitment notice.</span></p></div>
-      <div class="route-list"><div class="route-item"><b>Post-master Researcher</b><span>Equipment/process modeling, multiphysics, dynamic operation, optimization and demonstration-data analysis, subject to KRICT rules and open calls.</span></div><div class="route-item"><b>Postdoctoral / Research Appointment</b><span>Operated through approved programs and formal notices, with an explicit independent question and E2P interface ownership.</span></div><div class="route-item"><b>Student Research / Internship</b><span>Available when institutional programs, timing and research-topic fit align.</span></div><div class="route-item"><b>External Collaboration</b><span>Collaborations are welcomed when there is a clear source-technology, equipment, demonstration or deployment interface.</span></div></div>
-    </div>
-  </section>
-
-  <section class="section alt reveal anchor-target" id="contact">
-    <div class="shell">
-      <div class="section-head"><div><div class="eyebrow">CONTACT</div><h2>Start with the research question and available evidence.</h2></div><p><span class="lang-ko">연구 참여와 공동연구 문의는 필요한 맥락을 함께 보내주시면 더 정확히 검토할 수 있습니다.</span><span class="lang-en">Research-position and collaboration inquiries are easier to evaluate when they include the relevant context and evidence.</span></p></div>
-      <div class="contact-grid">
-        <article class="contact-card"><h3>Han Sol Jung · 정한솔</h3><p>Senior Researcher<br>Chemical Process Solution Research Center<br>Korea Research Institute of Chemical Technology (KRICT)</p><p><strong>Email</strong><br><a href="mailto:hsjung@krict.re.kr">hsjung@krict.re.kr</a></p><p><strong>Research identity</strong><br>Technology Translation & Engineering Decision-Making</p></article>
-        <article class="contact-panel"><h3>For research-position inquiries</h3><p class="lang-ko">간단한 CV/연구배경, 관심 research question, 본인이 다뤄본 data·model·experiment와 가능한 시작시점을 보내주세요. software 목록보다 어떤 문제를 소유하고 싶은지를 알고 싶습니다.</p><p class="lang-en">Please include a brief CV/background, the research question you are interested in, data/models/experiments you have worked with and possible start timing. We care more about the problem you want to own than a list of software packages.</p><h3>For collaboration inquiries</h3><p class="lang-ko">대상 기술·장치, 현재 확보된 source-of-truth data와 궁극적으로 필요한 engineering decision을 알려주세요.</p><p class="lang-en">Please describe the target technology/equipment, available source-of-truth data and the engineering decision the collaboration should support.</p></article>
-      </div>
-    </div>
-  </section>
+  <section class="page-hero"><div class="shell"><div class="eyebrow">JOIN E2P</div><h1><span class="lang-ko">주어진 모델을 돌리는 사람이 아니라,<br><span class="accent">자기 연구질문을 소유할 연구자를 찾습니다.</span></span><span class="lang-en">We are looking for researchers who want to<br><span class="accent">own a question, not just operate a tool.</span></span></h1><p><span class="lang-ko">E2P 연구자는 source of truth와 기존 모델을 독립적으로 재현하는 단계에서 시작해, 가정을 challenge하고 하나의 technical boundary, flagship question과 evidence plan을 소유하는 방향으로 성장합니다.</span><span class="lang-en">E2P researchers begin by independently reproducing source-of-truth evidence and existing models, then challenge assumptions, take ownership of a technical boundary, a flagship question and the evidence needed to answer it.</span></p><div class="page-nav"><a href="#fit">Who fits</a><a href="#growth">Growth path</a><a href="#routes">Opportunities</a><a href="#contact">Contact</a></div></div></section>
+  <section class="section reveal anchor-target" id="fit"><div class="shell"><div class="section-head"><div><div class="eyebrow">WHO MAY FIT THIS GROUP</div><h2>Curiosity, rigor and ownership matter more than one software package.</h2></div><p><span class="lang-ko">특정 툴을 이미 잘 쓰는지보다 원리를 확인하고 독립적으로 재현하며 다음 질문을 스스로 정의하고 싶은지가 더 중요합니다.</span><span class="lang-en">Existing software skill matters less than the willingness to verify principles, reproduce independently and define the next question.</span></p></div><div class="join-grid"><div class="fit-list"><div class="fit-item"><b>원리를 끝까지 확인하는 사람</b><span>결과가 그럴듯하다는 이유만으로 가정과 계산을 받아들이지 않는 사람</span></div><div class="fit-item"><b>독립적인 재현을 즐기는 사람</b><span>source of truth, balances, properties와 model logic를 직접 확인하는 사람</span></div><div class="fit-item"><b>원천기술과 실제 플랜트를 연결하고 싶은 사람</b><span>core technology를 BOP·유틸리티·plant integration과 operability 판단으로 번역하는 데 관심 있는 사람</span></div></div><div class="fit-list"><div class="fit-item"><b>“그래서 어떤 결정을 해야 하는가?”를 묻는 사람</b><span>model complexity보다 decision relevance를 중요하게 보는 사람</span></div><div class="fit-item"><b>자기 연구주제를 갖고 싶은 사람</b><span>장기적으로 하나의 technical boundary와 flagship question을 소유하고 싶은 사람</span></div><div class="fit-item"><b>협업 속에서도 reusable asset을 남기는 사람</b><span>project deliverable을 넘어 model, data interface와 validation protocol을 축적하는 사람</span></div></div></div></div></section>
+  <section class="section alt reveal anchor-target" id="growth"><div class="shell"><div class="section-head"><div><div class="eyebrow">RESEARCHER DEVELOPMENT</div><h2>How researchers grow in E2P.</h2></div><p><span class="lang-ko">PI가 모든 다음 단계를 지시하는 구조가 아니라, 검증된 이해를 바탕으로 autonomy와 ownership을 단계적으로 확장합니다.</span><span class="lang-en">Autonomy and ownership expand progressively from verified understanding rather than relying on the PI to prescribe every next step.</span></p></div><div class="ownership"><article class="ownership-step"><div class="num">01</div><h3>Source of Truth</h3><p>원자료, 설계자료와 기존 모델의 기준을 확인합니다.</p></article><article class="ownership-step"><div class="num">02</div><h3>Reconstruct</h3><p>기존 계산과 모델을 독립적으로 재현합니다.</p></article><article class="ownership-step"><div class="num">03</div><h3>Validate</h3><p>오류, 가정, 민감도와 validity domain을 검증합니다.</p></article><article class="ownership-step advanced"><div class="num">04</div><h3>Own a Boundary</h3><p>core technology–BOP, BOP–plant, model–data 또는 operation–decision 중 하나의 기술경계를 책임집니다.</p></article><article class="ownership-step advanced"><div class="num">05</div><h3>Publish / Protect</h3><p>ownership을 paper, IP와 professional visibility로 연결합니다.</p></article><article class="ownership-step advanced"><div class="num">06</div><h3>Define Next</h3><p>다음 question과 필요한 evidence를 스스로 제안합니다.</p></article></div></div></section>
+  <section class="section reveal anchor-target" id="routes"><div class="shell"><div class="section-head"><div><div class="eyebrow">OPPORTUNITIES</div><h2>Typical routes to work with E2P.</h2></div><p><span class="lang-ko">모든 공식 임용과 계약은 KRICT 채용공고와 기관 절차를 따릅니다. 홈페이지는 채용공고를 대체하지 않습니다.</span><span class="lang-en">All formal appointments follow KRICT recruitment notices and institutional procedures. This website does not replace an official recruitment notice.</span></p></div><div class="route-list"><div class="route-item"><b>Post-master Researcher</b><span>BOP/plant-system modeling, engineering-data integration, dynamic operability and demonstration-data analysis, subject to KRICT rules and open calls.</span></div><div class="route-item"><b>Postdoctoral / Research Appointment</b><span>Operated through approved programs and formal notices, with an explicit independent plant-system question and research ownership.</span></div><div class="route-item"><b>Student Research / Internship</b><span>Available when institutional programs, timing and research-topic fit align.</span></div><div class="route-item"><b>External Collaboration</b><span>Collaborations are welcomed when there is a clear core-technology, BOP/plant-integration, demonstration or deployment interface.</span></div></div></div></section>
+  <section class="section alt reveal anchor-target" id="contact"><div class="shell"><div class="section-head"><div><div class="eyebrow">CONTACT</div><h2>Start with the research question and available evidence.</h2></div><p><span class="lang-ko">연구 참여와 공동연구 문의는 필요한 맥락을 함께 보내주시면 더 정확히 검토할 수 있습니다.</span><span class="lang-en">Research-position and collaboration inquiries are easier to evaluate when they include the relevant context and evidence.</span></p></div><div class="contact-grid"><article class="contact-card"><h3>Han Sol Jung · 정한솔</h3><p>Senior Researcher<br>Chemical Process Solution Research Center<br>Korea Research Institute of Chemical Technology (KRICT)</p><p><strong>Email</strong><br><a href="mailto:hsjung@krict.re.kr">hsjung@krict.re.kr</a></p><p><strong>Research identity</strong><br>Technology Translation & Engineering Decision-Making</p></article><article class="contact-panel"><h3>For research-position inquiries</h3><p class="lang-ko">간단한 CV/연구배경, 관심 research question, 본인이 다뤄본 data·model·experiment와 가능한 시작시점을 보내주세요. software 목록보다 어떤 문제를 소유하고 싶은지를 알고 싶습니다.</p><p class="lang-en">Please include a brief CV/background, the research question you are interested in, data/models/experiments you have worked with and possible start timing. We care more about the problem you want to own than a list of software packages.</p><h3>For collaboration inquiries</h3><p class="lang-ko">대상 core technology와 BOP/plant interface, 현재 확보된 source-of-truth data와 궁극적으로 필요한 engineering decision을 알려주세요.</p><p class="lang-en">Please describe the target core technology and BOP/plant interface, available source-of-truth data and the engineering decision the collaboration should support.</p></article></div></div></section>
 </main>
-<footer class="footer">
-  <div class="shell">
-    <div class="footer-grid">
-      <div>
-        <img src="assets/e2p-wordmark-v19.svg" alt="E2P Research Group">
-        <small>Equipment-to-Process Systems Group<br>Korea Research Institute of Chemical Technology (KRICT)</small>
-      </div>
-      <div>
-        <strong>Han Sol Jung, Ph.D. · 정한솔</strong>
-        <small>Senior Researcher · KRICT<br><a href="mailto:hsjung@krict.re.kr">hsjung@krict.re.kr</a></small>
-      </div>
-      <div class="footer-links">
-        <a href="research.html">Research</a><a href="people.html">People</a>
-        <a href="publications.html">Publications</a><a href="ip.html">IP</a>
-        <a href="group.html">Group</a><a href="join.html">Join Us</a>
-      </div>
-    </div>
-    <div class="copyright">© E2P Systems Group · Established at KRICT in August 2025 · Public information only</div>
-  </div>
-</footer>
+<footer class="footer"><div class="shell"><div class="footer-grid"><div><img src="assets/e2p-wordmark-v20.svg" alt="E2P Systems Group"><small>Plant BOP &amp; Energy Systems Engineering<br>Korea Research Institute of Chemical Technology (KRICT)</small></div><div><strong>Han Sol Jung, Ph.D. · 정한솔</strong><small>Senior Researcher · KRICT<br><a href="mailto:hsjung@krict.re.kr">hsjung@krict.re.kr</a></small></div><div class="footer-links"><a href="research.html">Research</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="ip.html">IP</a><a href="group.html">Group</a><a href="join.html">Join Us</a></div></div><div class="copyright">© E2P Systems Group · Established at KRICT in August 2025 · Public information only</div></div></footer>
 <script src="assets/site.js"></script>
 </body>
 </html>
