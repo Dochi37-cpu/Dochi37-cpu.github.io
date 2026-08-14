@@ -87,6 +87,38 @@
     if (link.getAttribute('href') === 'group.html') link.textContent = 'How We Work';
   });
 
+  if (document.querySelector('#fit .join-grid')) {
+    const firstFitList = document.querySelector('#fit .join-grid .fit-list');
+    if (firstFitList && !document.getElementById('collaborative-integrity-fit')) {
+      const item = document.createElement('div');
+      item.className = 'fit-item';
+      item.id = 'collaborative-integrity-fit';
+      const title = document.createElement('b');
+      title.textContent = '사람과 credit을 존중하면서 솔직하게 challenge하는 사람';
+      const detail = document.createElement('span');
+      detail.textContent = '동료의 ownership을 존중하고, 다른 의견은 뒤에서가 아니라 근거를 가지고 직접 논의하는 사람';
+      item.append(title, detail);
+      firstFitList.appendChild(item);
+    }
+  }
+
+  const growthShell = document.querySelector('#growth .shell');
+  if (growthShell && !document.getElementById('researcher-promise')) {
+    const promise = document.createElement('div');
+    promise.className = 'callout';
+    promise.id = 'researcher-promise';
+    const label = document.createElement('b');
+    label.textContent = 'Researcher promise. ';
+    const ko = document.createElement('span');
+    ko.className = 'lang-ko';
+    ko.textContent = 'E2P의 목표는 사람을 오래 붙잡아 두는 것이 아닙니다. 함께한 연구자가 합류할 때보다 더 큰 capability, 더 선명한 research ownership, 더 넓은 career choices를 가지고 다음 단계로 갈 수 있게 하는 것을 중요하게 생각합니다.';
+    const en = document.createElement('span');
+    en.className = 'lang-en';
+    en.textContent = 'Our goal is not to keep people indefinitely. We want researchers to leave E2P with more capability, clearer research ownership and more career choices than when they joined.';
+    promise.append(label, ko, en);
+    growthShell.appendChild(promise);
+  }
+
   const menuButton = document.querySelector('.nav-toggle');
   const setMenu = (open) => {
     menu?.classList.toggle('open', open);
