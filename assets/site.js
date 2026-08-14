@@ -75,6 +75,18 @@
   initLanguage();
 
   const menu = document.querySelector('.menu');
+  const howWeWorkLink = menu ? Array.from(menu.querySelectorAll('a')).find((link) => link.getAttribute('href') === 'group.html') : null;
+  const peopleLink = menu ? Array.from(menu.querySelectorAll('a')).find((link) => link.getAttribute('href') === 'people.html') : null;
+  if (howWeWorkLink) {
+    howWeWorkLink.textContent = 'HOW WE WORK';
+    if (peopleLink && peopleLink.nextElementSibling !== howWeWorkLink) {
+      peopleLink.insertAdjacentElement('afterend', howWeWorkLink);
+    }
+  }
+  document.querySelectorAll('.footer-links a').forEach((link) => {
+    if (link.getAttribute('href') === 'group.html') link.textContent = 'How We Work';
+  });
+
   const menuButton = document.querySelector('.nav-toggle');
   const setMenu = (open) => {
     menu?.classList.toggle('open', open);
