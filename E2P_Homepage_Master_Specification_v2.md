@@ -1,8 +1,8 @@
 # E2P Homepage Master Specification v2
 
 **Status:** Canonical / Single Source of Truth  
-**Version:** 2.0  
-**Date:** 2026-08-13  
+**Version:** 2.1  
+**Date:** 2026-08-14  
 **Owner:** E2P Systems Group · Han Sol Jung · KRICT
 
 If website implementation conflicts with this document, the implementation must be updated to match this specification.
@@ -110,13 +110,22 @@ Canonical principle: **Different technologies, same plant-system questions.**
 - AI/inference/optimization is an enabling/collaborative capability.
 - Sustainability/TEA/LCA is an evaluation/decision interface.
 
-## 10. Researcher development
+## 10. Researcher development and group culture
 
 Public promise: **The goal is not more project support, but more independent research owners.**
 
 Researchers progress from source of truth and independent reproduction to challenging assumptions, owning a technical boundary, owning a flagship question and defining the next question/evidence plan.
 
 Possible technical boundaries include core technology-BOP, BOP-plant, model-data and operation-decision.
+
+### Technical authority principle
+Ownership means more than doing the work. As expertise grows, technical judgment should move to the researcher who owns the question. The PI coordinates the research portfolio and priorities; domain owners grow toward responsibility for technical decisions within their boundaries.
+
+### Collaborative integrity principle
+**Challenge ideas, respect people.** Assumptions, methods and results should be challenged rigorously, while people, research ownership and credit are treated with respect. Disagreement should be discussed directly and with evidence.
+
+### Researcher promise
+E2P does not define success as retaining people indefinitely. The goal is for researchers to leave E2P with more capability, clearer research ownership and more career choices than when they joined.
 
 ## 11. Canonical copy bank
 
@@ -130,10 +139,23 @@ Possible technical boundaries include core technology-BOP, BOP-plant, model-data
 - **Evidence principle:** Models do not define plant reality; engineering evidence does.
 - **Researcher principle:** We own questions, not software territories.
 - **Culture:** The goal is not more project support, but more independent research owners.
+- **Collaborative integrity:** Challenge ideas, respect people.
+- **Technical authority:** As expertise grows, technical judgment moves to the researcher who owns the question.
+- **Researcher promise:** More capability, clearer ownership, more career choices.
 - **Testbed principle:** Different technologies, same plant-system questions.
 - **Career narrative:** From “Is the technology promising?” to “Under what conditions can it operate and scale?”
 
-## 12. Non-negotiable guardrails
+## 12. Information architecture and navigation
+
+Preferred primary navigation order:
+
+**HOME → RESEARCH → PEOPLE → HOW WE WORK → PUBLICATIONS → IP → JOIN US**
+
+- `HOW WE WORK` is the public-facing label for `group.html`.
+- The page explains researcher development, ownership, operating principles and group culture.
+- Internal operating controls such as performance checkpoints, staffing gates or PI workload rules should not be exposed verbatim on the public website; translate them into public principles of autonomy, ownership, integrity and technical authority.
+
+## 13. Non-negotiable guardrails
 
 1. Do not present E2P as owning all reactor/device physics.
 2. Do not place CFD/COMSOL/multiphysics as the top-level group identity.
@@ -144,8 +166,18 @@ Possible technical boundaries include core technology-BOP, BOP-plant, model-data
 7. Demonstration is an important decision context, not the condition for the group's existence.
 8. Plant BOP & Energy Systems Engineering does not mean ownership of all plant engineering; it means ownership of BOP/system-level questions between core technology and operable deployment.
 9. Preserve explicit provenance, maturity and confidentiality labels for public evidence.
+10. Do not describe researchers primarily as project support or software operators; foreground research ownership and growth in technical judgment.
+11. Do not present internal personnel-management rules as public recruiting copy; translate them into clear and humane public principles.
 
-## 13. v1 → v2 change summary
+## 14. v2.0 → v2.1 change summary
+
+- `GROUP` public navigation label → `HOW WE WORK`, positioned after `PEOPLE`.
+- Added technical-authority principle: technical judgment moves toward the domain owner as expertise grows.
+- Added collaborative-integrity principle: challenge ideas rigorously while respecting people, ownership and credit.
+- Added researcher promise: researchers should gain capability, ownership and career choices through E2P.
+- Clarified that internal PI/staffing controls should be translated into public principles rather than exposed verbatim.
+
+## 15. v1 → v2 change summary
 
 - Equipment-to-Process Systems expanded name → E2P Systems Group brand; expanded name no longer foregrounded.
 - Equipment-aware PSE → signature methodology, not top identity.
