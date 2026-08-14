@@ -58,6 +58,12 @@
 
     const promiseLabel = document.querySelector('#researcher-promise > b');
     if (promiseLabel) promiseLabel.textContent = lang === 'ko' ? '연구자에 대한 약속. ' : 'Researcher promise. ';
+
+    const ownershipJudgment = document.querySelector('#ownership .callout > b');
+    if (ownershipJudgment) ownershipJudgment.textContent = lang === 'ko' ? 'Ownership에는 기술적 판단권도 포함됩니다.' : 'Ownership includes technical judgment.';
+
+    const culturePrinciple = document.querySelector('#principles .principle-card:nth-child(6) h3');
+    if (culturePrinciple) culturePrinciple.textContent = lang === 'ko' ? '아이디어는 치열하게, 사람은 존중하며' : 'Challenge ideas, respect people';
   };
 
   const setLanguage = (language) => {
