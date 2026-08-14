@@ -1,32 +1,34 @@
-# E2P Homepage Master Specification v2
+> **P2E v3 branding update (2026-08-14): the academic field, research architecture, ownership boundary and methods remain unchanged; only the short group brand migrated to P2E Research Group. The acronym is not expanded unless an official expansion is defined by the PI.**
+
+# P2E Homepage Master Specification v3
 
 **Status:** Canonical / Single Source of Truth  
 **Version:** 2.1  
 **Date:** 2026-08-14  
-**Owner:** E2P Systems Group · Han Sol Jung · KRICT
+**Owner:** P2E Research Group · Han Sol Jung · KRICT
 
 If website implementation conflicts with this document, the implementation must be updated to match this specification.
 
 ## 1. Canonical identity
 
-- **Group brand:** E2P Systems Group
+- **Group brand:** P2E Research Group
 - **Academic field:** Plant BOP & Energy Systems Engineering
 - **Canonical identity:** Technology Translation & Engineering Decision-Making
 - **Core philosophy:** From core technology to operable plant systems.
 - **KRICT/internal positioning:** 원천기술의 공정 scale-up·실증을 위한 BOP·Plant System Integration
 
 ### Master description
-E2P Systems Group studies how emerging chemical and energy technologies become operable plant systems. Research focuses on BOP and utilities, plant integration, dynamic operability and scale-up. Core process technologies are combined with engineering data, equipment-performance constraints and demonstration/operating evidence to define feasible plant configurations and operating envelopes. Equipment-performance-aware modeling, dynamic simulation, decision-relevant fidelity and data validation are methods, not ends in themselves. e-SAF, CO2-to-methanol and other low-carbon processes are testbeds for reusable technology-translation and engineering-decision methods.
+P2E Research Group studies how emerging chemical and energy technologies become operable plant systems. Research focuses on BOP and utilities, plant integration, dynamic operability and scale-up. Core process technologies are combined with engineering data, equipment-performance constraints and demonstration/operating evidence to define feasible plant configurations and operating envelopes. Equipment-performance-aware modeling, dynamic simulation, decision-relevant fidelity and data validation are methods, not ends in themselves. e-SAF, CO2-to-methanol and other low-carbon processes are testbeds for reusable technology-translation and engineering-decision methods.
 
 ## 2. Research architecture
 
 **Core Technology Input → BOP & Utilities → Plant Integration → Dynamic Operability → Scale-up & Demonstration Decisions**
 
 ### Core Technology Input
-Experiments, kinetics, reactor/device models, CFD/multiphysics results, separation performance and source-technology specifications. These are not necessarily E2P-owned technologies.
+Experiments, kinetics, reactor/device models, CFD/multiphysics results, separation performance and source-technology specifications. These are not necessarily P2E-owned technologies.
 
 ### BOP & Utilities
-Compressors, pumps, heat exchangers/thermal management, utilities, recycle systems, storage/buffer, feed conditioning, equipment performance maps and operating constraints. Core E2P ownership begins here.
+Compressors, pumps, heat exchangers/thermal management, utilities, recycle systems, storage/buffer, feed conditioning, equipment performance maps and operating constraints. Core P2E ownership begins here.
 
 ### Plant Integration
 PFD/HMB, engineering data, mass/energy integration, recycle architecture, BOP-core process interaction, design basis, system efficiency and plant-level constraints.
@@ -68,7 +70,7 @@ Scale-up criteria, BOP specification, plant configuration, operating envelope, c
 - CFD / multiphysics
 - TEA / LCA
 
-These enabling methods are used when they are necessary to answer a plant-system question; they are not top-level E2P identities.
+These enabling methods are used when they are necessary to answer a plant-system question; they are not top-level P2E identities.
 
 ## 6. Evidence principle
 
@@ -106,7 +108,7 @@ Canonical principle: **Different technologies, same plant-system questions.**
 - **Jisoo Kim:** core/direct; process systems, engineering-data/model integration, TCO/TEA/LCA and system decisions.
 - **Soo Won Son:** core/directly guided; reactor-plant interface, multiphysics input translation and operability.
 - **Seunghyun Cheon:** collaborator; formally supervised by Dr. Kiwoong Kim; e-SAF process-design and GlobalTop collaboration interface.
-- Reactor/device high-fidelity modeling is presented as upstream Core Technology Input or collaboration capability unless it directly supports an E2P plant-system question.
+- Reactor/device high-fidelity modeling is presented as upstream Core Technology Input or collaboration capability unless it directly supports an P2E plant-system question.
 - AI/inference/optimization is an enabling/collaborative capability.
 - Sustainability/TEA/LCA is an evaluation/decision interface.
 
@@ -125,7 +127,7 @@ Ownership means more than doing the work. As expertise grows, technical judgment
 **Challenge ideas, respect people.** Assumptions, methods and results should be challenged rigorously, while people, research ownership and credit are treated with respect. Disagreement should be discussed directly and with evidence.
 
 ### Researcher promise
-E2P does not define success as retaining people indefinitely. The goal is for researchers to leave E2P with more capability, clearer research ownership and more career choices than when they joined.
+P2E does not define success as retaining people indefinitely. The goal is for researchers to leave P2E with more capability, clearer research ownership and more career choices than when they joined.
 
 ## 11. Canonical copy bank
 
@@ -157,7 +159,7 @@ Preferred primary navigation order:
 
 ## 13. Non-negotiable guardrails
 
-1. Do not present E2P as owning all reactor/device physics.
+1. Do not present P2E as owning all reactor/device physics.
 2. Do not place CFD/COMSOL/multiphysics as the top-level group identity.
 3. Distinguish reactor/device equipment from BOP when using the word equipment.
 4. Present BOP as a research object that constrains plant feasibility and operability, not merely an auxiliary equipment list.
@@ -174,12 +176,12 @@ Preferred primary navigation order:
 - `GROUP` public navigation label → `HOW WE WORK`, positioned after `PEOPLE`.
 - Added technical-authority principle: technical judgment moves toward the domain owner as expertise grows.
 - Added collaborative-integrity principle: challenge ideas rigorously while respecting people, ownership and credit.
-- Added researcher promise: researchers should gain capability, ownership and career choices through E2P.
+- Added researcher promise: researchers should gain capability, ownership and career choices through P2E.
 - Clarified that internal PI/staffing controls should be translated into public principles rather than exposed verbatim.
 
 ## 15. v1 → v2 change summary
 
-- Equipment-to-Process Systems expanded name → E2P Systems Group brand; expanded name no longer foregrounded.
+- Equipment-to-Process Systems expanded name → P2E Research Group brand; expanded name no longer foregrounded.
 - Equipment-aware PSE → signature methodology, not top identity.
 - Equipment Reality → split into Core Technology Input and BOP & Utilities.
 - Equipment reality → process feasibility → decision → Core technology → BOP → plant integration → operability → decision.
