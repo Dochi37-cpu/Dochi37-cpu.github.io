@@ -1,4 +1,4 @@
-# E2P Systems Group
+# P2E Systems Group
 
 > Plant BOP & Energy Systems Engineering group at the Korea Research Institute of Chemical Technology (KRICT), led by Han Sol Jung.
 
@@ -15,7 +15,7 @@ Technology Translation & Engineering Decision-Making
 From core technology to operable plant systems.
 
 ## Research identity
-E2P studies how BOP, utilities, plant integration and operating constraints determine whether core chemical and energy technologies can scale and operate in real plant systems. Core technology inputs may include experiments, kinetics, reactor/device models and separation performance from internal or external collaborators. E2P's core ownership begins at BOP and utilities and extends through plant integration, dynamic operability, scale-up and demonstration decisions.
+P2E studies how BOP, utilities, plant integration and operating constraints determine whether core chemical and energy technologies can scale and operate in real plant systems. Core technology inputs may include experiments, kinetics, reactor/device models and separation performance from internal or external collaborators. P2E's core ownership begins at BOP and utilities and extends through plant integration, dynamic operability, scale-up and demonstration decisions.
 
 ## Signature methods
 - Equipment-performance-aware modeling

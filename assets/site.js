@@ -74,11 +74,11 @@
     syncDynamicLabels(lang);
     koButton?.setAttribute('aria-pressed', String(lang === 'ko'));
     enButton?.setAttribute('aria-pressed', String(lang === 'en'));
-    try { localStorage.setItem('e2p-language', lang); } catch (_) {}
+    try { localStorage.setItem('p2e-language', lang); } catch (_) {}
   };
 
   let initialLanguage = 'ko';
-  try { initialLanguage = localStorage.getItem('e2p-language') || 'ko'; } catch (_) {}
+  try { initialLanguage = localStorage.getItem('p2e-language') || 'ko'; } catch (_) {}
   initialLanguage = initialLanguage === 'en' ? 'en' : 'ko';
   body.dataset.lang = initialLanguage;
   root.lang = initialLanguage;
@@ -113,10 +113,10 @@
     const label = document.createElement('b');
     const ko = document.createElement('span');
     ko.className = 'lang-ko';
-    ko.textContent = 'E2P의 목표는 사람을 오래 붙잡아 두는 것이 아닙니다. 함께한 연구자가 합류할 때보다 더 큰 capability, 더 선명한 research ownership, 더 넓은 career choices를 가지고 다음 단계로 갈 수 있게 하는 것을 중요하게 생각합니다.';
+    ko.textContent = 'P2E의 목표는 사람을 오래 붙잡아 두는 것이 아닙니다. 함께한 연구자가 합류할 때보다 더 큰 capability, 더 선명한 research ownership, 더 넓은 career choices를 가지고 다음 단계로 갈 수 있게 하는 것을 중요하게 생각합니다.';
     const en = document.createElement('span');
     en.className = 'lang-en';
-    en.textContent = 'Our goal is not to keep people indefinitely. We want researchers to leave E2P with more capability, clearer research ownership and more career choices than when they joined.';
+    en.textContent = 'Our goal is not to keep people indefinitely. We want researchers to leave P2E with more capability, clearer research ownership and more career choices than when they joined.';
     promise.append(label, ko, en);
     growthShell.appendChild(promise);
   }
@@ -132,7 +132,7 @@
       bindTranslatableText();
       setLanguage(initialLanguage);
     } catch (error) {
-      console.error('E2P i18n map load failed', error);
+      console.error('P2E i18n map load failed', error);
       syncDynamicLabels(initialLanguage);
     }
 
