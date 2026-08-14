@@ -1,0 +1,173 @@
+name: Apply P2E rebrand and publication restoration
+
+on:
+  push:
+    branches: [p2e-rebrand-publications]
+    paths: [.github/workflows/apply-p2e-rebrand.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p2e-rebrand-publications
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Apply P2E migration
+        run: |
+          cat > /tmp/apply_p2e.py <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('.')
+          text_suffixes = {'.html','.md','.txt','.json','.xml','.js'}
+          skip = {Path('.github/workflows/apply-p2e-rebrand.yml')}
+
+          # Public-facing brand migration. Do not invent an acronym expansion.
+          replacements = [
+              ('E2P Systems Group', 'P2E Research Group'),
+              ('E2P-originated', 'P2E-originated'),
+              ('E2P-ORIGINATED', 'P2E-ORIGINATED'),
+              ('E2P translation', 'P2E translation'),
+              ('E2P workflow', 'P2E workflow'),
+              ('E2P program', 'P2E program'),
+              ('E2P researcher', 'P2E researcher'),
+              ('E2P researchers', 'P2E researchers'),
+              ('E2P core', 'P2E core'),
+              ('E2P methodology', 'P2E methodology'),
+              ('E2P research', 'P2E research'),
+              ('E2P output', 'P2E output'),
+              ('E2P outputs', 'P2E outputs'),
+              ('E2P의', 'P2E의'),
+              ('E2P는', 'P2E는'),
+              ('E2P에서', 'P2E에서'),
+              ('E2P가', 'P2E가'),
+              ('E2P를', 'P2E를'),
+              ('E2P에', 'P2E에'),
+              ('E2P 연구', 'P2E 연구'),
+              ('E2P translation pipeline', 'P2E translation pipeline'),
+              ('E2P TRANSLATION ARCHITECTURE', 'P2E TRANSLATION ARCHITECTURE'),
+              ('E2P-ORIGINATED OUTPUTS', 'P2E-ORIGINATED OUTPUTS'),
+              ('aria-label="E2P Systems Group home"', 'aria-label="P2E Research Group home"'),
+              ('alt="E2P Systems Group"', 'alt="P2E Research Group"'),
+              ('assets/e2p-wordmark-v20.svg', 'assets/p2e-wordmark-v1.svg'),
+              ('assets/e2p-favicon-v19.svg', 'assets/p2e-favicon-v1.svg'),
+              ('#e2p-status', '#p2e-status'),
+              ('id="e2p-status"', 'id="p2e-status"'),
+          ]
+
+          for p in root.rglob('*'):
+              if not p.is_file() or p in skip or p.suffix.lower() not in text_suffixes:
+                  continue
+              s = p.read_text(encoding='utf-8')
+              old = s
+              for a,b in replacements:
+                  s = s.replace(a,b)
+              # Remaining standalone visible E2P brand mentions in public/site-support text.
+              if p.name not in {'E2P_Homepage_Master_Specification_v2.md'}:
+                  s = re.sub(r'\bE2P\b', 'P2E', s)
+              if s != old:
+                  p.write_text(s, encoding='utf-8')
+
+          # New vector wordmark: P2E brand + academic descriptor.
+          wordmark = '''<svg xmlns="http://www.w3.org/2000/svg" width="620" height="116" viewBox="0 0 620 116" role="img" aria-labelledby="title desc">
+            <title id="title">P2E Research Group</title>
+            <desc id="desc">P2E Research Group wordmark for Plant BOP and Energy Systems Engineering</desc>
+            <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#20a65a"/><stop offset="1" stop-color="#39c26d"/></linearGradient></defs>
+            <rect width="620" height="116" fill="none"/>
+            <g font-family="Arial, Helvetica, sans-serif" font-weight="800">
+              <text x="8" y="73" font-size="72" fill="#0b3768">P2</text>
+              <text x="105" y="73" font-size="72" fill="url(#g)">E</text>
+            </g>
+            <path d="M136 30c13 3 22 11 27 23-14 1-25-4-32-14 1 11-2 22-10 31" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M134 39c9 2 17 6 24 11" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="184" y1="20" x2="184" y2="91" stroke="#9fb4c8" stroke-width="1.5"/>
+            <text x="205" y="51" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#0b3768">Research Group</text>
+            <text x="205" y="77" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#3c5874">Plant BOP &amp; Energy Systems Engineering</text>
+          </svg>'''
+          (root/'assets/p2e-wordmark-v1.svg').write_text(wordmark, encoding='utf-8')
+
+          favicon = '''<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+            <title id="title">P2E Research Group</title>
+            <rect width="128" height="128" rx="28" fill="#0b3768"/>
+            <text x="14" y="82" font-family="Arial, Helvetica, sans-serif" font-size="57" font-weight="800" fill="#ffffff">P2</text>
+            <text x="80" y="82" font-family="Arial, Helvetica, sans-serif" font-size="57" font-weight="800" fill="#39c26d">E</text>
+            <path d="M100 44c8 2 14 7 17 14-8 1-15-2-20-8 1 7-1 13-6 19" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>'''
+          (root/'assets/p2e-favicon-v1.svg').write_text(favicon, encoding='utf-8')
+
+          # Publication restoration: two source-verified older peer-reviewed papers.
+          pub = root/'publications.html'
+          s = pub.read_text(encoding='utf-8')
+          if 'A review: Effect of nanostructures on photocatalytic CO₂ conversion' not in s:
+              insert = '''<article class="publication-item" data-publication-category="co2"><div class="pub-year">2017</div><div class="pub-citation">Yoon Yun Lee, <strong>Han Sol Jung</strong>, Yong Tae Kang.<span class="pub-title">A review: Effect of nanostructures on photocatalytic CO₂ conversion over metal oxides and compound semiconductors</span><em>Journal of CO₂ Utilization 20, 163–177.</em></div><a class="source-link" href="https://doi.org/10.1016/j.jcou.2017.05.019" target="_blank" rel="noopener noreferrer">DOI ↗</a></article><article class="publication-item" data-publication-category="thermal"><div class="pub-year">2015</div><div class="pub-citation"><strong>Han Sol Jung</strong>, Hak Seong Kim, Kyung Yub Hwang, Kwang Ho Kim.<span class="pub-title">Experimental Study on Calcium Chloride Impregnated Perlite for Thermochemical Heat Storage</span><em>Korean Journal of Air-Conditioning and Refrigeration Engineering 27(3), 123–127.</em></div><a class="source-link" href="https://doi.org/10.6110/KJACR.2015.27.3.123" target="_blank" rel="noopener noreferrer">DOI ↗</a></article>'''
+              marker = '</div>\n      <div class="callout warning">Only records with bibliographic details preserved in the public site are listed.'
+              if marker not in s:
+                  raise SystemExit('publication insertion marker not found')
+              s = s.replace(marker, insert + '</div>\n      <div class="callout warning">Only records with bibliographic details preserved in the public site are listed.', 1)
+          s = s.replace('Only records with bibliographic details preserved in the public site are listed. The page is a curated public record, not an exhaustive bibliometric database.', 'This page currently lists 12 peer-reviewed publications verified from DOI/publisher records or archived full-text sources. If another item is identified, it will be added after source verification.')
+          s = s.replace('아래 논문을 새 그룹 성과로 소급 표시하지 않습니다.', '아래 12편의 검증된 peer-reviewed 논문은 PI의 연구배경으로 제시하며, 새 그룹 성과로 소급 표시하지 않습니다.')
+          s = s.replace('These papers are not retroactively presented as outputs of the new group.', 'These 12 verified peer-reviewed papers are presented as the PI’s research background and are not retroactively presented as outputs of the new group.')
+          pub.write_text(s, encoding='utf-8')
+
+          # New SSOT v3: brand changes, research identity unchanged.
+          oldspec = root/'E2P_Homepage_Master_Specification_v2.md'
+          if oldspec.exists():
+              legacy = oldspec.read_text(encoding='utf-8')
+              if not legacy.startswith('> **LEGACY'):
+                  legacy = '> **LEGACY — superseded by `P2E_Homepage_Master_Specification_v3.md` for branding and public-site naming. Research-identity content is retained as historical v2 context.**\n\n' + legacy
+                  oldspec.write_text(legacy, encoding='utf-8')
+          v3 = '''# P2E Research Group · Homepage Master Specification v3\n\n**Status:** Canonical public-site SSOT\n\n## Brand\n- Group brand: **P2E Research Group**\n- Do not expand the acronym unless the PI explicitly defines an official expansion.\n- Academic field: **Plant BOP & Energy Systems Engineering**\n- Core philosophy: **From core technology to operable plant systems.**\n- Core identity: **Technology Translation & Engineering Decision-Making**\n\n## Research architecture\n**Core Technology Input → BOP & Utilities → Plant Integration → Dynamic Operability → Scale-up & Demonstration Decisions**\n\nThe E2P→P2E migration is a branding change aligning the short group name with the downstream plant/BOP research identity. It does **not** change the established academic field, ownership boundary, research architecture, methods hierarchy, or current testbeds defined in v2.\n\n## Ownership boundary\nCore Technology Input may include experiments, kinetics, reactor/device models, separation performance and high-fidelity physics from internal or external collaborators. P2E's central ownership begins at BOP & Utilities and extends through plant integration, dynamic operability, scale-up and engineering decisions.\n\n## Current testbeds\ne-SAF / GlobalTop · CO₂-to-methanol · CCU and other low-carbon chemical/energy systems.\n\n## Publication rule\nThe publication page distinguishes P2E-originated outputs from the PI's prior and collaborative peer-reviewed record. Bibliographic records must be source-verified before addition.\n\n## Brand assets\n- `assets/p2e-wordmark-v1.svg`\n- `assets/p2e-favicon-v1.svg`\n\n## Legacy\n`E2P_Homepage_Master_Specification_v2.md` remains in the repository only as historical context and is superseded for current public naming.\n'''
+          (root/'P2E_Homepage_Master_Specification_v3.md').write_text(v3, encoding='utf-8')
+
+          # README points to current SSOT.
+          readme = root/'README.md'
+          if readme.exists():
+              r = readme.read_text(encoding='utf-8')
+              r = re.sub(r'E2P_Homepage_Master_Specification_v2\.md', 'P2E_Homepage_Master_Specification_v3.md', r)
+              r = r.replace('E2P', 'P2E')
+              readme.write_text(r, encoding='utf-8')
+
+          # Remove obsolete visual assets after references are migrated.
+          for old in ['assets/e2p-wordmark-v20.svg','assets/e2p-favicon-v19.svg']:
+              q = root/old
+              if q.exists(): q.unlink()
+
+          # Update sitemap lastmod.
+          sm = root/'sitemap.xml'
+          if sm.exists():
+              x = sm.read_text(encoding='utf-8')
+              x = re.sub(r'<lastmod>[^<]+</lastmod>', '<lastmod>2026-08-14</lastmod>', x)
+              sm.write_text(x, encoding='utf-8')
+
+          # Sanity checks.
+          public_files = list(root.glob('*.html')) + [root/'README.md', root/'llms.txt', root/'P2E_Homepage_Master_Specification_v3.md'] + list((root/'assets/i18n').glob('*.json'))
+          leftovers=[]
+          for p in public_files:
+              if p.exists() and 'E2P' in p.read_text(encoding='utf-8'):
+                  leftovers.append(str(p))
+          if leftovers:
+              raise SystemExit('public E2P leftovers: ' + ', '.join(leftovers))
+          refs=[]
+          for p in root.glob('*.html'):
+              t=p.read_text(encoding='utf-8')
+              if 'e2p-wordmark' in t or 'e2p-favicon' in t: refs.append(str(p))
+          if refs: raise SystemExit('old asset refs: ' + ', '.join(refs))
+          if '2017' not in pub.read_text(encoding='utf-8') or '2015' not in pub.read_text(encoding='utf-8'):
+              raise SystemExit('missing restored publications')
+          PY
+          python /tmp/apply_p2e.py
+          python tools/validate_site.py
+          node --check assets/site.js
+      - name: Commit migration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Rebrand E2P to P2E and restore verified publications" || exit 0
+          git push origin HEAD:p2e-rebrand-publications
