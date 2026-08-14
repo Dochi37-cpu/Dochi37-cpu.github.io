@@ -1,6 +1,6 @@
-# P2E Systems Group website
+# P2E Research Group website
 
-Public website for the **P2E Systems Group** at KRICT. Academic field: **Plant BOP & Energy Systems Engineering**.
+Public website for the **P2E Research Group** at KRICT. Academic field: **Plant BOP & Energy Systems Engineering**.
 
 Current canonical URL: `https://dochi37-cpu.github.io/`
 

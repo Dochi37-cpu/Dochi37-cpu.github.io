@@ -5,20 +5,20 @@
 **Status:** Canonical / Single Source of Truth  
 **Version:** 2.1  
 **Date:** 2026-08-14  
-**Owner:** P2E Systems Group · Han Sol Jung · KRICT
+**Owner:** P2E Research Group · Han Sol Jung · KRICT
 
 If website implementation conflicts with this document, the implementation must be updated to match this specification.
 
 ## 1. Canonical identity
 
-- **Group brand:** P2E Systems Group
+- **Group brand:** P2E Research Group
 - **Academic field:** Plant BOP & Energy Systems Engineering
 - **Canonical identity:** Technology Translation & Engineering Decision-Making
 - **Core philosophy:** From core technology to operable plant systems.
 - **KRICT/internal positioning:** 원천기술의 공정 scale-up·실증을 위한 BOP·Plant System Integration
 
 ### Master description
-P2E Systems Group studies how emerging chemical and energy technologies become operable plant systems. Research focuses on BOP and utilities, plant integration, dynamic operability and scale-up. Core process technologies are combined with engineering data, equipment-performance constraints and demonstration/operating evidence to define feasible plant configurations and operating envelopes. Equipment-performance-aware modeling, dynamic simulation, decision-relevant fidelity and data validation are methods, not ends in themselves. e-SAF, CO2-to-methanol and other low-carbon processes are testbeds for reusable technology-translation and engineering-decision methods.
+P2E Research Group studies how emerging chemical and energy technologies become operable plant systems. Research focuses on BOP and utilities, plant integration, dynamic operability and scale-up. Core process technologies are combined with engineering data, equipment-performance constraints and demonstration/operating evidence to define feasible plant configurations and operating envelopes. Equipment-performance-aware modeling, dynamic simulation, decision-relevant fidelity and data validation are methods, not ends in themselves. e-SAF, CO2-to-methanol and other low-carbon processes are testbeds for reusable technology-translation and engineering-decision methods.
 
 ## 2. Research architecture
 
@@ -181,7 +181,7 @@ Preferred primary navigation order:
 
 ## 15. v1 → v2 change summary
 
-- Equipment-to-Process Systems expanded name → P2E Systems Group brand; expanded name no longer foregrounded.
+- Equipment-to-Process Systems expanded name → P2E Research Group brand; expanded name no longer foregrounded.
 - Equipment-aware PSE → signature methodology, not top identity.
 - Equipment Reality → split into Core Technology Input and BOP & Utilities.
 - Equipment reality → process feasibility → decision → Core technology → BOP → plant integration → operability → decision.
