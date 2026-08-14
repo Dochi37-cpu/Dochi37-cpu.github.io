@@ -17,6 +17,7 @@
   };
 
   const bindTranslatableText = () => {
+    textBindings.length = 0;
     const walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT);
     let node;
     while ((node = walker.nextNode())) {
@@ -36,11 +37,41 @@
     });
   };
 
+  const syncDynamicLabels = (lang) => {
+    const menu = document.querySelector('.menu');
+    const howWeWorkLink = menu ? Array.from(menu.querySelectorAll('a')).find((link) => link.getAttribute('href') === 'group.html') : null;
+    const peopleLink = menu ? Array.from(menu.querySelectorAll('a')).find((link) => link.getAttribute('href') === 'people.html') : null;
+    if (howWeWorkLink) {
+      howWeWorkLink.textContent = lang === 'ko' ? '운영 방식' : 'HOW WE WORK';
+      if (peopleLink && peopleLink.nextElementSibling !== howWeWorkLink) {
+        peopleLink.insertAdjacentElement('afterend', howWeWorkLink);
+      }
+    }
+    document.querySelectorAll('.footer-links a').forEach((link) => {
+      if (link.getAttribute('href') === 'group.html') link.textContent = lang === 'ko' ? '운영 방식' : 'How We Work';
+    });
+
+    const integrityTitle = document.querySelector('#collaborative-integrity-fit b');
+    const integrityDetail = document.querySelector('#collaborative-integrity-fit span');
+    if (integrityTitle) integrityTitle.textContent = lang === 'ko' ? '사람과 credit을 존중하면서 솔직하게 challenge하는 사람' : 'Someone who challenges ideas honestly while respecting people and credit';
+    if (integrityDetail) integrityDetail.textContent = lang === 'ko' ? '동료의 ownership을 존중하고, 다른 의견은 뒤에서가 아니라 근거를 가지고 직접 논의하는 사람' : 'Someone who respects colleagues’ ownership and discusses disagreements directly, with evidence rather than behind the scenes';
+
+    const promiseLabel = document.querySelector('#researcher-promise > b');
+    if (promiseLabel) promiseLabel.textContent = lang === 'ko' ? '연구자에 대한 약속. ' : 'Researcher promise. ';
+
+    const ownershipJudgment = document.querySelector('#ownership .callout > b');
+    if (ownershipJudgment) ownershipJudgment.textContent = lang === 'ko' ? 'Ownership에는 기술적 판단권도 포함됩니다.' : 'Ownership includes technical judgment.';
+
+    const culturePrinciple = document.querySelector('#principles .principle-card:nth-child(6) h3');
+    if (culturePrinciple) culturePrinciple.textContent = lang === 'ko' ? '아이디어는 치열하게, 사람은 존중하며' : 'Challenge ideas, respect people';
+  };
+
   const setLanguage = (language) => {
     const lang = language === 'en' ? 'en' : 'ko';
     body.dataset.lang = lang;
     root.lang = lang;
     applyLocalizedText(lang);
+    syncDynamicLabels(lang);
     koButton?.setAttribute('aria-pressed', String(lang === 'ko'));
     enButton?.setAttribute('aria-pressed', String(lang === 'en'));
     try { localStorage.setItem('e2p-language', lang); } catch (_) {}
@@ -54,6 +85,42 @@
   koButton?.setAttribute('aria-pressed', String(initialLanguage === 'ko'));
   enButton?.setAttribute('aria-pressed', String(initialLanguage === 'en'));
 
+  const menu = document.querySelector('.menu');
+  const howWeWorkLink = menu ? Array.from(menu.querySelectorAll('a')).find((link) => link.getAttribute('href') === 'group.html') : null;
+  const peopleLink = menu ? Array.from(menu.querySelectorAll('a')).find((link) => link.getAttribute('href') === 'people.html') : null;
+  if (howWeWorkLink && peopleLink && peopleLink.nextElementSibling !== howWeWorkLink) {
+    peopleLink.insertAdjacentElement('afterend', howWeWorkLink);
+  }
+
+  if (document.querySelector('#fit .join-grid')) {
+    const firstFitList = document.querySelector('#fit .join-grid .fit-list');
+    if (firstFitList && !document.getElementById('collaborative-integrity-fit')) {
+      const item = document.createElement('div');
+      item.className = 'fit-item';
+      item.id = 'collaborative-integrity-fit';
+      const title = document.createElement('b');
+      const detail = document.createElement('span');
+      item.append(title, detail);
+      firstFitList.appendChild(item);
+    }
+  }
+
+  const growthShell = document.querySelector('#growth .shell');
+  if (growthShell && !document.getElementById('researcher-promise')) {
+    const promise = document.createElement('div');
+    promise.className = 'callout';
+    promise.id = 'researcher-promise';
+    const label = document.createElement('b');
+    const ko = document.createElement('span');
+    ko.className = 'lang-ko';
+    ko.textContent = 'E2P의 목표는 사람을 오래 붙잡아 두는 것이 아닙니다. 함께한 연구자가 합류할 때보다 더 큰 capability, 더 선명한 research ownership, 더 넓은 career choices를 가지고 다음 단계로 갈 수 있게 하는 것을 중요하게 생각합니다.';
+    const en = document.createElement('span');
+    en.className = 'lang-en';
+    en.textContent = 'Our goal is not to keep people indefinitely. We want researchers to leave E2P with more capability, clearer research ownership and more career choices than when they joined.';
+    promise.append(label, ko, en);
+    growthShell.appendChild(promise);
+  }
+
   const initLanguage = async () => {
     try {
       const maps = await Promise.all(mapFiles.map(async (url) => {
@@ -66,6 +133,7 @@
       setLanguage(initialLanguage);
     } catch (error) {
       console.error('E2P i18n map load failed', error);
+      syncDynamicLabels(initialLanguage);
     }
 
     koButton?.addEventListener('click', () => setLanguage('ko'));
@@ -73,51 +141,6 @@
   };
 
   initLanguage();
-
-  const menu = document.querySelector('.menu');
-  const howWeWorkLink = menu ? Array.from(menu.querySelectorAll('a')).find((link) => link.getAttribute('href') === 'group.html') : null;
-  const peopleLink = menu ? Array.from(menu.querySelectorAll('a')).find((link) => link.getAttribute('href') === 'people.html') : null;
-  if (howWeWorkLink) {
-    howWeWorkLink.textContent = 'HOW WE WORK';
-    if (peopleLink && peopleLink.nextElementSibling !== howWeWorkLink) {
-      peopleLink.insertAdjacentElement('afterend', howWeWorkLink);
-    }
-  }
-  document.querySelectorAll('.footer-links a').forEach((link) => {
-    if (link.getAttribute('href') === 'group.html') link.textContent = 'How We Work';
-  });
-
-  if (document.querySelector('#fit .join-grid')) {
-    const firstFitList = document.querySelector('#fit .join-grid .fit-list');
-    if (firstFitList && !document.getElementById('collaborative-integrity-fit')) {
-      const item = document.createElement('div');
-      item.className = 'fit-item';
-      item.id = 'collaborative-integrity-fit';
-      const title = document.createElement('b');
-      title.textContent = '사람과 credit을 존중하면서 솔직하게 challenge하는 사람';
-      const detail = document.createElement('span');
-      detail.textContent = '동료의 ownership을 존중하고, 다른 의견은 뒤에서가 아니라 근거를 가지고 직접 논의하는 사람';
-      item.append(title, detail);
-      firstFitList.appendChild(item);
-    }
-  }
-
-  const growthShell = document.querySelector('#growth .shell');
-  if (growthShell && !document.getElementById('researcher-promise')) {
-    const promise = document.createElement('div');
-    promise.className = 'callout';
-    promise.id = 'researcher-promise';
-    const label = document.createElement('b');
-    label.textContent = 'Researcher promise. ';
-    const ko = document.createElement('span');
-    ko.className = 'lang-ko';
-    ko.textContent = 'E2P의 목표는 사람을 오래 붙잡아 두는 것이 아닙니다. 함께한 연구자가 합류할 때보다 더 큰 capability, 더 선명한 research ownership, 더 넓은 career choices를 가지고 다음 단계로 갈 수 있게 하는 것을 중요하게 생각합니다.';
-    const en = document.createElement('span');
-    en.className = 'lang-en';
-    en.textContent = 'Our goal is not to keep people indefinitely. We want researchers to leave E2P with more capability, clearer research ownership and more career choices than when they joined.';
-    promise.append(label, ko, en);
-    growthShell.appendChild(promise);
-  }
 
   const menuButton = document.querySelector('.nav-toggle');
   const setMenu = (open) => {
