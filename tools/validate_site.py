@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the static E2P website using only the Python standard library."""
+"""Validate the static P2E website using only the Python standard library."""
 from __future__ import annotations
 
 from html.parser import HTMLParser
