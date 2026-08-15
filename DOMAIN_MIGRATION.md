@@ -1,54 +1,57 @@
-# GitHub identity and custom-domain migration
+# GitHub identity and public-domain migration
 
-## Recommended target architecture
+## Current source of truth
 
-### GitHub ownership
+- Public brand: **P2E Research Group**.
+- Current canonical site: `https://dochi37-cpu.github.io/`.
+- No repository-owner migration, organization handle, or custom public domain is currently approved.
 
-Create a GitHub Organization named **`e2p-systems`** if the handle is still available, then transfer the site repository to the organization and rename it:
+Do not infer a future GitHub organization or domain from retired E2P-era plans. Any migration destination must be explicitly approved by the PI before repository, DNS, `CNAME`, canonical, sitemap, or Open Graph changes are made.
 
-`e2p-systems/e2p-systems.github.io`
+## Generic target architecture
 
-This is preferable to renaming the PI's personal GitHub account because the website becomes a durable group asset with multiple maintainers and a clearer separation between personal and group identity.
+If a migration is approved later, use the approved identifiers only:
 
-Candidate handles `e2p-systems` and `e2p-group` returned no public account through the GitHub API when this plan was prepared, but availability must be confirmed in the GitHub organization-creation screen.
+- GitHub owner/organization: `<approved-org>`
+- GitHub Pages repository: `<approved-org>/<approved-org>.github.io`
+- Optional custom domain: `<approved-domain>`
 
-### Public web domain
+If no custom domain is approved, the public URL would normally be:
 
-Recommended order:
+`https://<approved-org>.github.io/`
 
-1. **`e2p.krict.re.kr`** — strongest institutional identity, subject to KRICT IT/DNS approval.
-2. **`www.e2p-systems.org`** — independent fallback after purchasing the domain.
-
-A custom domain removes the public dependency on a GitHub username and makes a later repository transfer less visible to visitors.
+If a custom domain is approved, use that exact approved hostname instead.
 
 ## Migration sequence
 
-1. Create the GitHub Organization and add at least two owners/maintainers.
-2. Transfer the repository from `Dochi37-cpu` to the organization.
-3. Rename the repository to `e2p-systems.github.io`.
-4. Confirm GitHub Pages still deploys from `main` / root.
-5. Obtain approval/control for the selected domain.
-6. Configure DNS:
-   - For `e2p.krict.re.kr`, create a CNAME from `e2p.krict.re.kr` to `e2p-systems.github.io`.
-   - For `www.e2p-systems.org`, create a CNAME from `www` to `e2p-systems.github.io`.
-7. In repository **Settings → Pages**, enter the same custom domain.
-8. Verify the custom domain at the GitHub organization level where available.
+1. Obtain explicit PI approval for the destination GitHub owner/organization and public URL.
+2. If an organization is used, create it and add appropriate owners/maintainers.
+3. Transfer the repository from the current owner only after the destination is confirmed.
+4. Rename the repository as required for the approved GitHub Pages URL.
+5. Confirm GitHub Pages still deploys from `main` / root.
+6. If a custom domain is approved, configure DNS for that exact hostname.
+7. In repository **Settings → Pages**, enter the same approved custom domain.
+8. Verify the custom domain where applicable.
 9. After DNS resolves, enable **Enforce HTTPS**.
-10. Update canonical URLs in the repository:
+10. Update canonical URLs only after the new destination is working:
 
 ```bash
-python tools/update_site_url.py --url https://e2p.krict.re.kr --write-cname
+python tools/update_site_url.py --url https://<approved-host> --write-cname
 python tools/validate_site.py
 ```
 
-11. Keep the old GitHub Pages URL available during DNS propagation and verify redirects before announcing the new address.
+If the approved destination uses the default GitHub Pages hostname rather than a custom domain, omit `--write-cname`.
+
+11. Verify the new deployment, all public pages, assets, canonical metadata, sitemap, and redirects before announcing the new address.
+12. Keep the existing deployment available until the new destination is verified.
 
 ## Do not do these prematurely
 
-- Do not rename the personal `Dochi37-cpu` account solely for the website.
-- Do not commit a real `CNAME` before DNS ownership is established.
-- Do not hard-code a domain that has not been approved or purchased.
-- Do not delete the old repository or Pages deployment until the custom domain is verified.
+- Do not rename the personal GitHub account solely for the website.
+- Do not create or commit a real `CNAME` before domain ownership/control is established.
+- Do not hard-code a speculative organization name or domain.
+- Do not change **P2E Research Group** branding as part of an infrastructure migration.
+- Do not delete the current repository or Pages deployment until the replacement is verified.
 
 ## Official references
 
