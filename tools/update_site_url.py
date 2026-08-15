@@ -20,7 +20,7 @@ def main() -> int:
     new_url = args.url.rstrip('/')
     parsed = urlparse(new_url)
     if parsed.scheme != 'https' or not parsed.netloc or parsed.path not in ('', '/'):
-        parser.error('--url must be an HTTPS origin such as https://e2p.krict.re.kr')
+        parser.error('--url must be an HTTPS origin such as https://group.example.org')
 
     changed = []
     for path in ROOT.rglob('*'):
