@@ -167,6 +167,7 @@
       });
     }, { threshold: 0.06 });
     revealElements.forEach((element) => observer.observe(element));
+    root.classList.add('reveal-ready');
   }
 
   const filterButtons = [...document.querySelectorAll('[data-publication-filter]')];
