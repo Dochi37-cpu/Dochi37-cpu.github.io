@@ -78,6 +78,11 @@ html.reveal-ready .reveal.visible { opacity: 1; transform: none; }
   .evidence-stage { border-right: 0; border-bottom: 1px solid var(--line); }
   .evidence-stage:last-child { border-bottom: 0; }
   .question-card { grid-template-columns: 1fr; }
+  .concept-bridge { grid-template-columns: 1fr; }
+  .concept-link { flex-direction: column; gap: 2px; }
+  .concept-link::before, .concept-link::after { content: "↓"; }
+  .decision-card, .collaboration-home-card { min-height: auto; }
+  .decision-principle { text-align: left; }
   .source-list, .flow { grid-template-columns: 1fr; }
   .flow span:not(:last-child)::after { content: "↓"; right: auto; left: 50%; bottom: -15px; top: auto; }
   .actions .btn { width: 100%; }

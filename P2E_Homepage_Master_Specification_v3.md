@@ -3,7 +3,7 @@
 # P2E Homepage Master Specification v3
 
 **Status:** Canonical / Single Source of Truth  
-**Version:** 2.2<br>
+**Version:** 2.3<br>
 **Date:** 2026-08-23<br>
 **Owner:** P2E Research Group · Han Sol Jung · KRICT
 
@@ -157,6 +157,14 @@ Preferred primary navigation order:
 - The page explains researcher development, ownership, operating principles and group culture.
 - Internal operating controls such as performance checkpoints, staffing gates or PI workload rules should not be exposed verbatim on the public website; translate them into public principles of autonomy, ownership, integrity and technical authority.
 
+### Homepage public communication principles
+
+- Explain the problem and decision value before specialist terminology.
+- Easy-language questions are primary; academic terms remain secondary labels.
+- **Homepage communication order:** Why → Four Questions → Decision Value → Testbeds → Collaboration → Evidence
+- Testbeds demonstrate reusable plant-system questions rather than defining the identity.
+- Public-facing clarity must not weaken evidence, provenance or ownership boundaries.
+
 ## 13. Non-negotiable guardrails
 
 1. Do not present P2E as owning all reactor/device physics.
@@ -171,12 +179,18 @@ Preferred primary navigation order:
 10. Do not describe researchers primarily as project support or software operators; foreground research ownership and growth in technical judgment.
 11. Do not present internal personnel-management rules as public recruiting copy; translate them into clear and humane public principles.
 
-## 14. v2.1 → v2.2 change summary
+## 14. v2.2 → v2.3 change summary
+
+- Reorganized homepage public communication around Why, Four Questions, Decision Value, Testbeds, Collaboration and Evidence.
+- Reframed specialist terminology as secondary labels beneath easy-language questions.
+- The scientific identity, research architecture, evidence/provenance principles and ownership boundaries remain unchanged.
+
+## 15. v2.1 → v2.2 change summary
 
 - Refined the Korean homepage hero for clearer external communication.
 - The scientific identity, academic field, research architecture, ownership boundaries, English canonical hero and evidence principles remain unchanged.
 
-## 15. v2.0 → v2.1 change summary
+## 16. v2.0 → v2.1 change summary
 
 - `GROUP` public navigation label → `HOW WE WORK`, positioned after `PEOPLE`.
 - Added technical-authority principle: technical judgment moves toward the domain owner as expertise grows.
@@ -184,7 +198,7 @@ Preferred primary navigation order:
 - Added researcher promise: researchers should gain capability, ownership and career choices through P2E.
 - Clarified that internal PI/staffing controls should be translated into public principles rather than exposed verbatim.
 
-## 16. v1 → v2 change summary
+## 17. v1 → v2 change summary
 
 - Equipment-to-Process Systems expanded name → P2E Research Group brand; expanded name no longer foregrounded.
 - Equipment-aware PSE → signature methodology, not top identity.
