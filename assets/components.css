@@ -25,6 +25,8 @@
 .position-card.core h3 { color: #fff; }
 .position-card p { color: var(--muted); font-size: 11.5px; }
 .position-card.core p { color: #c6d7e1; }
+.position-technical { margin-top: 11px; color: var(--green-700); font-size: 9px; font-weight: 900; letter-spacing: .06em; }
+.position-card.core .position-technical { color: #86e9ac; }
 .mini-note { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted-2); font-size: 9.5px; }
 .position-card.core .mini-note { border-color: rgba(255,255,255,.15); color: #bfd0db; }
 
@@ -41,6 +43,7 @@
 .question-label { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 15px; background: var(--green-100); color: var(--green-700); font-weight: 950; }
 .question-card h3 { margin: 0 0 6px; color: var(--navy-800); font-size: 21px; }
 .question-card p { margin: 0; color: var(--muted); font-size: 12px; }
+.research-question-card .technical-label { margin-bottom: 5px; color: var(--green-700); font-size: 9px; font-weight: 900; letter-spacing: .09em; }
 
 .hierarchy { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
 .hierarchy-card { position: relative; min-height: 180px; padding: 20px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
@@ -88,6 +91,11 @@
 .profile-links a { padding: 6px 9px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; color: #fff; font-size: 10px; font-weight: 800; }
 .profile-panel { padding: 25px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; }
 .profile-panel h3 { margin: 6px 0 10px; color: var(--navy-800); font-size: 22px; }
+.pi-trajectory { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin: 18px 0; }
+.trajectory-step { padding: 15px; border: 1px solid var(--line); border-radius: 13px; background: var(--background); }
+.trajectory-step.current { border-color: #c8ead7; background: var(--green-100); }
+.trajectory-step h4 { margin: 7px 0 6px; color: var(--navy-800); font-size: 14px; }
+.trajectory-step p { margin: 0; color: var(--muted); font-size: 9.5px; }
 .profile-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 18px; }
 .profile-fact { padding: 13px; border: 1px solid var(--line); border-radius: 13px; background: var(--background); }
 .profile-fact b { display: block; color: var(--navy-800); font-size: 10px; }
@@ -96,9 +104,14 @@
 .researcher-card, .collab-card { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
 .researcher-card h3, .collab-card h3 { margin: 7px 0; color: var(--navy-800); font-size: 19px; }
 .researcher-card p, .collab-card p { color: var(--muted); font-size: 12px; }
-.interface-line { margin-top: 13px; padding-top: 12px; border-top: 1px solid var(--line); color: #526b7a; font-size: 10.5px; }
+.interface-line { margin-top: 13px; padding: 12px; border-left: 3px solid var(--green-500); border-radius: 0 10px 10px 0; background: var(--green-100); color: #526b7a; font-size: 10.5px; }
 .interface-line b { color: var(--navy-800); }
 .collab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.collab-groups { display: grid; gap: 25px; }
+.collab-group { padding-top: 19px; border-top: 1px solid var(--line); }
+.collab-group:first-child { padding-top: 0; border-top: 0; }
+.collab-group-head { margin-bottom: 11px; }
+.collab-group-head h3 { margin: 5px 0 0; color: var(--navy-800); font-size: 20px; }
 
 .output-status {
   display: grid;
@@ -143,6 +156,7 @@
 .status-pill.published { background: var(--blue-100); color: #356b91; }
 
 .ownership { display: grid; grid-template-columns: repeat(6, 1fr); gap: 9px; }
+.condensed-ownership { grid-template-columns: repeat(4, 1fr); }
 .ownership-step { min-height: 150px; padding: 17px 13px; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
 .ownership-step .num { color: var(--green-700); font-size: 9px; font-weight: 900; letter-spacing: .1em; }
 .ownership-step h3 { margin: 7px 0 4px; color: var(--navy-800); font-size: 15px; }
@@ -158,6 +172,7 @@
 .fit-item, .route-item { padding: 15px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
 .fit-item b, .route-item b { display: block; color: var(--navy-800); font-size: 13px; }
 .fit-item span, .route-item span { display: block; margin-top: 3px; color: var(--muted); font-size: 10.5px; }
+.growth-summary p { margin: 0; color: var(--muted); font-size: 14px; }
 .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 16px; }
 .contact-card { padding: 25px; border-radius: var(--radius-lg); background: var(--navy-950); color: #fff; }
 .contact-card h3 { margin-top: 0; }

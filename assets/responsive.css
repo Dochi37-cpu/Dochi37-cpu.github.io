@@ -56,6 +56,7 @@ html.reveal-ready .reveal.visible { opacity: 1; transform: none; }
   .people-preview { grid-template-columns: 1fr 1fr; }
   .people-feature, .output-status, .contact-grid { grid-template-columns: 1fr; }
   .ownership { grid-template-columns: repeat(3, 1fr); }
+  .condensed-ownership { grid-template-columns: repeat(2, 1fr); }
   .principles { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -78,6 +79,7 @@ html.reveal-ready .reveal.visible { opacity: 1; transform: none; }
   .evidence-stage { border-right: 0; border-bottom: 1px solid var(--line); }
   .evidence-stage:last-child { border-bottom: 0; }
   .question-card { grid-template-columns: 1fr; }
+  .pi-trajectory { grid-template-columns: 1fr; }
   .concept-bridge { grid-template-columns: 1fr; }
   .concept-link { flex-direction: column; gap: 2px; }
   .concept-link::before, .concept-link::after { content: "↓"; }
