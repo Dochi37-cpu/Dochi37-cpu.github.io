@@ -187,6 +187,11 @@ p, h1, h2, h3, h4 { overflow-wrap: anywhere; }
   letter-spacing: -.05em;
   line-height: 1.04;
 }
+.hero h1 > .lang-ko {
+  font-size: .875em;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
 .hero-lead { max-width: 760px; color: var(--muted); font-size: 18px; }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .meta-pill {
