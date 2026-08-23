@@ -307,6 +307,73 @@ p, h1, h2, h3, h4 { overflow-wrap: anywhere; }
   font-weight: 800;
 }
 
+.home-clarity .lang-ko {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+.concept-bridge {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+.concept-node {
+  padding: 27px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.concept-node h3 { margin: 8px 0; color: var(--navy-800); font-size: 24px; }
+.concept-node p { margin: 0; color: var(--muted); font-size: 13px; }
+.concept-node.plant-system-node { border-color: #c8ead7; background: var(--green-100); }
+.concept-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--green-700);
+  font-size: 11px;
+  font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
+}
+.concept-link::before,
+.concept-link::after { content: "→"; font-size: 18px; }
+.homepage-question-card { align-items: start; }
+.homepage-question-card .technical-label {
+  margin-bottom: 5px;
+  color: var(--green-700);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+.decision-card { display: flex; flex-direction: column; min-height: 230px; }
+.decision-card .decision-detail {
+  margin-top: auto;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+  color: #4e6675;
+  font-size: 11px;
+}
+.decision-principle {
+  margin: 22px 0 0;
+  color: var(--navy-800);
+  font-size: 12px;
+  font-weight: 850;
+  text-align: right;
+}
+.testbed-fields { display: grid; gap: 13px; margin: 12px 0 18px; }
+.testbed-field + .testbed-field { padding-top: 12px; border-top: 1px solid var(--line); }
+.testbed-field .field-label {
+  color: var(--green-700);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+.testbed-field p { margin: 4px 0 0; color: var(--muted); font-size: 11px; }
+.collaboration-home-card { min-height: 250px; }
+.collaboration-home-card h3 { font-size: 19px; }
+
 .status-card { display: flex; flex-direction: column; min-height: 290px; }
 .status-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .status-badge {
