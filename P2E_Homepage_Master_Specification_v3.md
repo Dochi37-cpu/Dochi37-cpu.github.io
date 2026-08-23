@@ -3,8 +3,8 @@
 # P2E Homepage Master Specification v3
 
 **Status:** Canonical / Single Source of Truth  
-**Version:** 2.1  
-**Date:** 2026-08-14  
+**Version:** 2.2<br>
+**Date:** 2026-08-23<br>
 **Owner:** P2E Research Group · Han Sol Jung · KRICT
 
 If website implementation conflicts with this document, the implementation must be updated to match this specification.
@@ -134,7 +134,7 @@ P2E does not define success as retaining people indefinitely. The goal is for re
 - **Academic field:** Plant BOP & Energy Systems Engineering
 - **Core identity:** Technology Translation & Engineering Decision-Making
 - **Hero:** From core technology to operable plant systems.
-- **Korean hero:** 원천기술을 실제 운전 가능한 플랜트 시스템으로.
+- **Korean hero:** 원천기술을 실제 플랜트로 구현하기 위한 설계·운전 조건을 규명합니다.
 - **Technology principle:** Technologies change; plant-system questions and methods accumulate.
 - **Decision principle:** The endpoint is a decision, not a model.
 - **Fidelity principle:** Higher fidelity is not always necessary. Decision-relevant fidelity is.
@@ -171,7 +171,12 @@ Preferred primary navigation order:
 10. Do not describe researchers primarily as project support or software operators; foreground research ownership and growth in technical judgment.
 11. Do not present internal personnel-management rules as public recruiting copy; translate them into clear and humane public principles.
 
-## 14. v2.0 → v2.1 change summary
+## 14. v2.1 → v2.2 change summary
+
+- Refined the Korean homepage hero for clearer external communication.
+- The scientific identity, academic field, research architecture, ownership boundaries, English canonical hero and evidence principles remain unchanged.
+
+## 15. v2.0 → v2.1 change summary
 
 - `GROUP` public navigation label → `HOW WE WORK`, positioned after `PEOPLE`.
 - Added technical-authority principle: technical judgment moves toward the domain owner as expertise grows.
@@ -179,7 +184,7 @@ Preferred primary navigation order:
 - Added researcher promise: researchers should gain capability, ownership and career choices through P2E.
 - Clarified that internal PI/staffing controls should be translated into public principles rather than exposed verbatim.
 
-## 15. v1 → v2 change summary
+## 16. v1 → v2 change summary
 
 - Equipment-to-Process Systems expanded name → P2E Research Group brand; expanded name no longer foregrounded.
 - Equipment-aware PSE → signature methodology, not top identity.
