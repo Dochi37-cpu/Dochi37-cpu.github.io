@@ -3,7 +3,7 @@
 # P2E Homepage Master Specification v3
 
 **Status:** Canonical / Single Source of Truth  
-**Version:** 2.5<br>
+**Version:** 2.6<br>
 **Date:** 2026-08-30<br>
 **Owner:** P2E Research Group · Han Sol Jung · KRICT
 
@@ -168,6 +168,11 @@ Preferred primary navigation order:
 - Public-facing clarity must not weaken evidence, provenance or ownership boundaries.
 - PEOPLE introduces researchers through their research questions and technical responsibilities rather than rank.
 - The PI factual profile may include Education, Professional Experience, Professional Service & Memberships and selected entrepreneurial experience.
+- The PI factual profile may include selected talks and presentations delivered directly by the PI.
+- Talks are categorized by context and must not imply invited or keynote status without supporting evidence.
+- Co-authored conference contributions are not presented as PI talks unless the PI actually presented them.
+- PI-specific professional activities belong on PEOPLE rather than HOW WE WORK.
+- Desktop PI layouts should balance factual biography and profile information without artificial blank regions.
 - Header treatment may improve wordmark legibility while preserving the established visual identity.
 
 ### Whole-site communication hierarchy
@@ -194,7 +199,14 @@ Preferred primary navigation order:
 10. Do not describe researchers primarily as project support or software operators; foreground research ownership and growth in technical judgment.
 11. Do not present internal personnel-management rules as public recruiting copy; translate them into clear and humane public principles.
 
-## 14. v2.4 → v2.5 change summary
+## 14. v2.5 → v2.6 change summary
+
+- Added selected verified PI talks and presentations, categorized by university/outreach, international and conference/professional context without unsupported status claims.
+- Rebalanced the desktop PI profile by moving existing summary facts beneath the portrait and keeping the factual biography alongside it.
+- Consolidated PI-specific professional activities on PEOPLE and removed their duplicate summary from HOW WE WORK.
+- The scientific identity, research architecture, evidence/provenance principles, researcher and collaboration boundaries, publication/IP records and public URLs remain unchanged.
+
+## 15. v2.4 → v2.5 change summary
 
 - Simplified HOME to the canonical Hero, Why, Four Questions, Decision Value, Testbeds and Collaboration sequence.
 - Replaced the earlier two-stage homepage concept with a three-stage Reaction-System Performance → P2E System Integration → Plant Decisions bridge.
@@ -202,25 +214,25 @@ Preferred primary navigation order:
 - Improved wordmark legibility through a light blue-gray header treatment while retaining the existing visual identity.
 - The scientific identity, research architecture, evidence/provenance principles, researcher and collaboration boundaries, publication/IP records and public URLs remain unchanged.
 
-## 15. v2.3 → v2.4 change summary
+## 16. v2.3 → v2.4 change summary
 
 - Extended the homepage communication hierarchy across RESEARCH, PEOPLE, HOW WE WORK and JOIN US.
 - Normalized public navigation around the canonical page order and retained `group.html` as the HOW WE WORK URL.
 - Clarified that RESEARCH owns technical depth, PEOPLE foregrounds ownership boundaries, HOW WE WORK owns researcher development and JOIN US references that model without duplicating it.
 - The scientific identity, evidence/provenance principles, researcher and collaboration boundaries, publication/IP records and public URLs remain unchanged.
 
-## 16. v2.2 → v2.3 change summary
+## 17. v2.2 → v2.3 change summary
 
 - Reorganized homepage public communication around Why, Four Questions, Decision Value, Testbeds, Collaboration and Evidence.
 - Reframed specialist terminology as secondary labels beneath easy-language questions.
 - The scientific identity, research architecture, evidence/provenance principles and ownership boundaries remain unchanged.
 
-## 17. v2.1 → v2.2 change summary
+## 18. v2.1 → v2.2 change summary
 
 - Refined the Korean homepage hero for clearer external communication.
 - The scientific identity, academic field, research architecture, ownership boundaries, English canonical hero and evidence principles remain unchanged.
 
-## 18. v2.0 → v2.1 change summary
+## 19. v2.0 → v2.1 change summary
 
 - `GROUP` public navigation label → `HOW WE WORK`, positioned after `PEOPLE`.
 - Added technical-authority principle: technical judgment moves toward the domain owner as expertise grows.
@@ -228,7 +240,7 @@ Preferred primary navigation order:
 - Added researcher promise: researchers should gain capability, ownership and career choices through P2E.
 - Clarified that internal PI/staffing controls should be translated into public principles rather than exposed verbatim.
 
-## 19. v1 → v2 change summary
+## 20. v1 → v2 change summary
 
 - Equipment-to-Process Systems expanded name → P2E Research Group brand; expanded name no longer foregrounded.
 - Equipment-aware PSE → signature methodology, not top identity.

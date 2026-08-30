@@ -55,6 +55,9 @@ html.reveal-ready .reveal.visible { opacity: 1; transform: none; }
   .hierarchy-card:not(:last-child)::after { display: none; }
   .people-preview { grid-template-columns: 1fr 1fr; }
   .people-feature, .output-status, .contact-grid { grid-template-columns: 1fr; }
+  .pi-sidebar .profile-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .talk-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .talk-group:last-child { grid-column: 1 / -1; }
   .ownership { grid-template-columns: repeat(3, 1fr); }
   .condensed-ownership { grid-template-columns: repeat(2, 1fr); }
   .principles { grid-template-columns: repeat(2, 1fr); }
@@ -85,6 +88,8 @@ html.reveal-ready .reveal.visible { opacity: 1; transform: none; }
   .pi-trajectory { grid-template-columns: 1fr; }
   .cv-entry { grid-template-columns: 1fr; gap: 5px; }
   .profile-block, .profile-panel { padding: 18px; }
+  .pi-sidebar .profile-facts, .talk-groups { grid-template-columns: 1fr; }
+  .talk-group:last-child { grid-column: auto; }
   .pi-card h2 { font-size: 24px; }
   .decision-card, .collaboration-home-card { min-height: auto; }
   .decision-principle { text-align: left; }
