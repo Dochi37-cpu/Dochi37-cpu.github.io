@@ -83,12 +83,24 @@
 .callout.warning { border-left-color: #d5a326; background: var(--amber-100); color: #6f560f; }
 
 .people-feature { display: grid; grid-template-columns: .78fr 1.22fr; gap: 22px; align-items: start; }
+.pi-biography { display: grid; gap: 14px; }
+.pi-continuity { grid-column: 1 / -1; }
 .pi-card { padding: 20px 20px 24px; border-radius: var(--radius-lg); background: var(--navy-950); color: #fff; }
 .pi-portrait { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center 24%; border-radius: 16px; background: #dbe5ec; }
 .pi-card h2 { margin: 17px 0 3px; font-size: 28px; }
 .pi-card p { color: #c6d7e1; }
 .profile-links { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
 .profile-links a { padding: 6px 9px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; color: #fff; font-size: 10px; font-weight: 800; }
+.profile-block { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; }
+.profile-block > .eyebrow { margin-bottom: 8px; }
+.cv-list { display: grid; }
+.cv-entry { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 14px; padding: 13px 0; border-top: 1px solid var(--line); }
+.cv-entry:first-child { border-top: 0; }
+.cv-entry h4 { margin: 0 0 4px; color: var(--navy-800); font-size: 14px; }
+.cv-entry p { margin: 0; color: var(--muted); font-size: 11.5px; }
+.cv-entry .cv-detail { margin-top: 3px; color: var(--muted-2); font-size: 10.5px; }
+.cv-period { color: var(--green-700); font-size: 10px; font-weight: 900; letter-spacing: .04em; }
+.cv-entry-single { grid-template-columns: 1fr; }
 .profile-panel { padding: 25px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; }
 .profile-panel h3 { margin: 6px 0 10px; color: var(--navy-800); font-size: 22px; }
 .pi-trajectory { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin: 18px 0; }
@@ -99,7 +111,8 @@
 .profile-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 18px; }
 .profile-fact { padding: 13px; border: 1px solid var(--line); border-radius: 13px; background: var(--background); }
 .profile-fact b { display: block; color: var(--navy-800); font-size: 10px; }
-.profile-fact span { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
+.profile-fact span { margin-top: 3px; color: var(--muted); font-size: 10px; }
+.pi-biography .profile-facts { margin-top: 0; }
 .researcher-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 .researcher-card, .collab-card { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
 .researcher-card h3, .collab-card h3 { margin: 7px 0; color: var(--navy-800); font-size: 19px; }
