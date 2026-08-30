@@ -58,6 +58,9 @@ html.reveal-ready .reveal.visible { opacity: 1; transform: none; }
   .ownership { grid-template-columns: repeat(3, 1fr); }
   .condensed-ownership { grid-template-columns: repeat(2, 1fr); }
   .principles { grid-template-columns: repeat(2, 1fr); }
+  .concept-bridge { grid-template-columns: 1fr; }
+  .concept-link { min-height: 34px; }
+  .concept-link::before { content: "↓"; }
 }
 
 @media (max-width: 700px) {
@@ -75,7 +78,7 @@ html.reveal-ready .reveal.visible { opacity: 1; transform: none; }
   .question-grid, .hierarchy, .people-preview, .output-strip,
   .evidence-band, .researcher-grid, .collab-grid, .family-grid,
   .ownership, .principles, .join-grid, .footer-grid,
-  .profile-facts { grid-template-columns: 1fr; }
+  .profile-facts, .professional-service-grid { grid-template-columns: 1fr; }
   .evidence-stage { border-right: 0; border-bottom: 1px solid var(--line); }
   .evidence-stage:last-child { border-bottom: 0; }
   .question-card { grid-template-columns: 1fr; }
@@ -83,9 +86,6 @@ html.reveal-ready .reveal.visible { opacity: 1; transform: none; }
   .cv-entry { grid-template-columns: 1fr; gap: 5px; }
   .profile-block, .profile-panel { padding: 18px; }
   .pi-card h2 { font-size: 24px; }
-  .concept-bridge { grid-template-columns: 1fr; }
-  .concept-link { flex-direction: column; gap: 2px; }
-  .concept-link::before, .concept-link::after { content: "↓"; }
   .decision-card, .collaboration-home-card { min-height: auto; }
   .decision-principle { text-align: left; }
   .source-list, .flow { grid-template-columns: 1fr; }
