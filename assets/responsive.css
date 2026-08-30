@@ -80,6 +80,9 @@ html.reveal-ready .reveal.visible { opacity: 1; transform: none; }
   .evidence-stage:last-child { border-bottom: 0; }
   .question-card { grid-template-columns: 1fr; }
   .pi-trajectory { grid-template-columns: 1fr; }
+  .cv-entry { grid-template-columns: 1fr; gap: 5px; }
+  .profile-block, .profile-panel { padding: 18px; }
+  .pi-card h2 { font-size: 24px; }
   .concept-bridge { grid-template-columns: 1fr; }
   .concept-link { flex-direction: column; gap: 2px; }
   .concept-link::before, .concept-link::after { content: "↓"; }
