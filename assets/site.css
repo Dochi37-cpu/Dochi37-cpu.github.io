@@ -105,8 +105,9 @@ p, h1, h2, h3, h4 { overflow-wrap: anywhere; }
   inset-block-start: 0;
   z-index: 80;
   min-height: var(--header-height);
-  background: rgba(255, 255, 255, .96);
+  background: rgba(237, 244, 248, .97);
   border-bottom: 1px solid var(--line);
+  border-bottom-color: var(--line-strong);
   backdrop-filter: blur(14px);
 }
 .nav {
@@ -313,13 +314,26 @@ p, h1, h2, h3, h4 { overflow-wrap: anywhere; }
   word-break: keep-all;
   overflow-wrap: normal;
 }
+.why-copy { display: grid; gap: 12px; max-width: 680px; }
+.section-head .why-copy p { max-width: none; margin: 0; }
+.why-emphasis {
+  padding: 12px 14px;
+  border-left: 3px solid var(--green-500);
+  border-radius: 0 12px 12px 0;
+  background: var(--green-100);
+  color: var(--navy-800) !important;
+  font-weight: 800;
+}
 .concept-bridge {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: minmax(0, .9fr) 42px minmax(0, 1.15fr) 42px minmax(0, .9fr);
+  gap: 10px;
   align-items: stretch;
 }
 .concept-node {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 27px;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
@@ -327,20 +341,24 @@ p, h1, h2, h3, h4 { overflow-wrap: anywhere; }
 }
 .concept-node h3 { margin: 8px 0; color: var(--navy-800); font-size: 24px; }
 .concept-node p { margin: 0; color: var(--muted); font-size: 13px; }
-.concept-node.plant-system-node { border-color: #c8ead7; background: var(--green-100); }
+.concept-node.p2e-integration-node {
+  border-color: var(--green-500);
+  background: var(--navy-900);
+  color: #fff;
+  box-shadow: 0 16px 34px rgba(10, 40, 58, .18);
+}
+.p2e-integration-node h3 { color: #fff; }
+.p2e-integration-node p { color: #dbe7ee; }
+.p2e-integration-node .card-number { color: var(--green-500); }
+.concept-node.plant-decisions-node { border-color: #c8ead7; background: var(--green-100); }
 .concept-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   color: var(--green-700);
-  font-size: 11px;
-  font-weight: 900;
   text-align: center;
-  white-space: nowrap;
 }
-.concept-link::before,
-.concept-link::after { content: "→"; font-size: 18px; }
+.concept-link::before { content: "→"; font-size: 24px; font-weight: 900; }
 .homepage-question-card { align-items: start; }
 .homepage-question-card .technical-label {
   margin-bottom: 5px;

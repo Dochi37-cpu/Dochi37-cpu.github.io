@@ -101,6 +101,10 @@
 .cv-entry .cv-detail { margin-top: 3px; color: var(--muted-2); font-size: 10.5px; }
 .cv-period { color: var(--green-700); font-size: 10px; font-weight: 900; letter-spacing: .04em; }
 .cv-entry-single { grid-template-columns: 1fr; }
+.professional-service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.professional-service-item { padding: 13px; border: 1px solid var(--line); border-radius: 13px; background: var(--background); }
+.professional-service-item b { display: block; color: var(--green-700); font-size: 9px; letter-spacing: .1em; }
+.professional-service-item p { margin: 5px 0 0; color: var(--muted); font-size: 11px; }
 .profile-panel { padding: 25px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; }
 .profile-panel h3 { margin: 6px 0 10px; color: var(--navy-800); font-size: 22px; }
 .pi-trajectory { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin: 18px 0; }
