@@ -54,6 +54,7 @@ html.reveal-ready .reveal.visible { opacity: 1; transform: none; }
   .hierarchy { grid-template-columns: repeat(2, 1fr); }
   .hierarchy-card:not(:last-child)::after { display: none; }
   .people-preview { grid-template-columns: 1fr 1fr; }
+  .researcher-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .people-feature, .output-status, .contact-grid { grid-template-columns: 1fr; }
   .pi-sidebar .profile-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .talk-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }

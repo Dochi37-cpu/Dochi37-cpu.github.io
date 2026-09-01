@@ -130,7 +130,7 @@ body[data-lang="en"] .profile-fact > .lang-en { display: block; }
 .talk-item time { display: block; margin-bottom: 4px; color: var(--muted-2); font-size: 9px; font-weight: 800; letter-spacing: .04em; }
 .talk-item h4 { margin: 0 0 5px; color: var(--navy-800); font-size: 12.5px; line-height: 1.45; word-break: keep-all; overflow-wrap: break-word; }
 .talk-item p { margin: 0; color: var(--muted); font-size: 10.5px; line-height: 1.5; word-break: keep-all; overflow-wrap: break-word; }
-.researcher-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.researcher-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .researcher-card, .collab-card { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
 .researcher-card h3, .collab-card h3 { margin: 7px 0; color: var(--navy-800); font-size: 19px; }
 .researcher-card p, .collab-card p { color: var(--muted); font-size: 12px; }

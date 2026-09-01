@@ -3,8 +3,8 @@
 # P2E Homepage Master Specification v3
 
 **Status:** Canonical / Single Source of Truth  
-**Version:** 2.6<br>
-**Date:** 2026-08-30<br>
+**Version:** 2.7<br>
+**Date:** 2026-09-01<br>
 **Owner:** P2E Research Group · Han Sol Jung · KRICT
 
 If website implementation conflicts with this document, the implementation must be updated to match this specification.
@@ -97,7 +97,7 @@ Design basis, BOP specification criteria, scale-up criteria, flexible-operation 
 ## 8. Current testbeds
 
 - **e-SAF / GlobalTop:** integrated process, BOP, utility logic, engineering data, flexible operation and demonstration/scale-up decisions.
-- **CO2-to-methanol demo plant:** actual PFD/HMB, compressor/recycle/thermal constraints, BOP-aware off-design and dynamic operability, decision-relevant fidelity.
+- **CO2-to-methanol demo plant (active; initial researcher: Min Chaerim):** actual PFD/HMB, compressor/recycle/thermal constraints, BOP-aware off-design and dynamic operability, decision-relevant fidelity.
 - **Other low-carbon systems:** additional proving environments for dynamic integration, validation and demonstration decisions.
 
 Canonical principle: **Different technologies, same plant-system questions.**
@@ -107,6 +107,7 @@ Canonical principle: **Different technologies, same plant-system questions.**
 - **Han Sol Jung:** PI; Plant BOP & Energy Systems Engineering; BOP/utilities, plant integration, dynamic operability, scale-up, technology translation and engineering decisions.
 - **Jisoo Kim:** core/direct; process systems, engineering-data/model integration, TCO/TEA/LCA and system decisions.
 - **Soo Won Son:** core/directly guided; reactor-plant interface, multiphysics input translation and operability.
+- **Min Chaerim:** core/directly guided; CO₂-to-methanol demo-plant engineering/operating-data integration, part-load and dynamic operability, and operating-envelope development.
 - **Seunghyun Cheon:** collaborator; formally supervised by Dr. Kiwoong Kim; e-SAF process-design and GlobalTop collaboration interface.
 - Reactor/device high-fidelity modeling is presented as upstream Core Technology Input or collaboration capability unless it directly supports an P2E plant-system question.
 - AI/inference/optimization is an enabling/collaborative capability.
@@ -119,6 +120,11 @@ Public promise: **The goal is not more project support, but more independent res
 Researchers progress from source of truth and independent reproduction to challenging assumptions, owning a technical boundary, owning a flagship question and defining the next question/evidence plan.
 
 Possible technical boundaries include core technology-BOP, BOP-plant, model-data and operation-decision.
+
+### Public researcher principle
+- A newly assigned researcher may be publicly associated with an active testbed once the assignment is official.
+- Public researcher profiles describe the current technical boundary and research question, not private onboarding milestones or unverified outputs.
+- Research ownership is presented as an active development path and must not imply completed validation or publication.
 
 ### Technical authority principle
 Ownership means more than doing the work. As expertise grows, technical judgment should move to the researcher who owns the question. The PI coordinates the research portfolio and priorities; domain owners grow toward responsibility for technical decisions within their boundaries.
@@ -199,14 +205,22 @@ Preferred primary navigation order:
 10. Do not describe researchers primarily as project support or software operators; foreground research ownership and growth in technical judgment.
 11. Do not present internal personnel-management rules as public recruiting copy; translate them into clear and humane public principles.
 
-## 14. v2.5 → v2.6 change summary
+## 14. v2.6 → v2.7 change summary
+
+- Added Min Chaerim as a directly mentored core researcher.
+- Assigned the active CO₂-to-methanol Plant BOP & Operability testbed to Min Chaerim.
+- Defined her initial public research axis as Dynamic Operability & Data-to-Model Integration.
+- Preserved internal onboarding milestones, unpublished results and personal development plans as non-public information.
+- The scientific identity, research architecture, publication/IP records, PI profile and other researcher/collaboration boundaries remain unchanged.
+
+## 15. v2.5 → v2.6 change summary
 
 - Added selected verified PI talks and presentations, categorized by university/outreach, international and conference/professional context without unsupported status claims.
 - Rebalanced the desktop PI profile by moving existing summary facts beneath the portrait and keeping the factual biography alongside it.
 - Consolidated PI-specific professional activities on PEOPLE and removed their duplicate summary from HOW WE WORK.
 - The scientific identity, research architecture, evidence/provenance principles, researcher and collaboration boundaries, publication/IP records and public URLs remain unchanged.
 
-## 15. v2.4 → v2.5 change summary
+## 16. v2.4 → v2.5 change summary
 
 - Simplified HOME to the canonical Hero, Why, Four Questions, Decision Value, Testbeds and Collaboration sequence.
 - Replaced the earlier two-stage homepage concept with a three-stage Reaction-System Performance → P2E System Integration → Plant Decisions bridge.
@@ -214,25 +228,25 @@ Preferred primary navigation order:
 - Improved wordmark legibility through a light blue-gray header treatment while retaining the existing visual identity.
 - The scientific identity, research architecture, evidence/provenance principles, researcher and collaboration boundaries, publication/IP records and public URLs remain unchanged.
 
-## 16. v2.3 → v2.4 change summary
+## 17. v2.3 → v2.4 change summary
 
 - Extended the homepage communication hierarchy across RESEARCH, PEOPLE, HOW WE WORK and JOIN US.
 - Normalized public navigation around the canonical page order and retained `group.html` as the HOW WE WORK URL.
 - Clarified that RESEARCH owns technical depth, PEOPLE foregrounds ownership boundaries, HOW WE WORK owns researcher development and JOIN US references that model without duplicating it.
 - The scientific identity, evidence/provenance principles, researcher and collaboration boundaries, publication/IP records and public URLs remain unchanged.
 
-## 17. v2.2 → v2.3 change summary
+## 18. v2.2 → v2.3 change summary
 
 - Reorganized homepage public communication around Why, Four Questions, Decision Value, Testbeds, Collaboration and Evidence.
 - Reframed specialist terminology as secondary labels beneath easy-language questions.
 - The scientific identity, research architecture, evidence/provenance principles and ownership boundaries remain unchanged.
 
-## 18. v2.1 → v2.2 change summary
+## 19. v2.1 → v2.2 change summary
 
 - Refined the Korean homepage hero for clearer external communication.
 - The scientific identity, academic field, research architecture, ownership boundaries, English canonical hero and evidence principles remain unchanged.
 
-## 19. v2.0 → v2.1 change summary
+## 20. v2.0 → v2.1 change summary
 
 - `GROUP` public navigation label → `HOW WE WORK`, positioned after `PEOPLE`.
 - Added technical-authority principle: technical judgment moves toward the domain owner as expertise grows.
@@ -240,7 +254,7 @@ Preferred primary navigation order:
 - Added researcher promise: researchers should gain capability, ownership and career choices through P2E.
 - Clarified that internal PI/staffing controls should be translated into public principles rather than exposed verbatim.
 
-## 20. v1 → v2 change summary
+## 21. v1 → v2 change summary
 
 - Equipment-to-Process Systems expanded name → P2E Research Group brand; expanded name no longer foregrounded.
 - Equipment-aware PSE → signature methodology, not top identity.
