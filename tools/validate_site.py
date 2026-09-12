@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, unquote
 import re
 import sys
 
@@ -55,7 +55,8 @@ def local_target(value: str) -> Path | None:
     clean = parsed.path
     if not clean:
         return None
-    return ROOT / clean.lstrip('/')
+    target = ROOT / unquote(clean).lstrip('/')
+    return target / 'index.html' if target.is_dir() else target
 
 
 def main() -> int:
@@ -89,6 +90,17 @@ def main() -> int:
             target = local_target(ref)
             if target is not None and not target.exists():
                 errors.append(f'{path.name}: broken local {kind}={ref!r}.')
+
+            # Validate same-document and cross-page fragments, not just filenames.
+            parsed = urlparse(ref)
+            if kind == 'href' and parsed.fragment and not (parsed.scheme or parsed.netloc):
+                fragment_file = target if target is not None else path
+                if fragment_file.exists() and fragment_file.suffix.lower() == '.html':
+                    fragment_parser = Parser()
+                    fragment_parser.feed(fragment_file.read_text(encoding='utf-8'))
+                    fragment = unquote(parsed.fragment)
+                    if fragment not in fragment_parser.ids:
+                        errors.append(f'{path.name}: broken local fragment {ref!r}.')
 
         for retired in RETIRED_REFERENCES:
             if retired in text:
