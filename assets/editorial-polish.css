@@ -288,3 +288,31 @@ html.reveal-ready .reveal, html.reveal-ready .reveal.visible, .reveal {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* 09 — QA hardening: preserve the approved design, correct edge cases. */
+/* Muted text and small green labels also occur on tinted surfaces. */
+.cv-entry .cv-detail, .talk-item time { color: var(--muted); }
+.ownership-step.advanced .num, .trajectory-step.current .card-number {
+  color: #096b38;
+}
+/* Sticky offsets track the actual header height, including wrapped menus. */
+.anchor-target, #main-content { scroll-margin-top: calc(var(--header-offset, var(--header-height)) + 24px); }
+@media (max-width: 1080px) {
+  html.nav-ready .menu { max-height: calc(100svh - var(--header-offset, var(--header-height))); }
+  html:not(.nav-ready) .site-header { position: static; }
+}
+/* Font enlargement must not squeeze language controls to zero width. */
+.lang-toggle, .nav-toggle { flex-shrink: 0; }
+@media (min-width: 1081px) {
+  .nav { flex-wrap: wrap; }
+  .menu { min-width: 0; flex-wrap: wrap; }
+}
+/* Hide script-only controls unless their listeners have been registered. */
+.pub-filter, .publication-filter-status { display: none; }
+html.publication-filter-ready .pub-filter { display: flex; }
+html.publication-filter-ready .publication-filter-status {
+  display: block;
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: var(--text-secondary);
+}
