@@ -1,0 +1,290 @@
+/* P2E editorial refinement — review proposal, not a deployed baseline.
+   Load AFTER assets/responsive.css. Existing scientific copy and records remain intact.
+   No external fonts, new animation library, or new image assets are required. */
+
+/* 01 — Foundation: readable text, fewer visual weights. */
+:root {
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --header-height: 80px;
+  --text-body: 1rem;
+  --text-card: .9375rem;
+  --text-secondary: .875rem;
+  --text-label: .75rem;
+  --space-section: clamp(4rem, 6vw, 5.5rem);
+}
+html { scroll-behavior: auto; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  font-size: var(--text-body);
+  line-height: 1.7;
+}
+body[data-lang="ko"] .lang-en { display: none !important; }
+p, h1, h2, h3, h4 { overflow-wrap: break-word; }
+:lang(ko) { word-break: keep-all; }
+h1, h2, h3 { text-wrap: balance; font-weight: 700; }
+.no-break { white-space: nowrap; }
+.shell { width: min(var(--max), calc(100% - 64px)); }
+.section { padding-block: var(--space-section); }
+.section.compact { padding-block: 3.5rem; }
+.anchor-target { scroll-margin-top: calc(var(--header-height) + 24px); }
+.accent { color: var(--green-700); }
+.eyebrow, .card-number, .role, .technical-label,
+.homepage-question-card .technical-label,
+.research-question-card .technical-label,
+.position-technical, .hierarchy-card .step,
+.evidence-stage .stage, .ownership-step .num,
+.testbed-field .field-label {
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: .06em;
+}
+.lang-ko.eyebrow, .eyebrow .lang-ko { letter-spacing: .025em; }
+.small, .lead { line-height: 1.7; }
+.small { font-size: var(--text-secondary); }
+
+/* 02 — Header: use the existing compact mark + live text, not a tiny tagline. */
+.site-header { background: #edf4f8; backdrop-filter: none; }
+.nav { gap: 20px; }
+.brand { gap: 10px; flex-shrink: 0; }
+.brand .brand-icon { width: 40px; height: 40px; max-width: none; }
+.brand-title { color: var(--navy-900); font-size: 17px; font-weight: 700; white-space: nowrap; }
+.menu { gap: 16px; }
+.menu a { font-size: 13px; font-weight: 600; letter-spacing: 0; white-space: nowrap; }
+.lang-toggle { border-radius: 8px; }
+.lang-toggle button { min-width: 44px; min-height: 44px; font-size: 12px; font-weight: 600; }
+.nav-toggle { width: 44px; height: 44px; border-radius: 8px; }
+.lang-toggle button:focus-visible { outline-offset: -3px; }
+.lang-toggle button[aria-pressed="true"]:focus-visible { outline-color: #86e9ac; }
+.btn, .page-nav a, .profile-links a, .pub-filter button, .source-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--text-secondary);
+  font-weight: 600;
+}
+.btn { border-radius: 8px; transition: background-color .16s, border-color .16s, color .16s; }
+.btn:hover { transform: none; }
+.page-nav { gap: 8px; }
+.page-nav a { border-radius: 6px; padding: 8px 12px; }
+.profile-links a { border-radius: 6px; padding: 8px 12px; }
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--navy-700);
+  outline-offset: 4px;
+}
+:where(.pi-card, .contact-card, .footer, .section.dark) :where(a, button, summary):focus-visible {
+  outline-color: #86e9ac;
+}
+.contact-card a, .contact-panel a, .source-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+
+/* 03 — Typography and opening composition. */
+.hero, .page-hero { background: var(--background); }
+.hero { padding-block: clamp(3.5rem, 6vw, 5rem); }
+.hero-grid { grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr); gap: 48px; }
+.hero h1 {
+  font-size: clamp(2.25rem, 4.3vw, 3.75rem);
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+.hero h1 > .lang-ko { font-size: 1em; overflow-wrap: break-word; }
+.page-hero { padding-block: 56px 40px; }
+.page-hero h1 {
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  line-height: 1.23;
+  letter-spacing: -.03em;
+  max-width: 22ch;
+}
+.hero-lead { font-size: 18px; line-height: 1.75; max-width: 42rem; }
+.page-hero p { font-size: 16px; line-height: 1.75; max-width: 50rem; }
+.hero-meta { gap: 6px 16px; }
+.meta-pill { padding: 0; border: 0; border-radius: 0; background: none; font-size: 12px; font-weight: 500; }
+.translation-card { box-shadow: none; padding: 28px; }
+.translation-card .card-label { font-size: 12px; font-weight: 600; letter-spacing: .06em; }
+.translation-stack { gap: 0; }
+.translation-step { padding: 16px 0; border: 0; border-bottom: 1px solid #ffffff26; border-radius: 0; background: none; }
+.translation-step:not(:last-child)::after { content: none; }
+.translation-step b { font-size: 15px; font-weight: 600; }
+.translation-step span { font-size: 13px; }
+.translation-step.final { padding-left: 14px; border: 0; border-left: 2px solid var(--green-500); margin-top: 12px; background: none; }
+.section-head { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: start; gap: 48px; margin-bottom: 32px; }
+.section-head > :only-child { grid-column: 1 / -1; max-width: 52rem; }
+.section-head h2 { font-size: clamp(1.75rem, 2.8vw, 2.375rem); line-height: 1.3; letter-spacing: -.025em; }
+.section-head p { font-size: 16px; line-height: 1.75; }
+
+/* 04 — Cards are content, not simulated clickable tiles. */
+.card { box-shadow: none; transition: none; }
+.card:hover { transform: none; box-shadow: none; border-color: var(--line); }
+.card h3, .question-card h3 { font-size: 21px; line-height: 1.4; }
+.card p, .question-card p, .position-card p, .source-card p,
+.researcher-card p, .collab-card p, .contact-panel p,
+.status-panel p, .status-explain p, .family-card p,
+.ownership-step p, .principle-card p, .evidence-stage p {
+  font-size: var(--text-card); line-height: 1.75;
+}
+.grid, .question-grid, .researcher-grid { gap: 24px; }
+.question-card { padding: 24px 0; border: 0; border-top: 1px solid var(--line-strong); border-radius: 0; background: none; grid-template-columns: 36px minmax(0,1fr); gap: 16px; }
+.question-label { width: auto; height: auto; display: block; background: none; border-radius: 0; font-size: 15px; font-weight: 600; padding-top: 2px; }
+.decision-card, .collaboration-home-card { min-height: 0; }
+.decision-card { border: 0; border-top: 1px solid var(--line-strong); border-radius: 0; padding: 24px 0; background: none; }
+.decision-card .decision-detail { margin-top: 20px; font-size: 14px; }
+.decision-principle { font-size: 14px; font-weight: 600; text-align: left; }
+.testbed-field p { font-size: 14px; line-height: 1.7; }
+.status-row { flex-wrap: wrap; gap: 8px 12px; }
+.status-badge, .status-owner, .stage-pill, .status-pill { font-size: 12px; font-weight: 600; letter-spacing: 0; }
+.status-card .evidence-line { font-size: 13px; }
+.tags { gap: 6px; }
+.tags > span { border-radius: 5px; padding: 4px 8px; font-size: 12px; font-weight: 500; }
+.concept-bridge { gap: 12px; }
+.concept-node { padding: 24px; border-radius: 12px; }
+.concept-node h3 { font-size: 23px; }
+.concept-node p { font-size: 15px; line-height: 1.7; }
+.concept-node.p2e-integration-node { box-shadow: none; border-color: var(--navy-900); }
+.concept-node.plant-decisions-node { background: var(--surface); border-color: var(--line); }
+.why-emphasis { padding: 0 0 0 16px; background: none; border-radius: 0; font-weight: 600; }
+
+/* 05 — PI: a horizontal identity header, then a full-width biography.
+   The former repeated summary is retained in a native disclosure, not deleted. */
+.people-feature.pi-profile { display: block; }
+.pi-sidebar { display: block; }
+.pi-card { display: grid; grid-template-columns: 224px minmax(0, 1fr); gap: 32px; padding: 28px; align-items: center; }
+.pi-portrait { aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; }
+.pi-identity-copy { min-width: 0; }
+.pi-card h2 { font-size: 30px; margin-top: 0; line-height: 1.3; }
+.pi-card p { font-size: 16px; max-width: 42rem; }
+.pi-facts-disclosure { border-bottom: 1px solid var(--line); padding-block: 12px; }
+.pi-facts-disclosure > summary { padding-block: 12px; cursor: pointer; color: var(--muted); font-size: 14px; }
+.pi-sidebar .profile-facts { grid-template-columns: repeat(2, minmax(0,1fr)); margin: 12px 0; }
+.profile-fact { border-radius: 8px; }
+.profile-fact b, .profile-fact span { font-size: 13px; }
+.pi-biography { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 32px; margin-top: 32px; }
+.profile-block { padding: 24px 0; border: 0; border-top: 1px solid var(--line-strong); border-radius: 0; background: none; }
+.cv-entry { grid-template-columns: 96px minmax(0,1fr); gap: 16px; padding: 16px 0; }
+.cv-entry-single { grid-template-columns: 1fr; }
+.cv-entry h4 { font-size: 17px; }
+.cv-entry p { font-size: 15px; }
+.cv-entry .cv-detail { font-size: 14px; }
+.cv-period { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.professional-service-grid { grid-template-columns: 1fr; gap: 0; }
+.professional-service-item { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; padding: 14px 0; }
+.professional-service-item b { font-size: 12px; font-weight: 600; }
+.professional-service-item p { font-size: 14px; line-height: 1.7; }
+.pi-talks, .pi-continuity { margin-top: 40px; padding: 32px 0; border: 0; border-top: 1px solid var(--line-strong); border-radius: 0; background: none; }
+.talks-heading p { font-size: 15px; }
+.talk-groups { display: block; }
+.talk-group { display: grid; grid-template-columns: 190px minmax(0,1fr); gap: 32px; padding: 24px 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none; }
+.talk-group > h3 { font-size: 12px; font-weight: 600; min-height: 0; margin: 4px 0; }
+.talk-item { display: grid; grid-template-columns: 100px minmax(0,1fr); gap: 4px 20px; padding: 18px 0; }
+.talk-item:first-child { border-top: 0; padding-top: 0; }
+.talk-item time { grid-column: 1; grid-row: 1 / span 2; font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.talk-item h4, .talk-item p { grid-column: 2; }
+.talk-item h4 { font-size: 16px; line-height: 1.55; }
+.talk-item p { font-size: 14px; line-height: 1.7; }
+.trajectory-step p { font-size: 13px; }
+.researcher-card { display: flex; flex-direction: column; padding: 24px; }
+.researcher-card h3 { font-size: 23px; }
+.researcher-card > strong { font-size: 17px; line-height: 1.55; }
+.researcher-card > p { margin: 16px 0 24px; }
+.researcher-card .interface-line { margin-top: auto; }
+.interface-line { font-size: 13px; line-height: 1.7; border-radius: 0 6px 6px 0; }
+.collab-card { border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 24px 0; background: none; }
+
+/* 06 — Readable records; keep provenance and status warnings visible. */
+.publication-list { gap: 0; }
+.publication-item { padding: 24px 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; grid-template-columns: 56px minmax(0,1fr) auto; gap: 20px; }
+.publication-item[hidden] { display: none; }
+.pub-year { font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.pub-citation { font-size: 14px; line-height: 1.75; }
+.pub-title { display: block; font-size: 18px; line-height: 1.5; margin-block: 6px; }
+.pub-filter button { border-radius: 6px; }
+.family-card { padding: 24px 0; background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+.registry-details summary { min-height: 48px; font-size: 15px; font-weight: 600; }
+.registry-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+.registry-table th, .registry-table td { padding: 14px 16px; font-size: 14px; line-height: 1.6; }
+.registry-table th { font-size: 12px; font-weight: 600; }
+.registry-table .pubno { white-space: normal; overflow-wrap: anywhere; }
+.status-panel .eyebrow, .position-card.core .eyebrow { color: #86e9ac; }
+.status-panel .big { font-size: 26px; font-weight: 700; }
+.callout, .mini-note { font-size: 14px; line-height: 1.7; }
+.callout { border-radius: 0; }
+.hierarchy { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+.hierarchy-card { min-height: 0; }
+.hierarchy-card:not(:last-child)::after { content: none; }
+.hierarchy-card p { font-size: 14px; }
+.source-list span, .flow span, .case-fields span, .case-placeholder p { font-size: 14px; }
+.principles { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
+.principle-card { padding: 24px 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none; }
+.principle-card h3, .ownership-step h3 { font-size: 18px; line-height: 1.45; }
+.ownership-step { min-height: 0; padding: 20px; }
+.fit-item b, .route-item b { font-size: 17px; }
+.fit-item > span, .route-item > span { font-size: 15px; line-height: 1.75; }
+.fit-item, .route-item { border-radius: 8px; padding: 24px; }
+.footer { padding-block: 48px; }
+.footer small, .copyright { font-size: 13px; line-height: 1.7; }
+.footer-links { font-size: 14px; }
+.footer-links a { padding-block: 7px; }
+
+/* 07 — No entrance gating: all reading content is visible immediately. */
+html.reveal-ready .reveal, html.reveal-ready .reveal.visible, .reveal {
+  opacity: 1; transform: none; transition: none;
+}
+
+/* 08 — Content-led breakpoints; no fixed card heights or clipping. */
+@media (max-width: 1080px) {
+  :root { --header-height: 72px; }
+  .hero-grid, .section-head { grid-template-columns: 1fr; gap: 24px; }
+  .translation-card { max-width: none; }
+  .hero h1 { max-width: 22ch; }
+  .concept-bridge { grid-template-columns: 1fr; }
+  .researcher-grid, .grid.three { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  html.nav-ready .menu { top: 100%; max-height: calc(100svh - var(--header-height)); overflow-y: auto; overscroll-behavior-y: contain; }
+  .menu a { padding-block: 12px; min-height: 44px; font-size: 15px; }
+  .menu a[aria-current="page"] { background: var(--blue-100); border-radius: 6px; padding-inline: 12px; }
+  .talk-group { grid-template-columns: 150px minmax(0,1fr); gap: 24px; }
+  .hierarchy { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 700px) {
+  .shell, .narrow { width: calc(100% - 40px); }
+  .nav { gap: 8px; }
+  .brand { gap: 8px; min-width: 0; }
+  .brand .brand-icon { width: 32px; height: 32px; }
+  .brand-title { font-size: 13px; }
+  .lang-toggle button { min-width: 40px; }
+  .hero { padding-block: 44px; }
+  .hero h1 { font-size: clamp(2rem, 7.8vw, 2.75rem); line-height: 1.25; }
+  .page-hero { padding-block: 40px 32px; }
+  .page-hero h1 { font-size: clamp(1.875rem, 7vw, 2.5rem); line-height: 1.28; }
+  .hero-lead, .lead { font-size: 16px; }
+  .section { padding-block: 56px; }
+  .section-head h2 { font-size: 28px; line-height: 1.35; }
+  .section-head { margin-bottom: 24px; }
+  .question-card { grid-template-columns: 28px minmax(0,1fr); gap: 12px; }
+  .question-card h3 { font-size: 20px; }
+  .translation-card, .concept-node { padding: 22px; }
+  .researcher-grid, .grid.three, .principles, .hierarchy,
+  .pi-biography, .pi-sidebar .profile-facts { grid-template-columns: 1fr; }
+  .pi-card { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+  .pi-portrait { width: min(224px, 100%); aspect-ratio: 1 / 1; }
+  .pi-card h2 { font-size: 26px; }
+  .profile-block { padding-block: 22px; }
+  .cv-entry { grid-template-columns: 1fr; gap: 6px; }
+  .talk-group { grid-template-columns: 1fr; gap: 16px; }
+  .talk-item { grid-template-columns: 1fr; gap: 4px; }
+  .talk-item time { grid-row: auto; }
+  .talk-item time, .talk-item h4, .talk-item p { grid-column: 1; }
+  .publication-item { grid-template-columns: 1fr; gap: 8px; }
+  .source-link { justify-self: start; }
+}
+@media (max-width: 359px) {
+  .shell, .narrow { width: calc(100% - 32px); }
+  .brand-title { max-width: 84px; white-space: normal; line-height: 1.25; }
+  .nav { gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

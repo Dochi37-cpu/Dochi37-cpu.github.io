@@ -55,7 +55,7 @@ def local_target(value: str) -> Path | None:
     clean = parsed.path
     if not clean:
         return None
-    return ROOT / clean
+    return ROOT / clean.lstrip('/')
 
 
 def main() -> int:
