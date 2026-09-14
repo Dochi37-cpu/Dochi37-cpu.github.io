@@ -2,9 +2,7 @@ User-agent: *
 Allow: /
 
 User-agent: GPTBot
-Allow: /
+Disallow: /
 
 User-agent: ClaudeBot
-Allow: /
-
-Sitemap: https://dochi37-cpu.github.io/sitemap.xml
+Disallow: /
