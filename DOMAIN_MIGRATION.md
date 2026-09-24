@@ -1,12 +1,14 @@
-# GitHub identity and public-domain migration
+# GitHub identity and public-domain migration (historical plan)
 
-## Current source of truth
+> **Superseded on 2026-09-24.** The primary public website is now maintained in [`p2e-research-group/p2e-research-group.github.io`](https://github.com/p2e-research-group/p2e-research-group.github.io) at <https://p2e-research-group.github.io/>. This repository remains a detailed reference site at <https://dochi37-cpu.github.io/> with HTML pages marked `noindex,follow`. The sequence below predates the separate public-site repository and is not a current deployment procedure.
+
+## Former assumptions
 
 - Public brand: **P2E Research Group**.
-- Current canonical site: `https://dochi37-cpu.github.io/`.
-- No repository-owner migration, organization handle, or custom public domain is currently approved.
+- Former primary public site: `https://dochi37-cpu.github.io/`.
+- At the time this plan was written, no destination organization or public URL had yet been approved.
 
-Do not infer a future GitHub organization or domain from retired E2P-era plans. Any migration destination must be explicitly approved by the PI before repository, DNS, `CNAME`, canonical, sitemap, or Open Graph changes are made.
+The steps below were drafted before the separate public site was launched.
 
 ## Generic target architecture
 
