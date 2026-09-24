@@ -1,10 +1,12 @@
-# P2E Research Group website
+# P2E Research Group detailed reference site
 
-Public website for the **P2E Research Group** at KRICT. Academic field: **Plant BOP & Energy Systems Engineering**.
+Detailed reference site for the **P2E Research Group** at KRICT. Academic field: **Plant BOP & Energy Systems Engineering**.
 
-Current canonical URL: `https://dochi37-cpu.github.io/`
+The primary public website is maintained in [`p2e-research-group/p2e-research-group.github.io`](https://github.com/p2e-research-group/p2e-research-group.github.io) at <https://p2e-research-group.github.io/>.
 
-The content single source of truth is `P2E_Homepage_Master_Specification_v3.md`. If implementation and that specification conflict, update the implementation to match the specification.
+Reference site URL: <https://dochi37-cpu.github.io/>. Its HTML pages intentionally use `noindex,follow`.
+
+For this reference site, the content source of truth is `P2E_Homepage_Master_Specification_v3.md`. If implementation and that specification conflict, update the implementation to match the specification.
 
 ## Information architecture
 
@@ -43,7 +45,7 @@ python tools/validate_site.py
 
 The GitHub Actions workflow runs the same validator for branches and pull requests.
 
-## Changing the public URL
+## Changing this reference site's URL
 
 Use:
 
@@ -51,7 +53,7 @@ Use:
 python tools/update_site_url.py --url https://new.example.org
 ```
 
-Then validate, review the diff and configure GitHub Pages/DNS. See `DOMAIN_MIGRATION.md`.
+Then validate, review the diff and configure GitHub Pages/DNS as needed. `DOMAIN_MIGRATION.md` records a superseded migration plan; changes to the primary public website belong in its own repository.
 
 ## Deployment
 
