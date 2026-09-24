@@ -42,7 +42,7 @@ python tools/validate_site.py
 
 If the approved destination uses the default GitHub Pages hostname rather than a custom domain, omit `--write-cname`.
 
-11. Verify the new deployment, all public pages, assets, canonical metadata, sitemap, and redirects before announcing the new address.
+11. Verify the new deployment, all public pages, assets, canonical metadata, search indexing policy, and redirects before announcing the new address.
 12. Keep the existing deployment available until the new destination is verified.
 
 ## Do not do these prematurely

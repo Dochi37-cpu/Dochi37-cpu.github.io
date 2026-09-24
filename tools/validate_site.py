@@ -29,6 +29,7 @@ class Parser(HTMLParser):
         self.refs: list[tuple[str, str]] = []
         self.title_count = 0
         self.canonical_count = 0
+        self.robots_contents: list[str] = []
         self.has_main = False
         self.html_lang = None
 
@@ -44,6 +45,8 @@ class Parser(HTMLParser):
             self.refs.append(('src', values['src']))
         if tag == 'link' and values.get('rel') == 'canonical':
             self.canonical_count += 1
+        if tag == 'meta' and (values.get('name') or '').lower() == 'robots':
+            self.robots_contents.append(values.get('content') or '')
 
 
 def local_target(value: str) -> Path | None:
@@ -77,6 +80,13 @@ def main() -> int:
             errors.append(f'{path.name}: expected one <title>, found {parser.title_count}.')
         if parser.canonical_count != 1:
             errors.append(f'{path.name}: expected one canonical link, found {parser.canonical_count}.')
+        if len(parser.robots_contents) != 1:
+            errors.append(f'{path.name}: expected one robots meta tag, found {len(parser.robots_contents)}.')
+        elif not {'noindex', 'follow'}.issubset({
+            directive.strip().lower()
+            for directive in parser.robots_contents[0].split(',')
+        }):
+            errors.append(f'{path.name}: robots meta tag must include noindex,follow.')
         if not parser.has_main:
             errors.append(f'{path.name}: missing <main>.')
         if parser.html_lang not in ('ko', 'en'):
@@ -113,11 +123,14 @@ def main() -> int:
     required = [
         ROOT / 'assets/site.css', ROOT / 'assets/components.css', ROOT / 'assets/responsive.css',
         ROOT / 'assets/site.js', ROOT / 'robots.txt',
-        ROOT / 'sitemap.xml', ROOT / 'llms.txt', ROOT / '.nojekyll',
+        ROOT / 'llms.txt', ROOT / '.nojekyll',
     ]
     for path in required:
         if not path.exists():
             errors.append(f'Missing required file: {path.relative_to(ROOT)}.')
+
+    if (ROOT / 'sitemap.xml').exists():
+        errors.append('sitemap.xml must be absent while every HTML page is noindex.')
 
     if errors:
         print('Site validation failed:', file=sys.stderr)
