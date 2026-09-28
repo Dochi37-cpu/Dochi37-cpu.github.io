@@ -17,11 +17,11 @@ Repository settings should use:
 - Branch: `main`
 - Folder: `/(root)`
 
-After merging, check the Pages deployment and the canonical website.
+After merging, check this repository's Pages deployment and the reference site at [https://dochi37-cpu.github.io/](https://dochi37-cpu.github.io/).
 
 ## Custom domain
 
-Do not create a real `CNAME` file until the domain has been selected and DNS control is confirmed. Follow `DOMAIN_MIGRATION.md`.
+Do not create a real `CNAME` file until the domain has been selected and DNS control is confirmed. For changes to this reference site's URL, follow the README's "Changing this reference site's URL" procedure; `DOMAIN_MIGRATION.md` is a superseded historical plan, not a current deployment procedure.
 
 ## Routine content update
 
