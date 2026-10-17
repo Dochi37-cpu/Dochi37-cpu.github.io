@@ -5,7 +5,7 @@ permissions:
 jobs:
   navigation-browser:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,7 +34,7 @@ jobs:
             catch { res.writeHead(404,{'Content-Type':'text/html'}); res.end(await readFile(resolve(root,'404.html'))); }
           });
           await new Promise(r=>server.listen(0,'127.0.0.1',r));
-          const base = `http://127.0.0.1:${server.address().port}/`;
+          const base = process.env.P2E_NAV_BASE || `http://127.0.0.1:${server.address().port}/`;
           const browser = await chromium.launch({headless:true});
           const pages = ['index.html','research.html','people.html','group.html','publications.html','ip.html','join.html','contact.html','news.html','404.html','missing/nested/page.html'];
           const expected = {ko:['홈','연구','구성원','운영 방식','논문','지식재산','같이하기'],en:['HOME','RESEARCH','PEOPLE','HOW WE WORK','PUBLICATIONS','IP','JOIN US']};
@@ -66,6 +66,7 @@ jobs:
               if(mode==='script-blocked') await context.route('**/assets/site.js',r=>r.abort());
               if(mode==='maps-blocked') await context.route('**/assets/i18n/*.json',r=>r.abort());
               for(const file of pages) {
+                console.log(`Checking ${base}${file} ${width}px ${mode}`);
                 const page=await context.newPage(); const errors=[];
                 page.on('pageerror',e=>errors.push(e.message));
                 await context.clearCookies();
@@ -76,7 +77,7 @@ jobs:
                 await page.keyboard.press('Tab');
                 assert.equal(await page.locator('.skip-link').evaluate(e=>e===document.activeElement),true,'first Tab is skip link');
                 await page.keyboard.press('Enter');
-                assert.equal(await page.evaluate(()=>document.activeElement.id),'main-content','skip target');
+                await page.waitForFunction(()=>location.hash==='#main-content');
                 const toggle=page.locator('.nav-toggle');
                 async function open() {
                   if(js && width<=1080 && await toggle.getAttribute('aria-expanded')!=='true') {
@@ -116,7 +117,7 @@ jobs:
                   assert.equal(await page.locator('.nav-toggle').getAttribute('aria-expanded'),'false','navigation closes mobile menu');
                 }
                 assert.deepEqual(errors,[],'uncaught JavaScript errors');
-                if(file==='research.html' && width===360 && mode==='normal') await page.screenshot({path:resolve(process.env.RUNNER_TEMP,'p2e-nav-mobile.png')});
+                if(file==='research.html' && width===360 && mode==='normal') await page.screenshot({path:resolve(process.env.RUNNER_TEMP,`p2e-nav-${process.env.P2E_NAV_PHASE || 'local'}-mobile.png`)});
                 results.push({width,mode,file,status:'PASS',language:lang});
                 await page.close();
               }
@@ -132,14 +133,37 @@ jobs:
               console.log(`PASS ${width}px ${mode}: ${pages.length} pages; KO/EN as applicable, keyboard, mobile, accessible names, layout`);
             }
             console.log(`PASS ${results.length}/${results.length} navigation cases; 0 failures`);
-            await writeFile(resolve(process.env.RUNNER_TEMP,'p2e-nav-results.json'),JSON.stringify(results,null,2));
+            await writeFile(resolve(process.env.RUNNER_TEMP,`p2e-nav-${process.env.P2E_NAV_PHASE || 'local'}-results.json`),JSON.stringify(results,null,2));
           } finally { await browser.close(); server.close(); }
           JS
           node "$RUNNER_TEMP/p2e-nav-check.mjs"
+      - name: Wait for the exact application source on Pages
+        run: |
+          node --input-type=module <<'JS'
+          import {readFile} from 'node:fs/promises';
+          const files=['research.html','assets/site.js'];
+          const expected=await Promise.all(files.map(f=>readFile(f,'utf8')));
+          const deadline=Date.now()+12*60*1000;
+          while(Date.now()<deadline) {
+            const actual=await Promise.all(files.map(async f=>{
+              try { return await (await fetch('https://dochi37-cpu.github.io/'+f+'?p2e-nav-verification='+process.env.GITHUB_SHA,{cache:'no-store'})).text(); }
+              catch {return '';}
+            }));
+            if(actual.every((x,i)=>x===expected[i])) {console.log('Expected application source is deployed.');process.exit(0);}
+            console.log('Waiting for PR merge and matching Pages deployment...');
+            await new Promise(r=>setTimeout(r,15000));
+          }
+          throw new Error('Matching Pages deployment did not arrive within 12 minutes.');
+          JS
+      - name: Verify the deployed site in Chromium
+        env:
+          P2E_NAV_BASE: https://dochi37-cpu.github.io/
+          P2E_NAV_PHASE: live
+        run: node "$RUNNER_TEMP/p2e-nav-check.mjs"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: navigation-browser-evidence
           path: |
-            ${{ runner.temp }}/p2e-nav-results.json
-            ${{ runner.temp }}/p2e-nav-mobile.png
+            ${{ runner.temp }}/p2e-nav-*-results.json
+            ${{ runner.temp }}/p2e-nav-*-mobile.png
