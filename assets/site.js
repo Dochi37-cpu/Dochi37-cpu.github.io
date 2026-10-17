@@ -62,13 +62,18 @@
     const howWeWorkLink = menu ? Array.from(menu.querySelectorAll('a')).find((link) => isPageLink(link, 'group.html')) : null;
     const peopleLink = menu ? Array.from(menu.querySelectorAll('a')).find((link) => isPageLink(link, 'people.html')) : null;
     if (howWeWorkLink) {
-      howWeWorkLink.textContent = lang === 'ko' ? '운영 방식' : 'HOW WE WORK';
+      // Explicit KO/EN spans are switched by CSS; preserve them if dictionaries fail.
+      if (!howWeWorkLink.querySelector('.lang-ko, .lang-en')) {
+        howWeWorkLink.textContent = lang === 'ko' ? '운영 방식' : 'HOW WE WORK';
+      }
       if (peopleLink && peopleLink.nextElementSibling !== howWeWorkLink) {
         peopleLink.insertAdjacentElement('afterend', howWeWorkLink);
       }
     }
     document.querySelectorAll('.footer-links a').forEach((link) => {
-      if (isPageLink(link, 'group.html')) link.textContent = lang === 'ko' ? '운영 방식' : 'How We Work';
+      if (isPageLink(link, 'group.html') && !link.querySelector('.lang-ko, .lang-en')) {
+        link.textContent = lang === 'ko' ? '운영 방식' : 'How We Work';
+      }
     });
   };
 
