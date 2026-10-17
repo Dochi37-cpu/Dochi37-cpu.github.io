@@ -1,0 +1,145 @@
+name: Verify navigation in Chromium (temporary)
+on: [pull_request]
+permissions:
+  contents: read
+jobs:
+  navigation-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated browser test runtime
+        run: |
+          npm install --prefix "$RUNNER_TEMP/p2e-nav" playwright@1.51.1
+          node "$RUNNER_TEMP/p2e-nav/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Verify KO/EN navigation, fallback, mobile and keyboard
+        run: |
+          cat > "$RUNNER_TEMP/p2e-nav-check.mjs" <<'JS'
+          import { createRequire } from 'node:module';
+          import { createServer } from 'node:http';
+          import { readFile, writeFile } from 'node:fs/promises';
+          import { resolve, extname } from 'node:path';
+          import assert from 'node:assert/strict';
+          const require = createRequire(`${process.env.RUNNER_TEMP}/p2e-nav/package.json`);
+          const { chromium } = require('playwright');
+          const root = process.cwd();
+          const mime = {'.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.json':'application/json', '.svg':'image/svg+xml', '.png':'image/png', '.jpg':'image/jpeg'};
+          const server = createServer(async (req,res) => {
+            const pathname = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
+            const file = resolve(root, `.${pathname === '/' ? '/index.html' : pathname}`);
+            try { const content = await readFile(file); res.writeHead(200, {'Content-Type':mime[extname(file)] || 'application/octet-stream'}); res.end(content); }
+            catch { res.writeHead(404,{'Content-Type':'text/html'}); res.end(await readFile(resolve(root,'404.html'))); }
+          });
+          await new Promise(r=>server.listen(0,'127.0.0.1',r));
+          const base = `http://127.0.0.1:${server.address().port}/`;
+          const browser = await chromium.launch({headless:true});
+          const pages = ['index.html','research.html','people.html','group.html','publications.html','ip.html','join.html','contact.html','news.html','404.html','missing/nested/page.html'];
+          const expected = {ko:['홈','연구','구성원','운영 방식','논문','지식재산','같이하기'],en:['HOME','RESEARCH','PEOPLE','HOW WE WORK','PUBLICATIONS','IP','JOIN US']};
+          const results=[];
+          async function labels(page,lang) {
+            for (const selector of ['#main-menu','.footer-links']) {
+              const scope=page.locator(selector), links=scope.locator('a');
+              assert.equal(await links.count(),7);
+              for(let i=0;i<7;i++) {
+                const link=links.nth(i), name=(selector==='.footer-links' && i===3 && lang==='en') ? 'How We Work' : expected[lang][i];
+                assert.equal((await link.innerText()).trim(),name,`${selector} link ${i} ${lang}`);
+                assert.equal(await link.locator('.lang-ko').count(),1);
+                assert.equal(await link.locator('.lang-en').count(),1);
+                // Role queries use the computed accessible name, excluding CSS-hidden text.
+                assert.equal(await scope.getByRole('link',{name,exact:true}).count(),1);
+              }
+            }
+            assert.equal(await page.locator('html').getAttribute('lang'),lang);
+            assert.equal(await page.locator('body').getAttribute('data-lang'),lang);
+            assert.equal(await page.locator('#main-menu a').nth(2).getAttribute('href'),(await page.locator('#main-menu a').nth(3).getAttribute('href')).startsWith('/') ? '/people.html' : 'people.html');
+            assert.equal(await page.locator('#main-menu a').nth(3).getAttribute('href'),(await page.locator('#main-menu a').first().getAttribute('href')).startsWith('/') ? '/group.html' : 'group.html');
+            const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
+            assert.equal(overflow,false,'document horizontal overflow');
+          }
+          try {
+            for (const width of [1440,768,360]) for (const mode of ['normal','no-js','script-blocked','maps-blocked']) {
+              const js = mode==='normal' || mode==='maps-blocked';
+              const context=await browser.newContext({viewport:{width,height:900}, javaScriptEnabled:mode!=='no-js', locale:'en-US'});
+              if(mode==='script-blocked') await context.route('**/assets/site.js',r=>r.abort());
+              if(mode==='maps-blocked') await context.route('**/assets/i18n/*.json',r=>r.abort());
+              for(const file of pages) {
+                const page=await context.newPage(); const errors=[];
+                page.on('pageerror',e=>errors.push(e.message));
+                await context.clearCookies();
+                // Each case starts in the Korean default, irrespective of the previous page.
+                await page.addInitScript(()=>localStorage.removeItem('p2e-language'));
+                const response=await page.goto(base+file,{waitUntil:'networkidle'});
+                assert.equal(response.status(),file.startsWith('missing/')?404:200);
+                await page.keyboard.press('Tab');
+                assert.equal(await page.locator('.skip-link').evaluate(e=>e===document.activeElement),true,'first Tab is skip link');
+                await page.keyboard.press('Enter');
+                assert.equal(await page.evaluate(()=>document.activeElement.id),'main-content','skip target');
+                const toggle=page.locator('.nav-toggle');
+                async function open() {
+                  if(js && width<=1080 && await toggle.getAttribute('aria-expanded')!=='true') {
+                    await toggle.focus(); await page.keyboard.press('Enter');
+                    assert.equal(await toggle.getAttribute('aria-expanded'),'true');
+                    assert.equal(await page.locator('#main-menu a').first().evaluate(e=>e===document.activeElement),true);
+                  }
+                }
+                await open(); await labels(page,'ko');
+                if(js) {
+                  await page.getByRole('button',{name:'English (EN)',exact:true}).click();
+                  await open(); await labels(page,'en');
+                  assert.equal(await page.locator('[data-lang-button="en"]').getAttribute('aria-pressed'),'true');
+                  await page.getByRole('button',{name:'한국어 (KO)',exact:true}).click();
+                  await open(); await labels(page,'ko');
+                  await page.getByRole('button',{name:'English (EN)',exact:true}).click();
+                  // Check storage directly: per-case init script deliberately resets on reload.
+                  assert.equal(await page.evaluate(()=>localStorage.getItem('p2e-language')),'en');
+                  await open(); await labels(page,'en');
+                }
+                const lang=js?'en':'ko';
+                if(!js || width>1080) {
+                  await page.locator('.brand').focus(); await page.keyboard.press('Tab');
+                } else { await page.locator('#main-menu a').first().focus(); }
+                for(let i=0;i<7;i++) {
+                  assert.equal(await page.locator('#main-menu a').nth(i).evaluate(e=>e===document.activeElement),true,'navigation Tab order');
+                  if(i<6) await page.keyboard.press('Tab');
+                }
+                if(js && width<=1080) {
+                  await page.keyboard.press('Escape');
+                  assert.equal(await toggle.getAttribute('aria-expanded'),'false');
+                  assert.equal(await toggle.evaluate(e=>e===document.activeElement),true,'Escape restores focus');
+                  await open();
+                  await page.locator('#main-menu a').last().focus();
+                  await page.keyboard.press('Enter');
+                  await page.waitForURL('**/join.html');
+                  assert.equal(await page.locator('.nav-toggle').getAttribute('aria-expanded'),'false','navigation closes mobile menu');
+                }
+                assert.deepEqual(errors,[],'uncaught JavaScript errors');
+                if(file==='research.html' && width===360 && mode==='normal') await page.screenshot({path:resolve(process.env.RUNNER_TEMP,'p2e-nav-mobile.png')});
+                results.push({width,mode,file,status:'PASS',language:lang});
+                await page.close();
+              }
+              // A separate page checks actual reload persistence without the default-reset hook.
+              if(js) {
+                const page=await context.newPage(); await page.goto(base+'research.html',{waitUntil:'networkidle'});
+                await page.getByRole('button',{name:'English (EN)',exact:true}).click(); await page.reload({waitUntil:'networkidle'});
+                assert.equal(await page.locator('html').getAttribute('lang'),'en','English persists on reload');
+                await page.getByRole('button',{name:'한국어 (KO)',exact:true}).click(); await page.reload({waitUntil:'networkidle'});
+                assert.equal(await page.locator('html').getAttribute('lang'),'ko','Korean persists on reload'); await page.close();
+              }
+              await context.close();
+              console.log(`PASS ${width}px ${mode}: ${pages.length} pages; KO/EN as applicable, keyboard, mobile, accessible names, layout`);
+            }
+            console.log(`PASS ${results.length}/${results.length} navigation cases; 0 failures`);
+            await writeFile(resolve(process.env.RUNNER_TEMP,'p2e-nav-results.json'),JSON.stringify(results,null,2));
+          } finally { await browser.close(); server.close(); }
+          JS
+          node "$RUNNER_TEMP/p2e-nav-check.mjs"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: navigation-browser-evidence
+          path: |
+            ${{ runner.temp }}/p2e-nav-results.json
+            ${{ runner.temp }}/p2e-nav-mobile.png
