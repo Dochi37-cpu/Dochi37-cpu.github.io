@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-27",
+  "scope": "Public grant/publication history; not a statement of current enforceability or P2E ownership.",
+  "records": [
+    {
+      "parent": 2,
+      "jurisdiction": "US",
+      "application": "16/961,637",
+      "publication": "US11674720B2",
+      "aliases": [
+        "US20200340715A1"
+      ],
+      "stage": "granted",
+      "event_date": "2023-06-13",
+      "publication_url": "https://patents.google.com/patent/US11674720B2/en",
+      "evidence_url": "https://patentimages.storage.googleapis.com/ea/f9/ce/667a46bb261b4f/US11674720.pdf"
+    },
+    {
+      "parent": 2,
+      "jurisdiction": "CN",
+      "application": "201980008196.X",
+      "publication": "CN111602012B",
+      "aliases": [
+        "CN111602012A"
+      ],
+      "stage": "granted",
+      "event_date": "2022-08-30",
+      "publication_url": "https://patents.google.com/patent/CN111602012B/en",
+      "evidence_url": "https://patentimages.storage.googleapis.com/54/a6/b8/2076414ab7b88f/CN111602012B.pdf"
+    },
+    {
+      "parent": 2,
+      "jurisdiction": "EP",
+      "application": "19738376.3",
+      "publication": "EP3737895B1",
+      "aliases": [
+        "EP3737895A1",
+        "EP3737895A4"
+      ],
+      "stage": "granted",
+      "event_date": "2026-08-12",
+      "publication_url": "https://patents.google.com/patent/EP3737895B1/en",
+      "evidence_url": "https://data.epo.org/publication-server/rest/v1.2/publication-dates/20260812/patents/EP3737895NWB1/document.pdf"
+    },
+    {
+      "parent": 2,
+      "jurisdiction": "WO",
+      "application": "PCT/KR2019/000279",
+      "publication": "WO2019139333A1",
+      "aliases": [],
+      "stage": "pct_published",
+      "event_date": "2019-07-18",
+      "publication_url": "https://patents.google.com/patent/WO2019139333A1/en",
+      "evidence_url": "https://patents.google.com/patent/WO2019139333A1/en"
+    },
+    {
+      "parent": 3,
+      "jurisdiction": "US",
+      "application": "17/428,894",
+      "publication": "US20220072501A1",
+      "aliases": [],
+      "stage": "published",
+      "event_date": "2022-03-10",
+      "publication_url": "https://patents.google.com/patent/US20220072501A1/en",
+      "evidence_url": "https://patents.google.com/patent/US20220072501A1/en"
+    },
+    {
+      "parent": 3,
+      "jurisdiction": "EP",
+      "application": "20783067.0",
+      "publication": "EP3950116A1",
+      "aliases": [
+        "EP3950116A4"
+      ],
+      "stage": "published",
+      "event_date": "2022-02-09",
+      "publication_url": "https://patents.google.com/patent/EP3950116A1/en",
+      "evidence_url": "https://patentimages.storage.googleapis.com/e0/54/10/efc448e70e486a/EP3950116A1.pdf"
+    },
+    {
+      "parent": 3,
+      "jurisdiction": "WO",
+      "application": "PCT/KR2020/002000",
+      "publication": "WO2020204346A1",
+      "aliases": [],
+      "stage": "pct_published",
+      "event_date": "2020-10-08",
+      "publication_url": "https://patents.google.com/patent/WO2020204346A1/en",
+      "evidence_url": "https://patents.google.com/patent/WO2020204346A1/en"
+    },
+    {
+      "parent": 5,
+      "jurisdiction": "JP",
+      "application": "2020-134884",
+      "publication": "JP7054544B2",
+      "aliases": [
+        "JP2021143816A"
+      ],
+      "stage": "granted",
+      "event_date": "2022-04-14",
+      "publication_url": "https://patents.google.com/patent/JP7054544B2/en",
+      "evidence_url": "https://patentimages.storage.googleapis.com/05/74/7c/bb1a60483f2138/JP7054544B2.pdf"
+    },
+    {
+      "parent": 7,
+      "jurisdiction": "JP",
+      "application": "2022-128978",
+      "publication": "JP2023047292A",
+      "aliases": [],
+      "stage": "published",
+      "event_date": "2023-04-05",
+      "publication_url": "https://patents.google.com/patent/JP2023047292A/en",
+      "evidence_url": "https://patentimages.storage.googleapis.com/e7/7d/04/32959f7fc3fe21/JP2023047292A.pdf"
+    },
+    {
+      "parent": 8,
+      "jurisdiction": "JP",
+      "application": "2024-518966",
+      "publication": "JP7664667B2",
+      "aliases": [
+        "JP2024538587A"
+      ],
+      "stage": "granted",
+      "event_date": "2025-04-18",
+      "publication_url": "https://patents.google.com/patent/JP7664667B2/en",
+      "evidence_url": "https://patentimages.storage.googleapis.com/13/16/e6/bb8e21ef7e2bf6/JP7664667B2.pdf"
+    },
+    {
+      "parent": 8,
+      "jurisdiction": "US",
+      "application": "18/699,839",
+      "publication": "US20250113656A1",
+      "aliases": [],
+      "stage": "allowed",
+      "event_date": "2025-04-03",
+      "publication_url": "https://patents.google.com/patent/US20250113656A1/en",
+      "evidence_url": "https://patents.google.com/patent/US20250113656A1/en",
+      "allowance": {
+        "date": "2026-07-24",
+        "basis": "existing_public_site",
+        "note_ko": "미국 등록결정일(2026-07-24)은 기존 홈페이지 안내를 유지했습니다. 등록공보는 별도 확인 중입니다.",
+        "note_en": "The allowance date (24 Jul 2026) is retained from the existing site; a grant publication has not been verified."
+      }
+    },
+    {
+      "parent": 8,
+      "jurisdiction": "EP",
+      "application": "22887272.7",
+      "publication": "EP4425580A1",
+      "aliases": [
+        "EP4425580A4"
+      ],
+      "stage": "published",
+      "event_date": "2024-09-04",
+      "publication_url": "https://patents.google.com/patent/EP4425580A1/en",
+      "evidence_url": "https://patents.google.com/patent/EP4425580A1/en"
+    },
+    {
+      "parent": 8,
+      "jurisdiction": "WO",
+      "application": "PCT/KR2022/008736",
+      "publication": "WO2023075066A1",
+      "aliases": [],
+      "stage": "pct_published",
+      "event_date": "2023-05-04",
+      "publication_url": "https://patents.google.com/patent/WO2023075066A1/en",
+      "evidence_url": "https://patents.google.com/patent/WO2023075066A1/en"
+    },
+    {
+      "parent": 14,
+      "jurisdiction": "WO",
+      "application": "PCT/KR2023/015178",
+      "publication": "WO2024117507A1",
+      "aliases": [],
+      "stage": "pct_published",
+      "event_date": "2024-06-06",
+      "publication_url": "https://patents.google.com/patent/WO2024117507A1/en",
+      "evidence_url": "https://patentimages.storage.googleapis.com/2f/01/24/3251f89a57b381/WO2024117507A1.pdf"
+    },
+    {
+      "parent": 18,
+      "jurisdiction": "WO",
+      "application": "PCT/KR2025/099545",
+      "publication": "WO2025188145A1",
+      "aliases": [
+        "WO2025188145A8"
+      ],
+      "stage": "pct_published",
+      "event_date": "2025-09-12",
+      "publication_url": "https://patents.google.com/patent/WO2025188145A1/en",
+      "evidence_url": "https://patents.google.com/patent/WO2025188145A1/en"
+    },
+    {
+      "parent": 19,
+      "jurisdiction": "WO",
+      "application": "PCT/KR2025/011656",
+      "publication": "WO2026038778A1",
+      "aliases": [],
+      "stage": "pct_published",
+      "event_date": "2026-02-19",
+      "publication_url": "https://patents.google.com/patent/WO2026038778A1/en",
+      "evidence_url": "https://patents.google.com/patent/WO2026038778A1/en"
+    }
+  ],
+  "cards": [
+    {
+      "id": "diffusion-cooling",
+      "parents": [
+        2
+      ],
+      "ko": "저 GWP 확산형 흡수식 냉각",
+      "en": "Low-GWP Diffusion Absorption Cooling",
+      "application_ko": "저 GWP 냉매를 사용하는 냉각 시스템",
+      "application_en": "Cooling systems using low-GWP refrigerants",
+      "description_ko": "냉매·흡수제 조합과 순환 구조를 연결하는 냉각 기술입니다. LG전자·고려대학교 산학협력단 공동출원으로 한국·미국·중국·유럽 등록공보가 연결됩니다.",
+      "description_en": "Cooling technology linking refrigerant/absorbent combinations with cycle configuration. Jointly filed by LG Electronics and Korea University Research and Business Foundation, with grant publications in Korea, the US, China and Europe."
+    },
+    {
+      "id": "hybrid-heat-pump",
+      "parents": [
+        5
+      ],
+      "ko": "폐열 활용 하이브리드 열펌프",
+      "en": "Waste-Heat Hybrid Heat Pump",
+      "application_ko": "폐열 회수와 냉난방 운전모드 전환",
+      "application_en": "Waste-heat recovery and heating/cooling mode switching",
+      "description_ko": "재생열원을 활용하는 흡수식 열펌프의 시스템 구성과 운전모드 전환을 다룹니다. 한국·일본 등록공보를 함께 확인할 수 있습니다.",
+      "description_en": "System configuration and mode switching for an absorption heat pump using a regenerative heat source, with Korean and Japanese grant publications."
+    },
+    {
+      "id": "thermal-storage",
+      "parents": [
+        7
+      ],
+      "ko": "흡수식 열에너지 저장",
+      "en": "Absorption Thermal Energy Storage",
+      "application_ko": "열에너지 저장과 냉난방 동시 공급",
+      "application_en": "Thermal storage with simultaneous heating and cooling",
+      "description_ko": "에너지 수요와 공급의 시간 차이를 다루는 흡수식 시스템입니다. 국내 등록과 일본 공개 기록을 같은 발명 아래 연결합니다.",
+      "description_en": "An absorption system addressing the timing mismatch between energy supply and demand. The Korean grant and Japanese publication are linked under the same invention."
+    },
+    {
+      "id": "co2-reactor",
+      "parents": [
+        3
+      ],
+      "ko": "CO₂ 광전환 반응기",
+      "en": "CO₂ Photoconversion Reactor",
+      "application_ko": "CO₂ 전환용 광반응 장치",
+      "application_en": "Photoreaction equipment for CO₂ conversion",
+      "description_ko": "반응기 내부 구조물을 이용한 CO₂ 광전환 기술입니다. 국내 등록·미국 및 유럽 공개·PCT 국제공개 기록을 함께 제공합니다.",
+      "description_en": "CO₂ photoconversion using internal reactor structures, linking the Korean grant, US and European publications, and PCT international publication."
+    },
+    {
+      "id": "solar-filter",
+      "parents": [
+        8
+      ],
+      "ko": "태양에너지용 에멀젼 유체 필터",
+      "en": "Emulsion Fluid Filter for Solar Energy",
+      "application_ko": "파장 선택 흡수와 태양에너지 활용",
+      "application_en": "Wavelength-selective absorption for solar-energy use",
+      "description_ko": "에멀젼 유체로 빛의 파장별 흡수를 제어합니다. 한국·일본 등록과 미국·유럽 공개, 미국 등록결정 안내를 연결합니다.",
+      "description_en": "An emulsion fluid controls wavelength-dependent light absorption. Korean and Japanese grants are linked with US/European publications and the existing US allowance notice."
+    },
+    {
+      "id": "hydrogen-electrolysis",
+      "parents": [
+        10,
+        11,
+        14,
+        18,
+        20,
+        21,
+        22,
+        23
+      ],
+      "ko": "수소·수전해 전극 및 촉매",
+      "en": "Hydrogen, Electrodes & Electrolysis Catalysts",
+      "application_ko": "전극 내구성·촉매 제조·촉매층 재생",
+      "application_en": "Electrode durability, catalyst manufacturing and layer regeneration",
+      "description_ko": "서로 다른 전극·촉매 발명을 기술 분야로 묶었습니다. 국내 등록·공개 기록과 전극 관련 PCT 국제공개를 각 발명별로 연결합니다.",
+      "description_en": "A technology portfolio of distinct electrode and catalyst inventions, with domestic grants/publications and electrode-related PCT publications linked to each invention."
+    },
+    {
+      "id": "industrial-systems",
+      "parents": [
+        9,
+        15,
+        16,
+        17,
+        19
+      ],
+      "ko": "탄소·연료·해양 에너지 시스템",
+      "en": "Carbon, Fuel & Offshore Energy Systems",
+      "application_ko": "CO₂ 가압·가열, 연료 가스 처리, 수소생산·폐열 회수",
+      "application_en": "CO₂ conditioning, fuel-gas treatment, hydrogen production and heat recovery",
+      "description_ko": "장치의 성능을 공정 구성과 운전 조건으로 연결하는 산업 시스템 특허입니다. 메탄 산화 촉매의 PCT 국제공개도 국내 항목과 연결합니다.",
+      "description_en": "Industrial-system patents connecting equipment performance with process configuration and operating conditions, including a PCT publication linked to the domestic methane-oxidation catalyst record."
+    }
+  ],
+  "unresolved_domestic_rows": [
+    13,
+    20,
+    21,
+    23
+  ]
+}

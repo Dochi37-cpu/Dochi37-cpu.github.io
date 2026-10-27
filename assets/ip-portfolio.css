@@ -1,0 +1,84 @@
+/* IP-page-only presentation; all patent content is static and bilingual. */
+.ip-page .page-hero h1 { max-width: 1000px; font-size: clamp(2rem, 4vw, 3.2rem); }
+.ip-metrics { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 32px 0 12px; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.ip-metric { padding: 20px 16px; border-right: 1px solid var(--line); }
+.ip-metric:first-child { padding-left: 0; }
+.ip-metric:last-child { border-right: 0; }
+.ip-metric strong { display: block; color: var(--navy-900); font-size: 36px; line-height: 1.2; font-weight: 700; }
+.ip-metric > span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.ip-page .page-hero .ip-count-note { font-size: 12px; line-height: 1.7; color: var(--muted); }
+.ip-count-note time { white-space: nowrap; margin-left: 8px; }
+.ip-page .family-grid { gap: 28px 36px; }
+.ip-page .family-card { min-width: 0; padding-top: 20px; }
+.ip-page .family-card .eyebrow { font-size: 11px; line-height: 1.6; letter-spacing: .025em; }
+.ip-page .family-card h3 { font-size: 22px; margin: 8px 0 12px; line-height: 1.4; }
+.ip-page .family-card p { font-size: 14px; line-height: 1.8; }
+.ip-badges { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0 14px; }
+.ip-badge, .ip-stage { display: inline-flex; align-items: center; padding: 5px 8px; border: 1px solid var(--line); border-radius: 5px; background: var(--blue-100); color: var(--navy-800); font-size: 11px; line-height: 1.4; }
+.ip-badge.granted, .ip-stage.granted { border-color: #bfdcc9; color: #24683f; background: var(--green-100); }
+.ip-badge.pct_published, .ip-stage.pct_published { background: #f3f5f7; color: #52616f; }
+.ip-badge.allowed, .ip-stage.allowed { background: var(--amber-100); color: var(--amber-700); }
+.ip-card-links { display: flex; flex-wrap: wrap; gap: 10px 16px; }
+.ip-card-links a, .ip-publication, .ip-source, .ip-domestic-source { color: var(--navy-800); text-decoration: underline; text-underline-offset: 3px; }
+.ip-card-links a { display: inline-flex; min-height: 32px; align-items: center; font-size: 13px; }
+.ip-page a:focus-visible { outline: 3px solid var(--green-600); outline-offset: 4px; }
+.ip-page .registry-wrap { border: 0; overflow: visible; }
+.ip-page .ip-table { display: block; min-width: 0; table-layout: auto; }
+.ip-table caption { display: block; padding: 0 0 20px; text-align: left; font-size: 13px; color: var(--muted); }
+.ip-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.ip-table tbody { display: block; }
+.ip-table tr { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; border-top: 1px solid var(--line-strong); padding: 28px 0; gap: 12px 16px; }
+.ip-page .ip-table td { display: block; padding: 0; border: 0; }
+.ip-table .no { grid-column: 1; grid-row: 1; }
+.ip-table .title { grid-column: 2; grid-row: 1; font-size: 18px !important; }
+.ip-table .pubno { grid-column: 2 / 4; grid-row: 2; }
+.ip-table td:nth-child(4) { grid-column: 3; grid-row: 1; }
+.ip-table td:nth-child(5) { grid-column: 2 / 4; grid-row: 3; }
+.ip-page .ip-table th, .ip-page .ip-table td { font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; }
+.ip-table th:nth-child(1) { width: 5%; }
+.ip-table th:nth-child(2) { width: 18%; }
+.ip-table th:nth-child(3) { width: 25%; }
+.ip-table th:nth-child(4) { width: 10%; }
+.ip-table th:nth-child(5) { width: 42%; }
+.ip-page .ip-table .title { min-width: 0; font-weight: 600; }
+.ip-page .ip-table .pubno { white-space: normal; font-weight: 500; }
+.ip-page .ip-table .status-pill { font-size: 11px; }
+.ip-table tr:target { background: #f0f8f4; outline: 2px solid var(--green-600); outline-offset: -2px; }
+.ip-related { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
+.ip-related h4 { margin: 0 0 10px; font-size: 12px; color: var(--navy-800); }
+.ip-rights { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.ip-linked-record { min-width: 0; padding: 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.ip-right-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 7px; }
+.ip-right-heading b { font-size: 12px; }
+.ip-publication { display: block; font-weight: 600; font-size: 12px; overflow-wrap: anywhere; }
+.ip-linked-record small { display: block; margin-top: 5px; font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+.ip-source { display: inline-block; padding-block: 6px; font-size: 11px; }
+.ip-record-note { margin: 6px 0 0; font-size: 11px; color: var(--muted); }
+.ip-attribution { max-width: 1000px; }
+.ip-attribution h2 { font-size: 24px; margin: 10px 0 20px; }
+.ip-attribution p { font-size: 13px; line-height: 1.9; color: var(--muted); }
+@media (max-width: 800px) {
+  .ip-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ip-metric { padding: 16px 10px; border-bottom: 1px solid var(--line); }
+  .ip-metric:first-child { padding-left: 10px; }
+  .ip-metric strong { font-size: 30px; }
+  .ip-metric > span { font-size: 11px; }
+  .ip-page .family-grid { grid-template-columns: 1fr; }
+  .ip-page .registry-wrap { border: 0; overflow: visible; }
+  .ip-page .ip-table { display: block; min-width: 0; table-layout: auto; }
+  .ip-table caption { display: block; padding: 0 0 16px; }
+  .ip-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .ip-table tbody { display: block; }
+  .ip-table tr { display: grid; grid-template-columns: 30px minmax(0, 1fr); border-top: 1px solid var(--line-strong); padding: 20px 0; gap: 10px; }
+  .ip-page .ip-table td { display: block; padding: 0; border: 0; }
+  .ip-table .no { grid-column: 1; grid-row: 1; }
+  .ip-table .title { grid-column: 2; grid-row: 1; font-size: 16px !important; }
+  .ip-table .pubno { grid-column: 2; grid-row: 2; }
+  .ip-table td:nth-child(4) { grid-column: 2; grid-row: 3; }
+  .ip-table td:nth-child(5) { grid-column: 2; grid-row: 4; }
+  .ip-rights { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+}
+@media (max-width: 460px) {
+  .ip-rights { grid-template-columns: 1fr; }
+  .ip-page .family-card h3 { font-size: 20px; }
+}
