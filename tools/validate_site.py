@@ -120,6 +120,14 @@ def main() -> int:
             if re.search(pattern, text, flags=re.IGNORECASE):
                 errors.append(f'{path.name}: sensitive pre-publication pattern found: {pattern}.')
 
+    try:
+        from build_ip_portfolio import load_data, render
+        ip_page = (ROOT / 'ip.html').read_text(encoding='utf-8')
+        if render(ip_page, load_data(ROOT)) != ip_page:
+            errors.append('ip.html: generated portfolio differs from verified source data.')
+    except (ValueError, AssertionError, KeyError, OSError) as exc:
+        errors.append(f'IP portfolio validation failed: {exc}')
+
     required = [
         ROOT / 'assets/site.css', ROOT / 'assets/components.css', ROOT / 'assets/responsive.css',
         ROOT / 'assets/site.js', ROOT / 'robots.txt',
