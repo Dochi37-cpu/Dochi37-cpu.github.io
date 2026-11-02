@@ -71,7 +71,7 @@ def render_badges(parents, domestic_stages, records):
     return '<div class="ip-badges">'+''.join(badges)+'</div>'
 
 def transfer_label(transfer):
-    return bilingual(transfer['recipient_ko']+' 기술이전', 'Technology transferred to '+transfer['recipient_en'])
+    return bilingual('기술이전: '+transfer['recipient_ko'], 'Technology transfer: '+transfer['recipient_en'])
 
 def render_record(item):
     stage = STAGES[item['stage']]
@@ -129,7 +129,7 @@ def render(source, data):
             cell = cell[:-5] + '<!-- linked:start -->' + extra + '<!-- linked:end --></td>'
         if number in transfers_by_parent:
             transfer = transfers_by_parent[number]
-            extra = f'<div class="ip-transfer-record" data-transfer-parent="{number}"><span class="ip-transfer-pill">'+transfer_label(transfer)+'</span></div>'
+            extra = f'<div class="ip-transfer-record" data-transfer-parent="{number}">'+transfer_label(transfer)+'</div>'
             cell = cell[:-5] + '<!-- transfer:start -->' + extra + '<!-- transfer:end --></td>'
         # Link domestic identifiers without changing their visible text/attributes.
         if number not in data['unresolved_domestic_rows'] + [11] and 'class="ip-domestic-source"' not in cells[1]:
@@ -164,22 +164,15 @@ def render(source, data):
             anchor = f' id="{escape(legacy_id,quote=True)}"' if legacy_id else ''
             members.append(f'<li class="ip-portfolio-invention anchor-target"{anchor}><a class="ip-invention-link" href="#patent-{number}"><span class="ip-invention-number">{bilingual("특허 "+str(number),"Record "+str(number))}</span>{title_html}</a>'+render_badges([number],domestic_stages,data['records'])+'</li>')
         cards.append(f'<article class="family-card" id="{card["id"]}"><div class="eyebrow">{bilingual(card["application_ko"],card["application_en"])}</div><h3>{bilingual(card["ko"],card["en"])}</h3><p>{bilingual(card["description_ko"],card["description_en"])}</p><ul class="ip-portfolio-inventions">'+''.join(members)+'</ul></article>')
-    transfer_cases = []
-    for transfer in data.get('technology_transfers', []):
-        number=transfer['parent']
-        transfer_cases.append('<article class="ip-transfer-case"><div><span class="ip-transfer-pill">'+transfer_label(transfer)+'</span><h2>'+domestic_titles[number]+'</h2><p>'+bilingual('정한솔이 발명자로 참여한 등록특허의 산업체 기술이전 사례입니다.','An industry technology-transfer case for a granted patent naming Han Sol Jung as an inventor.')+'</p></div><div class="ip-transfer-links"><a href="#patent-'+str(number)+'">'+bilingual('특허 상세 기록','Patent details')+'</a><a href="'+escape(transfer['reference_url'],quote=True)+'">'+bilingual('어밸브 관련 공개자료','Public information on AVALVE')+'</a></div></article>')
-    transfer_section = ('<section class="section ip-transfer-section anchor-target" id="technology-transfer"><div class="shell"><div class="eyebrow">'+bilingual('기술이전 사례','TECHNOLOGY TRANSFER')+'</div>'+''.join(transfer_cases)+'</div></section>') if transfer_cases else ''
-    transfer_nav = '<a href="#technology-transfer">'+bilingual('기술이전 사례','Technology transfer')+'</a>' if transfer_cases else ''
     main = f'''<main id="main-content">
   <section class="page-hero"><div class="shell">
     <div class="eyebrow">{bilingual('지식재산','INTELLECTUAL PROPERTY')}</div>
     <h1>{bilingual('산업 적용을 위한 국내외 특허 포트폴리오','Patents for Industrial Applications')}</h1>
     <p>{bilingual('열에너지·탄소전환·수소 기술의 산업 적용을 위해 축적한 PI의 선행·공동연구 특허를 소개합니다. 각 발명의 국내 기록과 해외 권리화 이력을 함께 확인할 수 있습니다.','Explore the PI’s prior and collaborative patents for industrial applications in thermal energy, carbon conversion and hydrogen. Each invention connects domestic records with its international patent history.')}</p>
-    <div class="page-nav">{transfer_nav}<a href="#families">{bilingual('기술 분야별 특허','Technology areas')}</a><a href="#registry">{bilingual('국내외 통합 목록','Integrated registry')}</a><a href="#status">{bilingual('성과 귀속·수록 기준','Attribution & scope')}</a></div>
+    <div class="page-nav"><a href="#families">{bilingual('기술 분야별 특허','Technology areas')}</a><a href="#registry">{bilingual('국내외 통합 목록','Integrated registry')}</a><a href="#status">{bilingual('성과 귀속·수록 기준','Attribution & scope')}</a></div>
     <div class="ip-metrics">{metric_html}</div>
     <p class="ip-count-note">{bilingual('국내 23개 기록을 기준으로 연결한 공개 실적입니다. 국가·지역별 출원 1건을 한 번만 세며, PCT는 해외 등록과 구분합니다.','Public records linked to 23 domestic entries. Each national/regional application is counted once; PCT publications are separate from international grants.')} <time datetime="{data['checked_on']}">{data['checked_on']}</time></p>
   </div></section>
-  {transfer_section}
   <section class="section alt anchor-target" id="families"><div class="shell">
     <div class="section-head"><div><div class="eyebrow">{bilingual('기술 분야별 특허','PATENTS BY TECHNOLOGY AREA')}</div><h2>{bilingual('네 가지 기술 분야로 살펴봅니다.','Explore four technology areas.')}</h2></div><p>{bilingual('관련 기술을 분야별로 묶고, 국내외 등록·공개 현황은 각 발명에 표시했습니다. 특허명을 누르면 전체 목록의 상세 기록으로 이동합니다.','Related inventions are grouped by technology area. Domestic and international status is shown for each invention; select its title to view the detailed record.')}</p></div>
     <div class="family-grid">{''.join(cards)}</div>

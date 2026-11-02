@@ -90,3 +90,10 @@ Original EPO PDF SHA-256 (not bundled in the repository): `99ae389b11164bbe069d0
   international-record check date stays 2026-10-27; no new status search is implied.
 - The old section anchors for hybrid heat pump, thermal storage and solar filter
   remain available within the merged technology groups.
+
+## 2026-11-03: understated technology-transfer history
+
+- At the PI's request, show technology transfer only as a small, muted note in
+  patent 1: “기술이전: 어밸브” / “Technology transfer: AVALVE”.
+- Remove the standalone transfer section, its navigation link and the transfer
+  pill. Keep the four technology areas and all patent facts and evidence intact.
