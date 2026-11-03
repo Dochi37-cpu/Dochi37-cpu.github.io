@@ -207,62 +207,65 @@
     {
       "id": "diffusion-cooling",
       "parents": [
-        2
+        2,
+        5,
+        7,
+        12
       ],
-      "ko": "저 GWP 확산형 흡수식 냉각",
-      "en": "Low-GWP Diffusion Absorption Cooling",
-      "application_ko": "저 GWP 냉매를 사용하는 냉각 시스템",
-      "application_en": "Cooling systems using low-GWP refrigerants",
-      "description_ko": "냉매·흡수제 조합과 순환 구조를 연결하는 냉각 기술입니다. LG전자·고려대학교 산학협력단 공동출원으로 한국·미국·중국·유럽 등록공보가 연결됩니다.",
-      "description_en": "Cooling technology linking refrigerant/absorbent combinations with cycle configuration. Jointly filed by LG Electronics and Korea University Research and Business Foundation, with grant publications in Korea, the US, China and Europe."
-    },
-    {
-      "id": "hybrid-heat-pump",
-      "parents": [
-        5
-      ],
-      "ko": "폐열 활용 하이브리드 열펌프",
-      "en": "Waste-Heat Hybrid Heat Pump",
-      "application_ko": "폐열 회수와 냉난방 운전모드 전환",
-      "application_en": "Waste-heat recovery and heating/cooling mode switching",
-      "description_ko": "재생열원을 활용하는 흡수식 열펌프의 시스템 구성과 운전모드 전환을 다룹니다. 한국·일본 등록공보를 함께 확인할 수 있습니다.",
-      "description_en": "System configuration and mode switching for an absorption heat pump using a regenerative heat source, with Korean and Japanese grant publications."
-    },
-    {
-      "id": "thermal-storage",
-      "parents": [
-        7
-      ],
-      "ko": "흡수식 열에너지 저장",
-      "en": "Absorption Thermal Energy Storage",
-      "application_ko": "열에너지 저장과 냉난방 동시 공급",
-      "application_en": "Thermal storage with simultaneous heating and cooling",
-      "description_ko": "에너지 수요와 공급의 시간 차이를 다루는 흡수식 시스템입니다. 국내 등록과 일본 공개 기록을 같은 발명 아래 연결합니다.",
-      "description_en": "An absorption system addressing the timing mismatch between energy supply and demand. The Korean grant and Japanese publication are linked under the same invention."
+      "ko": "냉난방·축열 시스템",
+      "en": "Heating, Cooling & Thermal Storage",
+      "application_ko": "냉매·흡수제, 폐열 회수와 열에너지 저장",
+      "application_en": "Working fluids, waste-heat recovery and thermal storage",
+      "description_ko": "저 GWP 확산형 냉각, 폐열 활용 열펌프, 흡수식 축열과 연료전지차 냉난방을 다루는 특허입니다.",
+      "description_en": "Patents covering low-GWP diffusion absorption cooling, waste-heat heat pumps, absorption thermal storage and fuel-cell vehicle heating and cooling.",
+      "legacy_anchors": {
+        "5": "hybrid-heat-pump",
+        "7": "thermal-storage"
+      },
+      "member_titles": {
+        "2": {
+          "ko": "저 GWP 확산형 흡수식 냉각",
+          "en": "Low-GWP diffusion absorption cooling"
+        },
+        "5": {
+          "ko": "폐열 활용 하이브리드 열펌프",
+          "en": "Waste-heat hybrid heat pump"
+        },
+        "7": {
+          "ko": "흡수식 열에너지 저장·냉난방",
+          "en": "Absorption thermal storage with heating and cooling"
+        },
+        "12": {
+          "ko": "연료전지 자동차용 흡수식 히트펌프",
+          "en": "Absorption heat pump for fuel-cell vehicles"
+        }
+      }
     },
     {
       "id": "co2-reactor",
       "parents": [
-        3
-      ],
-      "ko": "CO₂ 광전환 반응기",
-      "en": "CO₂ Photoconversion Reactor",
-      "application_ko": "CO₂ 전환용 광반응 장치",
-      "application_en": "Photoreaction equipment for CO₂ conversion",
-      "description_ko": "반응기 내부 구조물을 이용한 CO₂ 광전환 기술입니다. 국내 등록·미국 및 유럽 공개·PCT 국제공개 기록을 함께 제공합니다.",
-      "description_en": "CO₂ photoconversion using internal reactor structures, linking the Korean grant, US and European publications, and PCT international publication."
-    },
-    {
-      "id": "solar-filter",
-      "parents": [
+        3,
         8
       ],
-      "ko": "태양에너지용 에멀젼 유체 필터",
-      "en": "Emulsion Fluid Filter for Solar Energy",
-      "application_ko": "파장 선택 흡수와 태양에너지 활용",
-      "application_en": "Wavelength-selective absorption for solar-energy use",
-      "description_ko": "에멀젼 유체로 빛의 파장별 흡수를 제어합니다. 한국·일본 등록과 미국·유럽 공개, 미국 등록결정 안내를 연결합니다.",
-      "description_en": "An emulsion fluid controls wavelength-dependent light absorption. Korean and Japanese grants are linked with US/European publications and the existing US allowance notice."
+      "ko": "광에너지 변환·활용",
+      "en": "Light-Energy Conversion & Utilization",
+      "application_ko": "CO₂ 광전환과 태양광·열 활용",
+      "application_en": "CO₂ photoconversion and photovoltaic-thermal use",
+      "description_ko": "CO₂ 광전환 반응기와 태양광·열 활용을 위한 파장 선택 유체 필터를 묶었습니다.",
+      "description_en": "CO₂ photoconversion reactors and wavelength-selective fluid filters for photovoltaic-thermal energy use.",
+      "legacy_anchors": {
+        "8": "solar-filter"
+      },
+      "member_titles": {
+        "3": {
+          "ko": "CO₂ 광전환 반응기",
+          "en": "CO₂ photoconversion reactor"
+        },
+        "8": {
+          "ko": "태양에너지용 에멀젼 유체 필터",
+          "en": "Emulsion fluid filter for solar energy"
+        }
+      }
     },
     {
       "id": "hydrogen-electrolysis",
@@ -277,11 +280,45 @@
         23
       ],
       "ko": "수소·수전해 전극 및 촉매",
-      "en": "Hydrogen, Electrodes & Electrolysis Catalysts",
-      "application_ko": "전극 내구성·촉매 제조·촉매층 재생",
-      "application_en": "Electrode durability, catalyst manufacturing and layer regeneration",
-      "description_ko": "서로 다른 전극·촉매 발명을 기술 분야로 묶었습니다. 국내 등록·공개 기록과 전극 관련 PCT 국제공개를 각 발명별로 연결합니다.",
-      "description_en": "A technology portfolio of distinct electrode and catalyst inventions, with domestic grants/publications and electrode-related PCT publications linked to each invention."
+      "en": "Hydrogen & Water-Electrolysis Catalysts",
+      "application_ko": "산소·수소 발생 전극, 촉매 제조와 재생",
+      "application_en": "Oxygen- and hydrogen-evolution electrodes, catalyst preparation and regeneration",
+      "description_ko": "수전해 전극·촉매의 성능과 내구성, 제조 방법, 촉매층 재생을 다루는 특허입니다.",
+      "description_en": "Patents on water-electrolysis electrode and catalyst performance, durability, preparation and catalyst-layer regeneration.",
+      "member_titles": {
+        "10": {
+          "ko": "Ni–Fe–Sc 산소발생 전극 촉매",
+          "en": "Ni–Fe–Sc oxygen-evolution electrode catalyst"
+        },
+        "11": {
+          "ko": "Ni–V 수소발생 촉매",
+          "en": "Ni–V hydrogen-evolution catalyst"
+        },
+        "14": {
+          "ko": "해수 수전해용 고내구성 전극 촉매",
+          "en": "Durable electrode catalyst for seawater electrolysis"
+        },
+        "18": {
+          "ko": "Ni–Fe–Y 전기분해용 전극",
+          "en": "Ni–Fe–Y electrode for electrolysis"
+        },
+        "20": {
+          "ko": "Co–V 수소발생 촉매",
+          "en": "Co–V hydrogen-evolution catalyst"
+        },
+        "21": {
+          "ko": "Ni–Mo 수소발생 촉매",
+          "en": "Ni–Mo hydrogen-evolution catalyst"
+        },
+        "22": {
+          "ko": "수전해 촉매 제조",
+          "en": "Water-electrolysis catalyst preparation"
+        },
+        "23": {
+          "ko": "막-전극 접합체 제조·촉매층 재생",
+          "en": "Membrane–electrode assembly preparation and catalyst-layer regeneration"
+        }
+      }
     },
     {
       "id": "industrial-systems",
@@ -292,12 +329,34 @@
         17,
         19
       ],
-      "ko": "탄소·연료·해양 에너지 시스템",
-      "en": "Carbon, Fuel & Offshore Energy Systems",
-      "application_ko": "CO₂ 가압·가열, 연료 가스 처리, 수소생산·폐열 회수",
-      "application_en": "CO₂ conditioning, fuel-gas treatment, hydrogen production and heat recovery",
-      "description_ko": "장치의 성능을 공정 구성과 운전 조건으로 연결하는 산업 시스템 특허입니다. 메탄 산화 촉매의 PCT 국제공개도 국내 항목과 연결합니다.",
-      "description_en": "Industrial-system patents connecting equipment performance with process configuration and operating conditions, including a PCT publication linked to the domestic methane-oxidation catalyst record."
+      "ko": "탄소·연료·해양 공정",
+      "en": "Carbon, Fuel & Offshore Processes",
+      "application_ko": "CO₂ 처리·저장, 연료 가스 처리와 수소생산",
+      "application_en": "CO₂ conditioning and storage, fuel-gas treatment and hydrogen production",
+      "description_ko": "CO₂ 처리·지중저장, 암모니아 벤트가스 처리, 수소생산·폐열 회수와 메탄 산화를 다룹니다.",
+      "description_en": "Patents on CO₂ conditioning and geological storage, ammonia vent-gas treatment, hydrogen production with waste-heat recovery, and methane oxidation.",
+      "member_titles": {
+        "9": {
+          "ko": "해양 부유식 구조물용 CO₂ 처리 시스템",
+          "en": "CO₂ conditioning for offshore floating structures"
+        },
+        "15": {
+          "ko": "암모니아 벤트가스 처리",
+          "en": "Ammonia vent-gas treatment"
+        },
+        "16": {
+          "ko": "CO₂ 지중저장 시스템",
+          "en": "CO₂ geological-storage system"
+        },
+        "17": {
+          "ko": "수소생산·폐열 회수",
+          "en": "Hydrogen production and waste-heat recovery"
+        },
+        "19": {
+          "ko": "내황성 메탄 산화 촉매",
+          "en": "Sulfur-resistant methane oxidation catalyst"
+        }
+      }
     }
   ],
   "unresolved_domestic_rows": [
@@ -305,5 +364,16 @@
     20,
     21,
     23
+  ],
+  "technology_transfers": [
+    {
+      "parent": 1,
+      "recipient_ko": "어밸브",
+      "recipient_en": "AVALVE",
+      "confirmed_on": "2026-11-02",
+      "basis": "PI confirmation on 2026-11-02; public portfolio disclosure requested by the PI.",
+      "reference_url": "https://mafra.go.kr/bbs/home/792/564646/download.do",
+      "reference_scope": "MAFRA release dated 2022-12-28, attachment 1 page 3, lists KR 10-1805184 in AVALVE IP holdings. It does not establish transaction date, amount, licence type or commercial deployment."
+    }
   ]
 }

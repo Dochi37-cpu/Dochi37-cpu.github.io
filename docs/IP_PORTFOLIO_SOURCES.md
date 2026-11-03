@@ -62,3 +62,38 @@ Original EPO PDF SHA-256 (not bundled in the repository): `99ae389b11164bbe069d0
 - Actual Chromium preview: desktop official page and 360/768 CSS-pixel iframe viewports for both sites; KO/EN switching, opposite-language hiding, all record counts, no horizontal page overflow, mobile-menu open/Escape and selected-record anchors verified.
 - Sandboxed script-blocked 360px frames: both sites show Korean fallback, all 23 domestic / 16 international records and no horizontal overflow.
 - Native mobile hardware, other browser engines and screen-reader speech: not tested.
+
+
+## 2026-11-02: technology transfer and technology-area grouping
+
+- The PI directly confirmed on 2026-11-02 that patent 1, KR 10-1805184
+  (비닐하우스 제설용 자동제설 로봇), was transferred to 어밸브 (AVALVE), and
+  requested public display of this technology-transfer achievement.
+- Public corroboration of the patent/company connection: MAFRA, 2022-12-28,
+  “제44호 에이(A)-벤처스로 ㈜어밸브 선정”, attachment 1, page 3, lists the exact
+  title and number in AVALVE's intellectual-property holdings:
+  https://mafra.go.kr/bbs/home/792/564646/download.do
+- That release is not evidence of the transaction date, consideration, exclusivity,
+  assignment/licensing mechanism, or commercial deployment. None of those claims
+  is added. “confirmed_on” is the PI confirmation date, not a transfer date.
+- This is a prior PI invention/transfer case, not newly P2E-originated IP or a
+  claim of P2E ownership. Domestic status remains “Granted”; technology transfer
+  is shown separately from legal grant/publication status.
+- Four presentation groups replace seven individual/family cards: heating/cooling
+  and thermal storage; light-energy conversion/utilization; hydrogen/electrolysis;
+  carbon/fuel/offshore processes. These are technology areas, not a claim that
+  different inventions belong to one patent family.
+- Each invention has its own jurisdiction/status badges. In particular, the
+  US allowance notice applies to the emulsion filter, not the CO2 reactor.
+- All 23 domestic rows, identifiers, original titles, grant/publication statuses,
+  16 international links and their sources remain intact. The historical
+  international-record check date stays 2026-10-27; no new status search is implied.
+- The old section anchors for hybrid heat pump, thermal storage and solar filter
+  remain available within the merged technology groups.
+
+## 2026-11-03: understated technology-transfer history
+
+- At the PI's request, show technology transfer only as a small, muted note in
+  patent 1: “기술이전: 어밸브” / “Technology transfer: AVALVE”.
+- Remove the standalone transfer section, its navigation link and the transfer
+  pill. Keep the four technology areas and all patent facts and evidence intact.

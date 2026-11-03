@@ -21,6 +21,13 @@
 .ip-card-links { display: flex; flex-wrap: wrap; gap: 10px 16px; }
 .ip-card-links a, .ip-publication, .ip-source, .ip-domestic-source { color: var(--navy-800); text-decoration: underline; text-underline-offset: 3px; }
 .ip-card-links a { display: inline-flex; min-height: 32px; align-items: center; font-size: 13px; }
+.ip-portfolio-inventions { list-style: none; padding: 0; margin: 20px 0 0; }
+.ip-portfolio-invention { padding: 14px 0; border-top: 1px solid var(--line); }
+.ip-invention-link { display: flex; align-items: baseline; gap: 10px; color: var(--navy-800); font-size: 14px; line-height: 1.6; text-decoration: underline; text-underline-offset: 3px; }
+.ip-invention-number { flex: 0 0 auto; color: var(--muted); font-size: 11px; white-space: nowrap; }
+.ip-portfolio-invention .ip-badges { margin: 8px 0 0; gap: 5px; }
+.ip-portfolio-invention .ip-badge { font-size: 10px; padding: 3px 6px; }
+.ip-transfer-record { margin-top: 6px; color: var(--muted); font-size: 12px; font-weight: 400; line-height: 1.5; }
 .ip-page a:focus-visible { outline: 3px solid var(--green-600); outline-offset: 4px; }
 .ip-page .registry-wrap { border: 0; overflow: visible; }
 .ip-page .ip-table { display: block; min-width: 0; table-layout: auto; }

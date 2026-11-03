@@ -41,7 +41,37 @@ def load_data(root=ROOT):
             assert item[field].startswith('https://'), 'public source required'
     for card in data['cards']:
         assert card['parents'] and all(1 <= n <= 23 for n in card['parents'])
+        assert set(card.get('member_titles', {})) <= {str(n) for n in card['parents']}
+        assert set(card.get('legacy_anchors', {})) <= {str(n) for n in card['parents']}
+    transferred_parents = set()
+    for transfer in data.get('technology_transfers', []):
+        assert 1 <= transfer['parent'] <= 23 and transfer['parent'] not in transferred_parents
+        assert transfer['recipient_ko'] and transfer['recipient_en']
+        assert transfer['reference_url'].startswith('https://')
+        date.fromisoformat(transfer['confirmed_on'])
+        transferred_parents.add(transfer['parent'])
     return data
+
+def render_badges(parents, domestic_stages, records):
+    stages = {domestic_stages[n] for n in parents}
+    ko,en = ('한국 등록·공개','KR · Granted / published') if len(stages)>1 else (('한국 등록','KR · Granted') if 'granted' in stages else ('한국 공개','KR · Published'))
+    badges = ['<span class="ip-badge">'+bilingual(ko,en)+'</span>']
+    seen = set()
+    for item in records:
+        if item['parent'] not in parents:
+            continue
+        label = (item['jurisdiction'], item['stage'])
+        if label in seen:
+            continue
+        seen.add(label)
+        ko,en = COUNTRIES[label[0]]; sk,se=STAGES[label[1]]
+        if label[0] == 'WO':
+            ko,en,sk,se = '', '', 'PCT 국제공개', 'PCT publication'
+        badges.append(f'<span class="ip-badge {item["stage"]}">{bilingual(ko+" "+sk if ko else sk,en+" · "+se if en else se)}</span>')
+    return '<div class="ip-badges">'+''.join(badges)+'</div>'
+
+def transfer_label(transfer):
+    return bilingual('기술이전: '+transfer['recipient_ko'], 'Technology transfer: '+transfer['recipient_en'])
 
 def render_record(item):
     stage = STAGES[item['stage']]
@@ -78,14 +108,18 @@ def render(source, data):
         items_by_parent.setdefault(item['parent'], []).append(item)
     rendered_rows = []
     domestic_stages = {}
+    domestic_titles = {}
+    transfers_by_parent = {item['parent']: item for item in data.get('technology_transfers', [])}
     for number, tail in enumerate(rows, 1):
         row = '<td class="no">' + tail
         assert re.match(rf'<td class="no">{number}</td>', row), 'domestic order changed'
         row = re.sub(r'<!-- linked:start -->[\s\S]*?<!-- linked:end -->', '', row)
+        row = re.sub(r'<!-- transfer:start -->[\s\S]*?<!-- transfer:end -->', '', row)
         row = re.sub(r' role="cell"', '', row)
         cells = re.findall(r'<td\b[^>]*>[\s\S]*?</td>', row)
         assert len(cells) == 5, 'domestic registry column contract changed'
         domestic_stages[number] = 'granted' if '>Granted</span>' in cells[3] else 'published'
+        domestic_titles[number] = re.sub(r'^<td\b[^>]*>|</td>$', '', cells[2])
         if number in data['unresolved_domestic_rows'] + [11]:
             cells[1] = re.sub(r'<a class="ip-domestic-source"[^>]*>([\s\S]*?)</a>', r'\1', cells[1])
         cell = cells[-1]
@@ -93,6 +127,10 @@ def render(source, data):
         if group:
             extra = '<div class="ip-related"><h4>' + bilingual('해외 권리화·국제공개', 'International records') + '</h4><ul class="ip-rights">' + ''.join(map(render_record, group)) + '</ul></div>'
             cell = cell[:-5] + '<!-- linked:start -->' + extra + '<!-- linked:end --></td>'
+        if number in transfers_by_parent:
+            transfer = transfers_by_parent[number]
+            extra = f'<div class="ip-transfer-record" data-transfer-parent="{number}">'+transfer_label(transfer)+'</div>'
+            cell = cell[:-5] + '<!-- transfer:start -->' + extra + '<!-- transfer:end --></td>'
         # Link domestic identifiers without changing their visible text/attributes.
         if number not in data['unresolved_domestic_rows'] + [11] and 'class="ip-domestic-source"' not in cells[1]:
             raw = re.sub(r'<[^>]+>', ' ', cells[1])
@@ -118,33 +156,25 @@ def render(source, data):
     metric_html = ''.join(f'<div class="ip-metric"><strong>{n}</strong><span>{bilingual(ko,en)}</span></div>' for n,ko,en in metrics)
     cards = []
     for card in data['cards']:
-        stages = {domestic_stages[n] for n in card['parents']}
-        ko,en = ('한국 등록·공개','KR · Granted / published') if len(stages)>1 else (('한국 등록','KR · Granted') if 'granted' in stages else ('한국 공개','KR · Published'))
-        badges = ['<span class="ip-badge">'+bilingual(ko,en)+'</span>']
-        related = [x for x in data['records'] if x['parent'] in card['parents']]
-        seen = set()
-        for item in related:
-            label = (item['jurisdiction'], item['stage'])
-            if label in seen:
-                continue
-            seen.add(label)
-            ko,en = COUNTRIES[label[0]]; sk,se=STAGES[label[1]]
-            if label[0] == 'WO':
-                ko,en,sk,se = '', '', 'PCT 국제공개', 'PCT publication'
-            badges.append(f'<span class="ip-badge {item["stage"]}">{bilingual(ko+" "+sk if ko else sk,en+" · "+se if en else se)}</span>')
-        links = ''.join(f'<a href="#patent-{n}">{bilingual("특허 "+str(n),"Record "+str(n))}</a>' for n in card['parents'])
-        cards.append(f'<article class="family-card" id="{card["id"]}"><div class="eyebrow">{bilingual(card["application_ko"],card["application_en"])}</div><h3>{bilingual(card["ko"],card["en"])}</h3><p>{bilingual(card["description_ko"],card["description_en"])}</p><div class="ip-badges">'+''.join(badges)+f'</div><div class="ip-card-links">{links}</div></article>')
+        members = []
+        for number in card['parents']:
+            title = card.get('member_titles', {}).get(str(number))
+            title_html = bilingual(title['ko'],title['en']) if title else domestic_titles[number]
+            legacy_id = card.get('legacy_anchors', {}).get(str(number))
+            anchor = f' id="{escape(legacy_id,quote=True)}"' if legacy_id else ''
+            members.append(f'<li class="ip-portfolio-invention anchor-target"{anchor}><a class="ip-invention-link" href="#patent-{number}"><span class="ip-invention-number">{bilingual("특허 "+str(number),"Record "+str(number))}</span>{title_html}</a>'+render_badges([number],domestic_stages,data['records'])+'</li>')
+        cards.append(f'<article class="family-card" id="{card["id"]}"><div class="eyebrow">{bilingual(card["application_ko"],card["application_en"])}</div><h3>{bilingual(card["ko"],card["en"])}</h3><p>{bilingual(card["description_ko"],card["description_en"])}</p><ul class="ip-portfolio-inventions">'+''.join(members)+'</ul></article>')
     main = f'''<main id="main-content">
   <section class="page-hero"><div class="shell">
     <div class="eyebrow">{bilingual('지식재산','INTELLECTUAL PROPERTY')}</div>
     <h1>{bilingual('산업 적용을 위한 국내외 특허 포트폴리오','Patents for Industrial Applications')}</h1>
     <p>{bilingual('열에너지·탄소전환·수소 기술의 산업 적용을 위해 축적한 PI의 선행·공동연구 특허를 소개합니다. 각 발명의 국내 기록과 해외 권리화 이력을 함께 확인할 수 있습니다.','Explore the PI’s prior and collaborative patents for industrial applications in thermal energy, carbon conversion and hydrogen. Each invention connects domestic records with its international patent history.')}</p>
-    <div class="page-nav"><a href="#families">{bilingual('기술별 대표 특허','Selected portfolios')}</a><a href="#registry">{bilingual('국내외 통합 목록','Integrated registry')}</a><a href="#status">{bilingual('성과 귀속·수록 기준','Attribution & scope')}</a></div>
+    <div class="page-nav"><a href="#families">{bilingual('기술 분야별 특허','Technology areas')}</a><a href="#registry">{bilingual('국내외 통합 목록','Integrated registry')}</a><a href="#status">{bilingual('성과 귀속·수록 기준','Attribution & scope')}</a></div>
     <div class="ip-metrics">{metric_html}</div>
     <p class="ip-count-note">{bilingual('국내 23개 기록을 기준으로 연결한 공개 실적입니다. 국가·지역별 출원 1건을 한 번만 세며, PCT는 해외 등록과 구분합니다.','Public records linked to 23 domestic entries. Each national/regional application is counted once; PCT publications are separate from international grants.')} <time datetime="{data['checked_on']}">{data['checked_on']}</time></p>
   </div></section>
   <section class="section alt anchor-target" id="families"><div class="shell">
-    <div class="section-head"><div><div class="eyebrow">{bilingual('기술별 대표 특허','SELECTED PATENT PORTFOLIOS')}</div><h2>{bilingual('기술의 용도와 국내외 권리화 현황을 함께 봅니다.','Industrial relevance and international patent history.')}</h2></div><p>{bilingual('관심 기술에서 해당 발명의 국내외 상세 기록으로 바로 이동할 수 있습니다. 수소·수전해 분야는 서로 다른 발명으로 구성된 기술 포트폴리오입니다.','Follow each technology to its linked domestic and international records. The hydrogen/electrolysis portfolio contains distinct inventions.')}</p></div>
+    <div class="section-head"><div><div class="eyebrow">{bilingual('기술 분야별 특허','PATENTS BY TECHNOLOGY AREA')}</div><h2>{bilingual('네 가지 기술 분야로 살펴봅니다.','Explore four technology areas.')}</h2></div><p>{bilingual('관련 기술을 분야별로 묶고, 국내외 등록·공개 현황은 각 발명에 표시했습니다. 특허명을 누르면 전체 목록의 상세 기록으로 이동합니다.','Related inventions are grouped by technology area. Domestic and international status is shown for each invention; select its title to view the detailed record.')}</p></div>
     <div class="family-grid">{''.join(cards)}</div>
   </div></section>
   <section class="section anchor-target" id="registry"><div class="shell">
