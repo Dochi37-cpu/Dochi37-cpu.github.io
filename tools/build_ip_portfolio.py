@@ -169,27 +169,20 @@ def render(source, data):
     <div class="eyebrow">{bilingual('지식재산','INTELLECTUAL PROPERTY')}</div>
     <h1>{bilingual('산업 적용을 위한 국내외 특허 포트폴리오','Patents for Industrial Applications')}</h1>
     <p>{bilingual('열에너지·탄소전환·수소 기술의 산업 적용을 위해 축적한 PI의 선행·공동연구 특허를 소개합니다. 각 발명의 국내 기록과 해외 권리화 이력을 함께 확인할 수 있습니다.','Explore the PI’s prior and collaborative patents for industrial applications in thermal energy, carbon conversion and hydrogen. Each invention connects domestic records with its international patent history.')}</p>
-    <div class="page-nav"><a href="#families">{bilingual('기술 분야별 특허','Technology areas')}</a><a href="#registry">{bilingual('국내외 통합 목록','Integrated registry')}</a><a href="#status">{bilingual('성과 귀속·수록 기준','Attribution & scope')}</a></div>
+    <div class="page-nav"><a href="#families">{bilingual('기술 분야별 특허','Technology areas')}</a><a href="#registry">{bilingual('국내외 통합 목록','Integrated registry')}</a></div>
     <div class="ip-metrics">{metric_html}</div>
     <p class="ip-count-note">{bilingual('국내 23개 기록을 기준으로 연결한 공개 실적입니다. 국가·지역별 출원 1건을 한 번만 세며, PCT는 해외 등록과 구분합니다.','Public records linked to 23 domestic entries. Each national/regional application is counted once; PCT publications are separate from international grants.')} <time datetime="{data['checked_on']}">{data['checked_on']}</time></p>
   </div></section>
   <section class="section alt anchor-target" id="families"><div class="shell">
-    <div class="section-head"><div><div class="eyebrow">{bilingual('기술 분야별 특허','PATENTS BY TECHNOLOGY AREA')}</div><h2>{bilingual('네 가지 기술 분야로 살펴봅니다.','Explore four technology areas.')}</h2></div><p>{bilingual('관련 기술을 분야별로 묶고, 국내외 등록·공개 현황은 각 발명에 표시했습니다. 특허명을 누르면 전체 목록의 상세 기록으로 이동합니다.','Related inventions are grouped by technology area. Domestic and international status is shown for each invention; select its title to view the detailed record.')}</p></div>
+    <div class="section-head"><div><div class="eyebrow">{bilingual('기술 분야별 특허','PATENTS BY TECHNOLOGY AREA')}</div><h2>{bilingual('네 가지 기술 분야로 살펴봅니다.','Explore four technology areas.')}</h2></div></div>
     <div class="family-grid">{''.join(cards)}</div>
   </div></section>
   <section class="section anchor-target" id="registry"><div class="shell">
-    <div class="section-head"><div><div class="eyebrow">{bilingual('국내외 특허 통합 목록','DOMESTIC & INTERNATIONAL PATENTS')}</div><h2>{bilingual('하나의 발명, 연결된 국내외 기록.','One invention, connected patent records.')}</h2></div><p>{bilingual('각 발명의 국내 등록·공개 이력과 해외 권리화 기록을 함께 확인할 수 있습니다. 대표 카드의 특허 번호를 누르면 해당 항목으로 이동합니다.','Explore each invention’s domestic and international patent history. Record links in the selected portfolios lead directly to the relevant entry.')}</p></div>
+    <div class="section-head"><div><div class="eyebrow">{bilingual('국내외 특허 통합 목록','DOMESTIC & INTERNATIONAL PATENTS')}</div><h2>{bilingual('하나의 발명, 연결된 국내외 기록.','One invention, connected patent records.')}</h2></div></div>
     <div class="registry-wrap" role="region" aria-label="Domestic and international patents" tabindex="0">
     <table class="registry-table ip-table" role="table"><caption>{bilingual('국내 23개 항목과 연결된 국내외 특허 기록','23 domestic entries with linked international patent records')}</caption>
     <thead role="rowgroup"><tr role="row"><th scope="col">{bilingual('번호','No.')}</th><th scope="col">{bilingual('국내 식별자','Domestic identifiers')}</th><th scope="col">{bilingual('발명의 명칭','Invention')}</th><th scope="col">{bilingual('국내 이력','Domestic record')}</th><th scope="col">{bilingual('기술 분야·해외 연결','Application & international records')}</th></tr></thead>
     <tbody role="rowgroup">{''.join(rendered_rows)}</tbody></table></div>
-  </div></section>
-  <section class="section alt anchor-target" id="status"><div class="shell ip-attribution">
-    <div class="eyebrow">{bilingual('성과 귀속·수록 기준','ATTRIBUTION & SCOPE')}</div>
-    <h2>{bilingual('연구 경험과 발명 기여를 명확하게 기록합니다.','Clear attribution of research and invention.')}</h2>
-    <p>{bilingual('이 페이지는 PI가 발명자로 참여한 선행·공동연구의 공개 기록입니다. 특허권자는 각 공보에 기재된 기관·기업이며, 기존 성과를 P2E 창출 성과나 P2E 소유 권리로 소급 표시하지 않습니다. P2E에서 새로 창출한 성과는 공개 가능한 시점에 구분해 표시합니다.','These are public records of prior and collaborative inventions in which the PI participated. Patent owners are the institutions/companies named in each publication. Prior records are not relabeled as P2E-originated or P2E-owned IP; new P2E outputs will be identified when publicly available.')}</p>
-    <p>{bilingual('등록·공개는 확인된 공보 이력을 뜻합니다. 공개 출원이 현재 심사 중임을 뜻하지 않으며, 등록 이력이 현재 권리의 유효성이나 실시권을 보장하지 않습니다. EP는 유럽 지역 절차 1건으로 계산하고 개별 국가의 유효화는 별도로 집계하지 않습니다.','Grant/publication labels describe documented publication history, not current pendency, enforceability or licensing rights. EP is counted as one regional procedure; individual national validations are not counted.')}</p>
-    <div id="principle" class="anchor-target"><p>{bilingual('공개된 자료만 연결하며, 공개 전 출원과 내부 발명 정보는 수록하지 않습니다. PCT 국제공개는 국가별 등록과 구분하고, 동일 출원의 공개·등록 번호는 중복 집계하지 않습니다.','Only public material is linked. Unpublished applications and internal invention information are excluded. PCT international publications are separate from national grants, and publication/grant numbers for the same application are not counted twice.')}</p></div>
   </div></section>
 </main>'''
     result = source.replace('<main id="main-content">'+old_main+'</main>', main)
