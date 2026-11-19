@@ -188,7 +188,7 @@ def render(source, data):
     <div class="section-head"><div><div class="eyebrow">{bilingual('국내외 특허 통합 목록','DOMESTIC & INTERNATIONAL PATENTS')}</div><h2>{bilingual('하나의 발명, 연결된 국내외 기록.','One invention, connected patent records.')}</h2></div></div>
     <div class="registry-wrap" role="region" aria-label="Domestic and international patents" tabindex="0">
     <table class="registry-table ip-table" role="table"><caption>{bilingual('국내 23개 항목과 연결된 국내외 특허 기록','23 domestic entries with linked international patent records')}</caption>
-    <thead role="rowgroup"><tr role="row"><th scope="col">{bilingual('번호','No.')}</th><th scope="col">{bilingual('국내 식별자','Domestic identifiers')}</th><th scope="col">{bilingual('발명의 명칭','Invention')}</th><th scope="col">{bilingual('국내 이력','Domestic record')}</th><th scope="col">{bilingual('기술 분야·해외 연결','Application & international records')}</th></tr></thead>
+    <thead role="rowgroup"><tr role="row"><th scope="col">{bilingual('번호','No.')}</th><th scope="col">{bilingual('국내 식별자','Domestic identifiers')}</th><th scope="col">{bilingual('발명의 명칭','Invention')}</th><th scope="col">{bilingual('국내 이력','Domestic record')}</th><th scope="col">{bilingual('해외 기록·기술이전','International records & technology transfer')}</th></tr></thead>
     <tbody role="rowgroup">{''.join(rendered_rows)}</tbody></table></div>
   </div></section>
 </main>'''
