@@ -1,10 +1,10 @@
 # IP portfolio: public evidence and counting rules
 
-Checked: 2026-10-27. This inventory links public documents to the existing 23 Korean entries. It is a publication-history inventory, not a freedom-to-operate or current enforceability assessment. No new P2E ownership or commercialization claim is made.
+International records checked: 2026-10-27. Domestic row 19 updated: 2026-11-19. This inventory links public documents to the existing 23 Korean entries. It is a publication-history inventory, not a freedom-to-operate or current enforceability assessment. No new P2E ownership or commercialization claim is made.
 
 ## Counts
 
-- Domestic: the existing 23 entries remain in their original order, with titles, hidden identifiers and 11 granted / 12 published labels preserved.
+- Domestic: the existing 23 entries remain in their original order, with titles and prior identifiers preserved. The 2026-11-19 update to row 19 changes the counts from 11 granted / 12 published to 12 granted / 11 published.
 - International national/regional applications: 10 (5 with verified grant publications, 4 published, 1 carrying the existing allowance notice).
 - PCT international publications: 6, separate from grants.
 - Total linked international entries: 16 under 8 domestic entries. Aliases, A4 search reports and the A8 correction are not additional patents.
@@ -97,3 +97,30 @@ Original EPO PDF SHA-256 (not bundled in the repository): `99ae389b11164bbe069d0
   patent 1: “기술이전: 어밸브” / “Technology transfer: AVALVE”.
 - Remove the standalone transfer section, its navigation link and the transfer
   pill. Keep the four technology areas and all patent facts and evidence intact.
+
+
+## 2026-11-19: Korean grant for the sulfur-resistant methane-oxidation catalyst
+
+- Domestic row 19: 내황성을 갖는 메탄 산화반응용 촉매 및 이를 이용한 메탄 산화방법.
+- Application: 10-2024-0108551 (2024-08-13); earlier publication:
+  KR 10-2026-0024252 (2026-02-20). Both identifiers are retained as data attributes.
+- Registration: KR 10-3040665, registered 2026-10-27; B1 grant publication
+  issued 2026-10-30. Registration and publication dates are stored separately.
+- Primary evidence: the PI supplied the Korean grant gazette
+  `1020240108551B1.pdf` on 2026-11-19. Page 1 states the title, application,
+  earlier publication, registration number and both grant dates; page 2 lists
+  정한솔 among the inventors.
+- Evidence PDF SHA-256 (not bundled):
+  `048df62065d35cb2fdfed37744e79eab9fc26abc9c066e6004aeafd1e89217e1`.
+- The proprietors named on page 1 are 주식회사 퓨어스피어,
+  에이치디한국조선해양 주식회사 and 에이치디현대중공업 주식회사.
+  The prior/collaborative-invention attribution remains unchanged.
+- The grant mirror could not be retrieved on 2026-11-19. As with row 11,
+  the verified registration is displayed without an unverified mirror link.
+  This is evidence of the grant event, not a new current-enforceability finding.
+- The original row number, titles, technical descriptions and
+  PCT/KR2025/011656 / WO2026038778A1 connection are preserved. The PCT record
+  remains an international publication, not an overseas grant.
+- The international inventory was not re-audited; its 2026-10-27 check date and
+  all 16 linked records are preserved. The displayed date now explicitly labels
+  that international scope. Earlier verification sections above are historical.
