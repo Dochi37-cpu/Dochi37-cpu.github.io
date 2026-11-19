@@ -373,5 +373,13 @@
       "reference_url": "https://mafra.go.kr/bbs/home/792/564646/download.do",
       "reference_scope": "MAFRA release dated 2022-12-28, attachment 1 page 3, lists KR 10-1805184 in AVALVE IP holdings. It does not establish transaction date, amount, licence type or commercial deployment."
     }
-  ]
+  ],
+  "domestic_source_overrides": {
+    "KR103029668B1": "https://doi.org/10.8080/1020240041982",
+    "KR103040665B1": "https://doi.org/10.8080/1020240108551",
+    "KR20220017011A": "https://doi.org/10.8080/1020200096553",
+    "KR20260015099A": "https://doi.org/10.8080/1020250097991",
+    "KR20260063484A": "https://doi.org/10.8080/1020240151179",
+    "KR20260063485A": "https://doi.org/10.8080/1020240151180"
+  }
 }
