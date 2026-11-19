@@ -101,7 +101,7 @@ def render(source, data):
     table = re.search(r'<table\b[^>]*class="registry-table[^\"]*"[^>]*>([\s\S]*?)</table>', old_main)
     if not table:
         raise ValueError('existing domestic registry is required')
-    rows = re.findall(r'<tr\b[^>]*>\s*<td(?: role="cell")? class="no">([\s\S]*?)</tr>', table.group(1))
+    rows = re.findall(r'(<tr\b[^>]*>)\s*<td(?: role="cell")? class="no">([\s\S]*?)</tr>', table.group(1))
     assert len(rows) == 23, 'preserve all 23 domestic rows'
     items_by_parent = {}
     for item in data['records']:
@@ -109,8 +109,15 @@ def render(source, data):
     rendered_rows = []
     domestic_stages = {}
     domestic_titles = {}
+    domestic_anchors = {}
     transfers_by_parent = {item['parent']: item for item in data.get('technology_transfers', [])}
-    for number, tail in enumerate(rows, 1):
+    for number, (opening, tail) in enumerate(rows, 1):
+        # Keep existing bookmarks attached to their invention when display numbers change.
+        match = re.search(r'\bid="([^"]+)"', opening)
+        row_anchor = match[1] if match else f'patent-{number}'
+        assert re.fullmatch(r'patent-[1-9][0-9]*', row_anchor), 'invalid domestic anchor'
+        assert row_anchor not in domestic_anchors.values(), 'duplicate domestic anchor'
+        domestic_anchors[number] = row_anchor
         row = '<td class="no">' + tail
         assert re.match(rf'<td class="no">{number}</td>', row), 'domestic order changed'
         row = re.sub(r'<!-- linked:start -->[\s\S]*?<!-- linked:end -->', '', row)
@@ -120,7 +127,7 @@ def render(source, data):
         assert len(cells) == 5, 'domestic registry column contract changed'
         domestic_stages[number] = 'granted' if '>Granted</span>' in cells[3] else 'published'
         domestic_titles[number] = re.sub(r'^<td\b[^>]*>|</td>$', '', cells[2])
-        if number in data['unresolved_domestic_rows'] + [11, 19]:
+        if number in data['unresolved_domestic_rows'] + [11, 12]:
             cells[1] = re.sub(r'<a class="ip-domestic-source"[^>]*>([\s\S]*?)</a>', r'\1', cells[1])
         cell = cells[-1]
         group = items_by_parent.get(number, [])
@@ -132,7 +139,7 @@ def render(source, data):
             extra = f'<div class="ip-transfer-record" data-transfer-parent="{number}">'+transfer_label(transfer)+'</div>'
             cell = cell[:-5] + '<!-- transfer:start -->' + extra + '<!-- transfer:end --></td>'
         # Link domestic identifiers without changing their visible text/attributes.
-        if number not in data['unresolved_domestic_rows'] + [11, 19] and 'class="ip-domestic-source"' not in cells[1]:
+        if number not in data['unresolved_domestic_rows'] + [11, 12] and 'class="ip-domestic-source"' not in cells[1]:
             raw = re.sub(r'<[^>]+>', ' ', cells[1])
             match = re.search(r'KR\s*10-(\d{7})', raw)
             if match and 'Reg.' in raw:
@@ -146,7 +153,7 @@ def render(source, data):
                     lambda m: m[1] + f'<a class="ip-domestic-source" href="https://patents.google.com/patent/{publication}/ko">' + m[2] + '</a>' + m[3], cells[1])
         cells[-1] = cell
         cells = [c.replace('<td ', '<td role="cell" ', 1) for c in cells]
-        rendered_rows.append(f'<tr role="row" id="patent-{number}" class="anchor-target">' + ''.join(cells) + '</tr>')
+        rendered_rows.append(f'<tr role="row" id="{row_anchor}" class="anchor-target">' + ''.join(cells) + '</tr>')
     grants = sum(x['stage'] == 'granted' for x in data['records'])
     other = sum(x['stage'] in ('published','allowed') for x in data['records'])
     pct = sum(x['stage'] == 'pct_published' for x in data['records'])
@@ -162,7 +169,7 @@ def render(source, data):
             title_html = bilingual(title['ko'],title['en']) if title else domestic_titles[number]
             legacy_id = card.get('legacy_anchors', {}).get(str(number))
             anchor = f' id="{escape(legacy_id,quote=True)}"' if legacy_id else ''
-            members.append(f'<li class="ip-portfolio-invention anchor-target"{anchor}><a class="ip-invention-link" href="#patent-{number}"><span class="ip-invention-number">{bilingual("특허 "+str(number),"Record "+str(number))}</span>{title_html}</a>'+render_badges([number],domestic_stages,data['records'])+'</li>')
+            members.append(f'<li class="ip-portfolio-invention anchor-target"{anchor}><a class="ip-invention-link" href="#{domestic_anchors[number]}"><span class="ip-invention-number">{bilingual("특허 "+str(number),"Record "+str(number))}</span>{title_html}</a>'+render_badges([number],domestic_stages,data['records'])+'</li>')
         cards.append(f'<article class="family-card" id="{card["id"]}"><div class="eyebrow">{bilingual(card["application_ko"],card["application_en"])}</div><h3>{bilingual(card["ko"],card["en"])}</h3><p>{bilingual(card["description_ko"],card["description_en"])}</p><ul class="ip-portfolio-inventions">'+''.join(members)+'</ul></article>')
     main = f'''<main id="main-content">
   <section class="page-hero"><div class="shell">
