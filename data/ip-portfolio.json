@@ -138,9 +138,7 @@
       "evidence_url": "https://patents.google.com/patent/US20250113656A1/en",
       "allowance": {
         "date": "2026-07-24",
-        "basis": "existing_public_site",
-        "note_ko": "미국 등록결정일(2026-07-24)은 기존 홈페이지 안내를 유지했습니다. 등록공보는 별도 확인 중입니다.",
-        "note_en": "The allowance date (24 Jul 2026) is retained from the existing site; a grant publication has not been verified."
+        "basis": "existing_public_site"
       }
     },
     {
