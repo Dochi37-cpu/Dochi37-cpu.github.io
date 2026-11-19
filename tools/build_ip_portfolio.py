@@ -120,7 +120,7 @@ def render(source, data):
         assert len(cells) == 5, 'domestic registry column contract changed'
         domestic_stages[number] = 'granted' if '>Granted</span>' in cells[3] else 'published'
         domestic_titles[number] = re.sub(r'^<td\b[^>]*>|</td>$', '', cells[2])
-        if number in data['unresolved_domestic_rows'] + [11]:
+        if number in data['unresolved_domestic_rows'] + [11, 19]:
             cells[1] = re.sub(r'<a class="ip-domestic-source"[^>]*>([\s\S]*?)</a>', r'\1', cells[1])
         cell = cells[-1]
         group = items_by_parent.get(number, [])
@@ -132,12 +132,12 @@ def render(source, data):
             extra = f'<div class="ip-transfer-record" data-transfer-parent="{number}">'+transfer_label(transfer)+'</div>'
             cell = cell[:-5] + '<!-- transfer:start -->' + extra + '<!-- transfer:end --></td>'
         # Link domestic identifiers without changing their visible text/attributes.
-        if number not in data['unresolved_domestic_rows'] + [11] and 'class="ip-domestic-source"' not in cells[1]:
+        if number not in data['unresolved_domestic_rows'] + [11, 19] and 'class="ip-domestic-source"' not in cells[1]:
             raw = re.sub(r'<[^>]+>', ' ', cells[1])
             match = re.search(r'KR\s*10-(\d{7})', raw)
             if match and 'Reg.' in raw:
                 publication = 'KR10' + match.group(1) + 'B1'
-                # The existing Ni-V grant is retained even if a mirror has not indexed it.
+                # Verified domestic grants are retained even if a mirror has not indexed them.
             else:
                 match = re.search(r'Pub\.\s*KR\s*10-(\d{4})-(\d+)', raw)
                 publication = 'KR' + match.group(1) + match.group(2).zfill(7) + 'A' if match else None
@@ -171,7 +171,7 @@ def render(source, data):
     <p>{bilingual('열에너지·탄소전환·수소 기술의 산업 적용을 위해 축적한 PI의 선행·공동연구 특허를 소개합니다. 각 발명의 국내 기록과 해외 권리화 이력을 함께 확인할 수 있습니다.','Explore the PI’s prior and collaborative patents for industrial applications in thermal energy, carbon conversion and hydrogen. Each invention connects domestic records with its international patent history.')}</p>
     <div class="page-nav"><a href="#families">{bilingual('기술 분야별 특허','Technology areas')}</a><a href="#registry">{bilingual('국내외 통합 목록','Integrated registry')}</a></div>
     <div class="ip-metrics">{metric_html}</div>
-    <p class="ip-count-note">{bilingual('국내 23개 기록을 기준으로 연결한 공개 실적입니다. 국가·지역별 출원 1건을 한 번만 세며, PCT는 해외 등록과 구분합니다.','Public records linked to 23 domestic entries. Each national/regional application is counted once; PCT publications are separate from international grants.')} <time datetime="{data['checked_on']}">{data['checked_on']}</time></p>
+    <p class="ip-count-note">{bilingual('국내 23개 기록을 기준으로 연결한 공개 실적입니다. 국가·지역별 출원 1건을 한 번만 세며, PCT는 해외 등록과 구분합니다.','Public records linked to 23 domestic entries. Each national/regional application is counted once; PCT publications are separate from international grants.')} {bilingual('해외 연결 확인 기준: ', 'International records checked: ')}<time datetime="{data['checked_on']}">{data['checked_on']}</time></p>
   </div></section>
   <section class="section alt anchor-target" id="families"><div class="shell">
     <div class="section-head"><div><div class="eyebrow">{bilingual('기술 분야별 특허','PATENTS BY TECHNOLOGY AREA')}</div><h2>{bilingual('네 가지 기술 분야로 살펴봅니다.','Explore four technology areas.')}</h2></div></div>
