@@ -168,7 +168,7 @@
       "evidence_url": "https://patents.google.com/patent/WO2023075066A1/en"
     },
     {
-      "parent": 14,
+      "parent": 15,
       "jurisdiction": "WO",
       "application": "PCT/KR2023/015178",
       "publication": "WO2024117507A1",
@@ -179,7 +179,7 @@
       "evidence_url": "https://patentimages.storage.googleapis.com/2f/01/24/3251f89a57b381/WO2024117507A1.pdf"
     },
     {
-      "parent": 18,
+      "parent": 19,
       "jurisdiction": "WO",
       "application": "PCT/KR2025/099545",
       "publication": "WO2025188145A1",
@@ -192,7 +192,7 @@
       "evidence_url": "https://patents.google.com/patent/WO2025188145A1/en"
     },
     {
-      "parent": 19,
+      "parent": 12,
       "jurisdiction": "WO",
       "application": "PCT/KR2025/011656",
       "publication": "WO2026038778A1",
@@ -210,7 +210,7 @@
         2,
         5,
         7,
-        12
+        13
       ],
       "ko": "냉난방·축열 시스템",
       "en": "Heating, Cooling & Thermal Storage",
@@ -235,7 +235,7 @@
           "ko": "흡수식 열에너지 저장·냉난방",
           "en": "Absorption thermal storage with heating and cooling"
         },
-        "12": {
+        "13": {
           "ko": "연료전지 자동차용 흡수식 히트펌프",
           "en": "Absorption heat pump for fuel-cell vehicles"
         }
@@ -272,8 +272,8 @@
       "parents": [
         10,
         11,
-        14,
-        18,
+        15,
+        19,
         20,
         21,
         22,
@@ -294,11 +294,11 @@
           "ko": "Ni–V 수소발생 촉매",
           "en": "Ni–V hydrogen-evolution catalyst"
         },
-        "14": {
+        "15": {
           "ko": "해수 수전해용 고내구성 전극 촉매",
           "en": "Durable electrode catalyst for seawater electrolysis"
         },
-        "18": {
+        "19": {
           "ko": "Ni–Fe–Y 전기분해용 전극",
           "en": "Ni–Fe–Y electrode for electrolysis"
         },
@@ -324,10 +324,10 @@
       "id": "industrial-systems",
       "parents": [
         9,
-        15,
+        12,
         16,
         17,
-        19
+        18
       ],
       "ko": "탄소·연료·해양 공정",
       "en": "Carbon, Fuel & Offshore Processes",
@@ -340,19 +340,19 @@
           "ko": "해양 부유식 구조물용 CO₂ 처리 시스템",
           "en": "CO₂ conditioning for offshore floating structures"
         },
-        "15": {
+        "16": {
           "ko": "암모니아 벤트가스 처리",
           "en": "Ammonia vent-gas treatment"
         },
-        "16": {
+        "17": {
           "ko": "CO₂ 지중저장 시스템",
           "en": "CO₂ geological-storage system"
         },
-        "17": {
+        "18": {
           "ko": "수소생산·폐열 회수",
           "en": "Hydrogen production and waste-heat recovery"
         },
-        "19": {
+        "12": {
           "ko": "내황성 메탄 산화 촉매",
           "en": "Sulfur-resistant methane oxidation catalyst"
         }
@@ -360,7 +360,7 @@
     }
   ],
   "unresolved_domestic_rows": [
-    13,
+    14,
     20,
     21,
     23
