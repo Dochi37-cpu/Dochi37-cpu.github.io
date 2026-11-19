@@ -1,14 +1,14 @@
 # IP portfolio: public evidence and counting rules
 
-International records checked: 2026-10-27. Domestic row 19 updated: 2026-11-19. This inventory links public documents to the existing 23 Korean entries. It is a publication-history inventory, not a freedom-to-operate or current enforceability assessment. No new P2E ownership or commercialization claim is made.
+International records checked: 2026-10-27. Domestic grant and numbering updated: 2026-11-19 (KR 10-3040665 is now row 12). This inventory links public documents to the existing 23 Korean entries. It is a publication-history inventory, not a freedom-to-operate or current enforceability assessment. No new P2E ownership or commercialization claim is made.
 
 ## Counts
 
-- Domestic: the existing 23 entries remain in their original order, with titles and prior identifiers preserved. The 2026-11-19 update to row 19 changes the counts from 11 granted / 12 published to 12 granted / 11 published.
+- Domestic: 23 entries, ordered as 12 granted followed by 11 published. KR 10-3040665 moved from row 19 to row 12; former rows 12–18 became 13–19. Titles, identifiers and grant/publication facts are preserved.
 - International national/regional applications: 10 (5 with verified grant publications, 4 published, 1 carrying the existing allowance notice).
 - PCT international publications: 6, separate from grants.
 - Total linked international entries: 16 under 8 domestic entries. Aliases, A4 search reports and the A8 correction are not additional patents.
-- Nine international links are new to the site: CN/EP for row 2; US/EP for row 3; JP/EP for row 8; WO for rows 14, 18 and 19.
+- Nine international links were added on 2026-10-27 (current row numbers): CN/EP for row 2; US/EP for row 3; JP/EP for row 8; WO for rows 12, 15 and 19.
 - EP is one regional procedure; national validation and current national validity are not inferred.
 - JP grant-publication dates are the B2 issue dates, not an invented registration date.
 
@@ -29,11 +29,11 @@ International records checked: 2026-10-27. Domestic row 19 updated: 2026-11-19. 
 | 8 | US | 18/699,839 | US20250113656A1 | allowed | 2025-04-03 | [Record](https://patents.google.com/patent/US20250113656A1/en) | [Source](https://patents.google.com/patent/US20250113656A1/en) |
 | 8 | EP | 22887272.7 | EP4425580A1 | published | 2024-09-04 | [Record](https://patents.google.com/patent/EP4425580A1/en) | [Source](https://patents.google.com/patent/EP4425580A1/en) |
 | 8 | WO | PCT/KR2022/008736 | WO2023075066A1 | pct_published | 2023-05-04 | [Record](https://patents.google.com/patent/WO2023075066A1/en) | [Source](https://patents.google.com/patent/WO2023075066A1/en) |
-| 14 | WO | PCT/KR2023/015178 | WO2024117507A1 | pct_published | 2024-06-06 | [Record](https://patents.google.com/patent/WO2024117507A1/en) | [Source](https://patentimages.storage.googleapis.com/2f/01/24/3251f89a57b381/WO2024117507A1.pdf) |
-| 18 | WO | PCT/KR2025/099545 | WO2025188145A1 | pct_published | 2025-09-12 | [Record](https://patents.google.com/patent/WO2025188145A1/en) | [Source](https://patents.google.com/patent/WO2025188145A1/en) |
-| 19 | WO | PCT/KR2025/011656 | WO2026038778A1 | pct_published | 2026-02-19 | [Record](https://patents.google.com/patent/WO2026038778A1/en) | [Source](https://patents.google.com/patent/WO2026038778A1/en) |
+| 15 | WO | PCT/KR2023/015178 | WO2024117507A1 | pct_published | 2024-06-06 | [Record](https://patents.google.com/patent/WO2024117507A1/en) | [Source](https://patentimages.storage.googleapis.com/2f/01/24/3251f89a57b381/WO2024117507A1.pdf) |
+| 19 | WO | PCT/KR2025/099545 | WO2025188145A1 | pct_published | 2025-09-12 | [Record](https://patents.google.com/patent/WO2025188145A1/en) | [Source](https://patents.google.com/patent/WO2025188145A1/en) |
+| 12 | WO | PCT/KR2025/011656 | WO2026038778A1 | pct_published | 2026-02-19 | [Record](https://patents.google.com/patent/WO2026038778A1/en) | [Source](https://patents.google.com/patent/WO2026038778A1/en) |
 
-## Verification and scope
+## Verification and scope (2026-10-27 row numbers)
 
 Grant front pages inspected: US11674720B2, JP7054544B2, CN111602012B, JP7664667B2. The EPO publication server returned the original EP3737895B1 specification, whose front page states 12 August 2026 as publication and mention of grant, application 19738376.3, priority KR20180004266, LG Electronics / Korea University proprietors, and Hansol Jung as inventor.
 
@@ -99,7 +99,7 @@ Original EPO PDF SHA-256 (not bundled in the repository): `99ae389b11164bbe069d0
   pill. Keep the four technology areas and all patent facts and evidence intact.
 
 
-## 2026-11-19: Korean grant for the sulfur-resistant methane-oxidation catalyst
+## 2026-11-19: Korean grant for the sulfur-resistant methane-oxidation catalyst (before renumbering)
 
 - Domestic row 19: 내황성을 갖는 메탄 산화반응용 촉매 및 이를 이용한 메탄 산화방법.
 - Application: 10-2024-0108551 (2024-08-13); earlier publication:
@@ -124,3 +124,20 @@ Original EPO PDF SHA-256 (not bundled in the repository): `99ae389b11164bbe069d0
 - The international inventory was not re-audited; its 2026-10-27 check date and
   all 16 linked records are preserved. The displayed date now explicitly labels
   that international scope. Earlier verification sections above are historical.
+
+
+## 2026-11-19: registered patents first, with synchronized display numbers
+
+- At the PI's request, move KR 10-3040665 from display number 19 to 12, directly
+  after the Ni–V grant (11). Former display numbers 12–18 shift to 13–19;
+  numbers 1–11 and 20–23 stay unchanged.
+- Apply the same numbering to the technology-area cards, their member titles,
+  international-record parents and unresolved-family references. Members within
+  each technology area follow ascending current display numbers.
+- Existing `#patent-N` bookmarks stay attached to the same invention. These
+  anchor identifiers are stable and are no longer interpreted as display numbers.
+  The renderer derives card links from the target row, and the shared-record
+  checker validates the visible number against that row.
+- All 23 invention records, 16 international records, source URLs, registration
+  dates, statuses, attribution and counts are unchanged by this renumbering.
+  Historical sections above retain the row numbers used at the time.
