@@ -39,6 +39,9 @@ def load_data(root=ROOT):
             publications.add(number)
         for field in ('publication_url', 'evidence_url'):
             assert item[field].startswith('https://'), 'public source required'
+    for publication, url in data.get('domestic_source_overrides', {}).items():
+        assert re.fullmatch(r'KR[0-9]+[AB][0-9]?', publication), 'invalid domestic source identifier'
+        assert re.fullmatch(r'https://doi\.org/10\.8080/10[0-9]{11}', url), 'invalid KIPRIS permanent link'
     for card in data['cards']:
         assert card['parents'] and all(1 <= n <= 23 for n in card['parents'])
         assert set(card.get('member_titles', {})) <= {str(n) for n in card['parents']}
@@ -127,8 +130,8 @@ def render(source, data):
         assert len(cells) == 5, 'domestic registry column contract changed'
         domestic_stages[number] = 'granted' if '>Granted</span>' in cells[3] else 'published'
         domestic_titles[number] = re.sub(r'^<td\b[^>]*>|</td>$', '', cells[2])
-        if number in data['unresolved_domestic_rows'] + [11, 12]:
-            cells[1] = re.sub(r'<a class="ip-domestic-source"[^>]*>([\s\S]*?)</a>', r'\1', cells[1])
+        # Resolve domestic links independently of unresolved international families.
+        cells[1] = re.sub(r'<a class="ip-domestic-source"[^>]*>([\s\S]*?)</a>', r'\1', cells[1])
         cell = cells[-1]
         group = items_by_parent.get(number, [])
         if group:
@@ -138,19 +141,20 @@ def render(source, data):
             transfer = transfers_by_parent[number]
             extra = f'<div class="ip-transfer-record" data-transfer-parent="{number}">'+transfer_label(transfer)+'</div>'
             cell = cell[:-5] + '<!-- transfer:start -->' + extra + '<!-- transfer:end --></td>'
-        # Link domestic identifiers without changing their visible text/attributes.
-        if number not in data['unresolved_domestic_rows'] + [11, 12] and 'class="ip-domestic-source"' not in cells[1]:
-            raw = re.sub(r'<[^>]+>', ' ', cells[1])
-            match = re.search(r'KR\s*10-(\d{7})', raw)
-            if match and 'Reg.' in raw:
-                publication = 'KR10' + match.group(1) + 'B1'
-                # Verified domestic grants are retained even if a mirror has not indexed them.
-            else:
-                match = re.search(r'Pub\.\s*KR\s*10-(\d{4})-(\d+)', raw)
-                publication = 'KR' + match.group(1) + match.group(2).zfill(7) + 'A' if match else None
-            if publication:
-                cells[1] = re.sub(r'(<td\b[^>]*>)([\s\S]*)(</td>)',
-                    lambda m: m[1] + f'<a class="ip-domestic-source" href="https://patents.google.com/patent/{publication}/ko">' + m[2] + '</a>' + m[3], cells[1])
+        # Use verified KIPRIS permanent links when the grant/publication mirror is unavailable.
+        # Keys are publication identifiers so links stay with inventions after renumbering.
+        raw = re.sub(r'<[^>]+>', ' ', cells[1])
+        match = re.search(r'KR\s*10-(\d{7})', raw)
+        if match and 'Reg.' in raw:
+            publication = 'KR10' + match.group(1) + 'B1'
+        else:
+            match = re.search(r'Pub\.\s*KR\s*10-(\d{4})-(\d+)', raw)
+            publication = 'KR' + match.group(1) + match.group(2).zfill(7) + 'A' if match else None
+        assert publication, 'domestic identifier required for source link'
+        source_url = data.get('domestic_source_overrides', {}).get(
+            publication, f'https://patents.google.com/patent/{publication}/ko')
+        cells[1] = re.sub(r'(<td\b[^>]*>)([\s\S]*)(</td>)',
+            lambda m: m[1] + f'<a class="ip-domestic-source" href="{escape(source_url, quote=True)}">' + m[2] + '</a>' + m[3], cells[1])
         cells[-1] = cell
         cells = [c.replace('<td ', '<td role="cell" ', 1) for c in cells]
         rendered_rows.append(f'<tr role="row" id="{row_anchor}" class="anchor-target">' + ''.join(cells) + '</tr>')
