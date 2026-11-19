@@ -82,8 +82,8 @@ def render_record(item):
              'event-date': item['event_date']}
     attributes = ' '.join(f'data-{k}="{escape(v, quote=True)}"' for k, v in attrs.items())
     note = ''
-    if item.get('allowance'):
-        value = item['allowance']
+    value = item.get('allowance', {})
+    if value.get('note_ko') and value.get('note_en'):
         note = '<p class="ip-record-note">' + bilingual(value['note_ko'], value['note_en']) + '</p>'
     aliases = ''
     if item['aliases']:
