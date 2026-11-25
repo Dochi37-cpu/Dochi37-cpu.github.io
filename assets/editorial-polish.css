@@ -316,3 +316,34 @@ html.publication-filter-ready .publication-filter-status {
   color: var(--muted);
   font-size: var(--text-secondary);
 }
+
+/* Compact research overview and two paths for inquiries. */
+.workflow-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 1rem; }
+.workflow-list .card { padding: 1.1rem; }
+.workflow-list h3 { margin-block: .4rem; }
+.project-evidence { margin-top: .9rem; }
+.join-entry { padding-block: clamp(2rem, 5vw, 3.75rem); }
+.join-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: clamp(1.5rem, 5vw, 5rem); }
+.join-layout > * { min-width: 0; }
+.join-layout h1, .join-layout h2, .join-layout p { margin: 0; }
+.join-entry h1 { margin-bottom: .75rem; }
+.join-layout h2 { color: var(--navy-950); font-size: clamp(1.3rem, 2.2vw, 1.7rem); line-height: 1.4; }
+.join-layout p { max-width: 55ch; font-size: 1rem; line-height: 1.7; }
+.join-person { border-inline-start: .2rem solid var(--green-700); padding-inline-start: 1.25rem; }
+.join-person h2 { margin-bottom: .5rem; font-size: 1rem; }
+.join-person a, .join-link { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--navy-800); text-decoration: underline; text-underline-offset: .2em; }
+.join-email { font-size: 1.125rem; font-weight: 650; }
+.join-routes { padding-block: clamp(2rem, 4.5vw, 3.5rem); background: var(--surface); }
+.join-routes .join-layout > div { border-top: 1px solid var(--line-strong); padding-top: 1rem; }
+.join-routes h2 { margin-bottom: .75rem; }
+.join-types { font-weight: 600; color: var(--navy-900); margin-bottom: .5rem !important; }
+.join-link { margin-top: .3rem; font-weight: 600; }
+.join-more { background: var(--surface); padding-bottom: 1.5rem; }
+.join-more .shell { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+@media (max-width: 42rem) {
+  .join-layout { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+}
+.footer-origin { display: inline-block; margin-inline-start: 1rem; }
+@media (max-width: 35rem) {
+  .footer-origin { display: block; margin-inline-start: 0; }
+}

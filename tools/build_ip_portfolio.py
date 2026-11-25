@@ -57,7 +57,7 @@ def load_data(root=ROOT):
 
 def render_badges(parents, domestic_stages, records):
     stages = {domestic_stages[n] for n in parents}
-    ko,en = ('한국 등록·공개','KR · Granted / published') if len(stages)>1 else (('한국 등록','KR · Granted') if 'granted' in stages else ('한국 공개','KR · Published'))
+    ko,en = ('한국 등록 또는 공개','Korean grants or publications') if len(stages)>1 else (('한국 등록','KR grant') if 'granted' in stages else ('한국 공개','KR publication'))
     badges = ['<span class="ip-badge">'+bilingual(ko,en)+'</span>']
     seen = set()
     for item in records:
@@ -70,7 +70,7 @@ def render_badges(parents, domestic_stages, records):
         ko,en = COUNTRIES[label[0]]; sk,se=STAGES[label[1]]
         if label[0] == 'WO':
             ko,en,sk,se = '', '', 'PCT 국제공개', 'PCT publication'
-        badges.append(f'<span class="ip-badge {item["stage"]}">{bilingual(ko+" "+sk if ko else sk,en+" · "+se if en else se)}</span>')
+        badges.append(f'<span class="ip-badge {item["stage"]}">{bilingual(ko+" "+sk if ko else sk,en+": "+se if en else se)}</span>')
     return '<div class="ip-badges">'+''.join(badges)+'</div>'
 
 def transfer_label(transfer):
@@ -90,7 +90,7 @@ def render_record(item):
         note = '<p class="ip-record-note">' + bilingual(value['note_ko'], value['note_en']) + '</p>'
     aliases = ''
     if item['aliases']:
-        aliases = '<small>' + bilingual('관련 공개번호: ', 'Related publications: ') + escape(' · '.join(item['aliases'])) + '</small>'
+        aliases = '<small>' + bilingual('관련 공개번호: ', 'Related publications: ') + escape(', '.join(item['aliases'])) + '</small>'
     return (f'<li class="ip-linked-record" {attributes}>'
             f'<div class="ip-right-heading"><b>{bilingual(*country)}</b>'
             f'<span class="ip-stage {item["stage"]}">{bilingual(*stage)}</span></div>'
@@ -162,7 +162,7 @@ def render(source, data):
     other = sum(x['stage'] in ('published','allowed') for x in data['records'])
     pct = sum(x['stage'] == 'pct_published' for x in data['records'])
     metrics = [(sum(s=='granted' for s in domestic_stages.values()),'국내 등록','KR grants'), (sum(s=='published' for s in domestic_stages.values()),'국내 공개','KR publications'),
-               (grants,'해외 등록','International grants'), (other,'해외 공개·등록결정','International publications / allowance'),
+               (grants,'해외 등록','International grants'), (other,'해외 공개 또는 등록결정','International publications / allowance'),
                (pct,'PCT 국제공개','PCT publications')]
     metric_html = ''.join(f'<div class="ip-metric"><strong>{n}</strong><span>{bilingual(ko,en)}</span></div>' for n,ko,en in metrics)
     cards = []
@@ -177,21 +177,20 @@ def render(source, data):
         cards.append(f'<article class="family-card" id="{card["id"]}"><div class="eyebrow">{bilingual(card["application_ko"],card["application_en"])}</div><h3>{bilingual(card["ko"],card["en"])}</h3><p>{bilingual(card["description_ko"],card["description_en"])}</p><ul class="ip-portfolio-inventions">'+''.join(members)+'</ul></article>')
     main = f'''<main id="main-content">
   <section class="page-hero"><div class="shell">
-    <div class="eyebrow">{bilingual('지식재산','INTELLECTUAL PROPERTY')}</div>
-    <h1>{bilingual('산업 적용을 위한 국내외 특허 포트폴리오','Patents for Industrial Applications')}</h1>
-    <p>{bilingual('열에너지·탄소전환·수소 기술의 산업 적용을 위해 축적한 PI의 선행·공동연구 특허를 소개합니다. 각 발명의 국내 기록과 해외 권리화 이력을 함께 확인할 수 있습니다.','Explore the PI’s prior and collaborative patents for industrial applications in thermal energy, carbon conversion and hydrogen. Each invention connects domestic records with its international patent history.')}</p>
-    <div class="page-nav"><a href="#families">{bilingual('기술 분야별 특허','Technology areas')}</a><a href="#registry">{bilingual('국내외 통합 목록','Integrated registry')}</a></div>
+    <h1>{bilingual('국내외 특허','Patent portfolio')}</h1>
+    <p>{bilingual('정한솔 선임연구원이 이전 연구와 공동연구에서 발명자로 참여한 특허입니다. 국내 특허를 기준으로 해외 공보를 함께 모았습니다.','Patents naming Han Sol Jung as an inventor in prior and collaborative research. Korean records are paired with their corresponding international publications.')}</p>
+    <div class="page-nav"><a href="#families">{bilingual('기술 분야별 특허','Technology areas')}</a><a href="#registry">{bilingual('특허 전체 목록','Full patent list')}</a></div>
     <div class="ip-metrics">{metric_html}</div>
-    <p class="ip-count-note">{bilingual('국내 23개 기록을 기준으로 연결한 공개 실적입니다. 국가·지역별 출원 1건을 한 번만 세며, PCT는 해외 등록과 구분합니다.','Public records linked to 23 domestic entries. Each national/regional application is counted once; PCT publications are separate from international grants.')} {bilingual('해외 연결 확인 기준: ', 'International records checked: ')}<time datetime="{data['checked_on']}">{data['checked_on']}</time></p>
+    <p class="ip-count-note">{bilingual('국가나 지역별로 같은 출원은 한 번만 셉니다. PCT 국제공개는 해외 등록에 포함하지 않습니다.','Each application is counted once per jurisdiction. PCT publications are counted separately from overseas grants.')} {bilingual('해외 기록 확인일: ', 'International records checked: ')}<time datetime="{data['checked_on']}">{data['checked_on']}</time></p>
   </div></section>
   <section class="section alt anchor-target" id="families"><div class="shell">
-    <div class="section-head"><div><div class="eyebrow">{bilingual('기술 분야별 특허','PATENTS BY TECHNOLOGY AREA')}</div><h2>{bilingual('네 가지 기술 분야로 살펴봅니다.','Explore four technology areas.')}</h2></div></div>
+    <div class="section-head"><div><h2>{bilingual('기술 분야별 특허','Patents by technology area')}</h2></div></div>
     <div class="family-grid">{''.join(cards)}</div>
   </div></section>
   <section class="section anchor-target" id="registry"><div class="shell">
-    <div class="section-head"><div><div class="eyebrow">{bilingual('국내외 특허 통합 목록','DOMESTIC & INTERNATIONAL PATENTS')}</div><h2>{bilingual('하나의 발명, 연결된 국내외 기록.','One invention, connected patent records.')}</h2></div></div>
+    <div class="section-head"><div><h2>{bilingual('특허 전체 목록','Full patent list')}</h2></div></div>
     <div class="registry-wrap" role="region" aria-label="Domestic and international patents" tabindex="0">
-    <table class="registry-table ip-table" role="table"><caption>{bilingual('국내 23개 항목과 연결된 국내외 특허 기록','23 domestic entries with linked international patent records')}</caption>
+    <table class="registry-table ip-table" role="table"><caption>{bilingual(f'국내 발명 {len(rendered_rows)}건과 관련 해외 기록', f'{len(rendered_rows)} Korean inventions and their international records')}</caption>
     <thead role="rowgroup"><tr role="row"><th scope="col">{bilingual('번호','No.')}</th><th scope="col">{bilingual('국내 식별자','Domestic identifiers')}</th><th scope="col">{bilingual('발명의 명칭','Invention')}</th><th scope="col">{bilingual('국내 이력','Domestic record')}</th><th scope="col">{bilingual('해외 기록·기술이전','International records & technology transfer')}</th></tr></thead>
     <tbody role="rowgroup">{''.join(rendered_rows)}</tbody></table></div>
   </div></section>
